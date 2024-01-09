@@ -1,0 +1,898 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Univariate Visualizations &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/21_univariate';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Multivariate Visualizations" href="22_multivariate.html" />
+    <link rel="prev" title="matplotlib: Visualizing Data" href="20_visualization.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    CSC-475 (Seminar in CS)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../policies/grading.html">Grading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/academic_success.html">Academic Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/accomodations.html">Accomodations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/integrity.html">Academic Integrity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../policies/title_9.html">Nondiscrimination Policy and Sexual Misconduct</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/preproposal.html">Preproposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/report.html">Report</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../class_discussions/readings.html">Readings / Viewings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class_discussions/index.html">Class Discussions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><span class="math notranslate nohighlight">\(\LaTeX\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html"><strong>Github</strong>: Social Media for Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Univariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/21_univariate.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/21_univariate.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Univariate Visualizations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plots">Bar Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels-and-title">Axis labels and Title</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">Box Plots</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="univariate-visualizations">
+<h1>Univariate Visualizations<a class="headerlink" href="#univariate-visualizations" title="Permalink to this headline">#</a></h1>
+<p>Uni-variate (single variable) visualizations are used to better understand one-dimensional data (think <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">Series</span></code>) in the dataset.</p>
+<p>In this section, we will look at techniques to understand the <strong>distribution</strong> of each <strong>feature</strong>. Distribution of a feature, <em>simply put</em>, is the frequency of each value of the variable.</p>
+<p>We know from previous discussion that <strong><code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code></strong> method on a <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">Series</span></code> gives us the <strong>frequency distribution</strong> of each value in the <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
+<p>We will use the <strong>World Bank dataset</strong>, which contains information about countries and social statistics.</p>
+<!-- 
+````{card} 
+
+**Boston Housing Dataset**
+
+^^^
+
+The Boston Housing Dataset is a derived from information collected by the U.S. Census Service concerning housing in the area of Boston MA. The following describes the dataset columns: 
+
+| Column | Description |
+| --- | --- |
+| CRIM | per capita crime rate by town |
+| ZN | proportion of residential land zoned for lots over 25,000 sq.ft. |
+| INDUS | proportion of non-retail business acres per town.
+| CHAS | Charles River dummy variable (1 if tract bounds river; 0 otherwise)
+| NOX | nitric oxides concentration (parts per 10 million)
+| RM | average number of rooms per dwelling
+| AGE | proportion of owner-occupied units built prior to 1940
+| DIS | weighted distances to five Boston employment centres
+| RAD | index of accessibility to radial highways
+| TAX | full-value property-tax rate per $10,000
+| PTRATIO | pupil-teacher ratio by town
+| B | $1000 \ times (B_k - 0.63)^2$ where $B_k$ is the proportion of blacks by town
+| LSTAT | % lower status of the population
+| MEDV | Median value of owner-occupied homes in $1000's
+
++++
+Source:  The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic
+ prices and the demand for clean air', J. Environ. Economics & Management,
+ vol.5, 81-102, 1978. 
+```` --><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> 
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/data/world_bank.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Continent</th>
+      <th>Country</th>
+      <th>Primary completion rate: Male: % of relevant age group: 2015</th>
+      <th>Primary completion rate: Female: % of relevant age group: 2015</th>
+      <th>Lower secondary completion rate: Male: % of relevant age group: 2015</th>
+      <th>Lower secondary completion rate: Female: % of relevant age group: 2015</th>
+      <th>Youth literacy rate: Male: % of ages 15-24: 2005-14</th>
+      <th>Youth literacy rate: Female: % of ages 15-24: 2005-14</th>
+      <th>Adult literacy rate: Male: % ages 15 and older: 2005-14</th>
+      <th>Adult literacy rate: Female: % ages 15 and older: 2005-14</th>
+      <th>...</th>
+      <th>Access to improved sanitation facilities: % of population: 1990</th>
+      <th>Access to improved sanitation facilities: % of population: 2015</th>
+      <th>Child immunization rate: Measles: % of children ages 12-23 months: 2015</th>
+      <th>Child immunization rate: DTP3: % of children ages 12-23 months: 2015</th>
+      <th>Children with acute respiratory infection taken to health provider: % of children under age 5 with ARI: 2009-2016</th>
+      <th>Children with diarrhea who received oral rehydration and continuous feeding: % of children under age 5 with diarrhea: 2009-2016</th>
+      <th>Children sleeping under treated bed nets: % of children under age 5: 2009-2016</th>
+      <th>Children with fever receiving antimalarial drugs: % of children under age 5 with fever: 2009-2016</th>
+      <th>Tuberculosis: Treatment success rate: % of new cases: 2014</th>
+      <th>Tuberculosis: Cases detection rate: % of new estimated cases: 2015</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+      <td>Algeria</td>
+      <td>106.0</td>
+      <td>105.0</td>
+      <td>68.0</td>
+      <td>85.0</td>
+      <td>96.0</td>
+      <td>92.0</td>
+      <td>83.0</td>
+      <td>68.0</td>
+      <td>...</td>
+      <td>80.0</td>
+      <td>88.0</td>
+      <td>95.0</td>
+      <td>95.0</td>
+      <td>66.0</td>
+      <td>42.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>88.0</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Africa</td>
+      <td>Angola</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79.0</td>
+      <td>67.0</td>
+      <td>82.0</td>
+      <td>60.0</td>
+      <td>...</td>
+      <td>22.0</td>
+      <td>52.0</td>
+      <td>55.0</td>
+      <td>64.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>25.9</td>
+      <td>28.3</td>
+      <td>34.0</td>
+      <td>64.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Africa</td>
+      <td>Benin</td>
+      <td>83.0</td>
+      <td>73.0</td>
+      <td>50.0</td>
+      <td>37.0</td>
+      <td>55.0</td>
+      <td>31.0</td>
+      <td>41.0</td>
+      <td>18.0</td>
+      <td>...</td>
+      <td>7.0</td>
+      <td>20.0</td>
+      <td>75.0</td>
+      <td>79.0</td>
+      <td>23.0</td>
+      <td>33.0</td>
+      <td>72.7</td>
+      <td>25.9</td>
+      <td>89.0</td>
+      <td>61.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Africa</td>
+      <td>Botswana</td>
+      <td>98.0</td>
+      <td>101.0</td>
+      <td>86.0</td>
+      <td>87.0</td>
+      <td>96.0</td>
+      <td>99.0</td>
+      <td>87.0</td>
+      <td>89.0</td>
+      <td>...</td>
+      <td>39.0</td>
+      <td>63.0</td>
+      <td>97.0</td>
+      <td>95.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>77.0</td>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Africa</td>
+      <td>Burundi</td>
+      <td>58.0</td>
+      <td>66.0</td>
+      <td>35.0</td>
+      <td>30.0</td>
+      <td>90.0</td>
+      <td>88.0</td>
+      <td>89.0</td>
+      <td>85.0</td>
+      <td>...</td>
+      <td>42.0</td>
+      <td>48.0</td>
+      <td>93.0</td>
+      <td>94.0</td>
+      <td>55.0</td>
+      <td>43.0</td>
+      <td>53.8</td>
+      <td>25.4</td>
+      <td>91.0</td>
+      <td>51.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 47 columns</p>
+</div></div></div>
+</div>
+<section id="bar-plots">
+<h2>Bar Plots<a class="headerlink" href="#bar-plots" title="Permalink to this headline">#</a></h2>
+<p><strong>Bar plots</strong> are used to visualize the frequency distribution of <i><u><strong>features that take on a small set of unique values</strong></u></i>. Such features are more often categorical features as opposed to numerical features.</p>
+<p>Visualizing categorical features is easy. We can use <strong><code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code></strong> method to get the frequency distribution of each value in the feature. This frequency distribution can be plotted using a <strong>bar chart</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val_counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">val_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Africa        47
+Europe        43
+Asia          34
+N. America    18
+Oceania       13
+S. America    11
+Name: Continent, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> the method to make a bar chart is <strong><code class="docutils literal notranslate"><span class="pre">barplot()</span></code></strong>. The method takes in two arguments: <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">val_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">val_counts</span><span class="o">.</span><span class="n">values</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e4b00cd8b518d641440d8e3ee09d4bba1c9d4f5dbcd932696dae47532e956e2c.png" src="../_images/e4b00cd8b518d641440d8e3ee09d4bba1c9d4f5dbcd932696dae47532e956e2c.png" />
+</div>
+</div>
+<p>Note that the plots above are <strong>incomplete</strong>. If you show this plot to someone, they will not be able to understand what the plot is about.</p>
+<p>To <em>complete</em> the plot, so it is understandable, we need to add atleast a title, axis labels and, depending on context, a legend.</p>
+</section>
+<section id="axis-labels-and-title">
+<h2>Axis labels and Title<a class="headerlink" href="#axis-labels-and-title" title="Permalink to this headline">#</a></h2>
+<p>To add axis labels and title, we need to assign the plot object returned by <code class="docutils literal notranslate"><span class="pre">sns.barplot</span></code> to a variable and then use <strong><code class="docutils literal notranslate"><span class="pre">.set()</span></code></strong> method on the plot object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">val_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">val_counts</span><span class="o">.</span><span class="n">values</span><span class="p">);</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Continent&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Count of countries (rows)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Count of countries in each continent&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b55de7a139d2b4ba41bc2b7a8759c22cf5575b3fdc5d456ee038d5bd14cf58d2.png" src="../_images/b55de7a139d2b4ba41bc2b7a8759c22cf5575b3fdc5d456ee038d5bd14cf58d2.png" />
+</div>
+</div>
+<p>Note that we have used <strong><code class="docutils literal notranslate"><span class="pre">.set()</span></code></strong> method on the plot object, returned by <strong><code class="docutils literal notranslate"><span class="pre">sns.barplot()</span></code></strong> method, and passed the arguments <code class="docutils literal notranslate"><span class="pre">xlabel</span></code>, <code class="docutils literal notranslate"><span class="pre">ylabel</span></code> and <code class="docutils literal notranslate"><span class="pre">title</span></code> to the method.</p>
+<p>Now, the plot is “complete” and can be understood by someone who has not seen the data.</p>
+<hr/>
+<p><strong>Bar plots don’t scale</strong>. If you try to plot a feature (categorical or numerical) with a lot of unique values, the plot will be unreadable. Yes, even with a title and axis labels!</p>
+<p>Here is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val_counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">();</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">val_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">val_counts</span><span class="o">.</span><span class="n">values</span><span class="p">);</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frequency of countries in the World Bank data&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b5393c1453fb612c1f9fc3a90d3a81d753e04c170bc08a4f83800de043f375ad.png" src="../_images/b5393c1453fb612c1f9fc3a90d3a81d753e04c170bc08a4f83800de043f375ad.png" />
+</div>
+</div>
+<p>The plot above is unreadable. We can’t make out the labels on the x-axis. This is because there are too many unique values in the <code class="docutils literal notranslate"><span class="pre">country</span></code> feature.</p>
+<p>There is no easy way to fix this for categorical features. For numerical features, however, there is a way.</p>
+<!--To make the plot readable, we need to **rotate** the x-axis labels.
+
+## Rotating x-axis labels
+
+To rotate the x-axis labels, we need to use the **`.set_xticklabels()`** method on the plot object. --></section>
+<section id="histograms">
+<h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">#</a></h2>
+<p>Histograms <em>look</em> very similar to bar plots. However, they are different in a subtle but critical way.</p>
+<p>Histograms solve the problem of plotting a feature with a lot of unique values by <strong>binning</strong> the values.</p>
+<p>Binning is the process of dividing the range of values of a feature into <strong>bins</strong>. Each bin represents a range of values. The height of the bar in a histogram represents the number of values in the bin. In most cases, the bins are of equal width.</p>
+<p>For example, if we have a feature with values ranging from 0 to 100, we can divide the range into 10 bins of width 10 each. The first bin will contain values from 0 to 10, the second bin will contain values from 10 to 20 and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;Gross domestic product: </span><span class="si">% g</span><span class="s2">rowth : 2016&quot;</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">col</span><span class="p">);</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution of GDP growth in 2016&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e10450ba8b6af9cd4cc6a0ea9e8b9d2fd9d15c8b7f445fc55f8ff355acfb1a18.png" src="../_images/e10450ba8b6af9cd4cc6a0ea9e8b9d2fd9d15c8b7f445fc55f8ff355acfb1a18.png" />
+</div>
+</div>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">sns.histplot</span></code> will try to infer the bin edges from the data. However, it is possible to set the bin edges explicitly. This can be useful when comparing multiple distributions.</p>
+</section>
+<section id="box-plots">
+<h2>Box Plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">#</a></h2>
+<img align="right" width="60%" src="https://ds100.org/course-notes-su23/visualization_1/images/boxplot.png">
+<p><strong>Box plots</strong> display distributions using information about quartiles.</p>
+<p>A quartile represents a 25% portion of the data. We say that:</p>
+<ul class="simple">
+<li><p>The first quartile (Q1) repesents the 25th percentile – 25% of the data lies below the first quartile</p></li>
+<li><p>The second quartile (Q2) represents the 50th percentile, also known as the median – 50% of the data lies below the second quartile</p></li>
+<li><p>The third quartile (Q3) represents the 75th percentile – 75% of the data lies below the third quartile.</p></li>
+</ul>
+<p>In a box plot, the lower extent of the box lies at Q1, while the upper extent of the box lies at Q3. The horizontal line in the middle of the box corresponds to Q2 (equivalently, the median).</p>
+<p>The <strong>Inter-Quartile Range</strong> (IQR) measures the spread of the middle % of the distribution, calculated as the (<span class="math notranslate nohighlight">\(3^{rd}\)</span> Quartile <span class="math notranslate nohighlight">\(-\)</span> <span class="math notranslate nohighlight">\(1^{st}\)</span> Quartile).</p>
+<p>The <strong>whiskers</strong> of a box-plot are the two points that lie at the [<span class="math notranslate nohighlight">\(1^{st}\)</span> Quartile <span class="math notranslate nohighlight">\(-\)</span>(<span class="math notranslate nohighlight">\(1.5 \times\)</span> IQR)], and the [<span class="math notranslate nohighlight">\(3^{rd}\)</span> Quartile <span class="math notranslate nohighlight">\(+\)</span> (<span class="math notranslate nohighlight">\(1.5 \times\)</span> IQR)]. They are the lower and upper ranges of “normal” data (the points excluding outliers). Subsequently, the outliers are the data points that fall beyond the whiskers, or further than (
+<span class="math notranslate nohighlight">\(1.5 \times\)</span> IQR) from the extreme quartiles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;Gross domestic product: </span><span class="si">% g</span><span class="s2">rowth : 2016&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    159.000000
+mean       2.780503
+std        3.106862
+min      -10.400000
+25%        1.450000
+50%        2.900000
+75%        4.500000
+max       11.000000
+Name: Gross domestic product: % growth : 2016, dtype: float64
+</pre></div>
+</div>
+<img alt="../_images/a1ad8e60f3f6a5802e404afd32ad65fec4dc071ce300d628d4a21977292f52f7.png" src="../_images/a1ad8e60f3f6a5802e404afd32ad65fec4dc071ce300d628d4a21977292f52f7.png" />
+</div>
+</div>
+<p>If it helps, you can think of the box plot as a birds-eye-view of histogram. Histogram as seeing a hill from the side, while box plot is seeing the hill from above through a drone or through a bird’s eye.</p>
+<p>Also note that boxplot is to <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> as barplot is to <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="20_visualization.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="22_multivariate.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multivariate Visualizations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plots">Bar Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels-and-title">Axis labels and Title</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">Box Plots</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

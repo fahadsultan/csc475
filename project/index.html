@@ -1,0 +1,845 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Project &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Preproposal" href="preproposal.html" />
+    <link rel="prev" title="Purposeful Pathways" href="../pathways.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    CSC-475 (Seminar in CS)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../policies/grading.html">Grading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/academic_success.html">Academic Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/accomodations.html">Accomodations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/integrity.html">Academic Integrity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../policies/title_9.html">Nondiscrimination Policy and Sexual Misconduct</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preproposal.html">Preproposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal.html">Proposal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="litreview.html">Literature Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">Report</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../class_discussions/readings.html">Readings / Viewings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class_discussions/index.html">Class Discussions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/latex.html"><span class="math notranslate nohighlight">\(\LaTeX\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/github.html"><strong>Github</strong>: Social Media for Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pandas1.html">Pandas I: Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/21_univariate.html">Univariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/22_multivariate.html">Multivariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/23_dosdonts.html">Dos and Donts of Visualization</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fproject/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/project/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Project</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex-template">LaTeX Template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-2023-projects">Fall 2023 Projects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csc-272">CSC-272</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csc-475">CSC-475</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="project">
+<h1>Project<a class="headerlink" href="#project" title="Permalink to this headline">#</a></h1>
+<!-- ## Ideas: 
+
+01. Bureau of Labor Statistics project
+02. Computational Finance project 
+03. NYC project? 
+04. ChatGPT API
+05. Spotify Project 
+06. Education IPEDS project
+07. VR code
+08. TikTok API bellingcat
+09. React.js project
+10. 
+
+* **[Project Prepreposal](https://docs.google.com/document/d/1feE6sO5X7wMhPAwt8HoIvxz0Gk6tUIKf_VOG4xqtdGU/edit)**
+* **[Project Proposal](https://www.overleaf.com/project/64fb72d8ef07452bcb240e6d)**
+* **[Literature Review](https://docs.google.com/document/d/1EEvQ-KIendOy5tNeTyO6JuYLzf9Xfkc8_ygL84kQ4uc/edit)**
+* **[Preliminary Report](https://www.overleaf.com/project/654d27387c4fce8510ef409e)** -->
+<p>In this course, you will plan, execute, and present the results of a term-long project of your choosing. If you are an Information Technology major, your project must relate to your cognate discipline.</p>
+<p>In the project, <em><strong>you will be asking a question and defending an argument in a Final Paper, in <a class="reference external" href="https://docs.google.com/presentation/d/1y4OMQq9ChapHJF-cUaYQa6J7IUvhlgL5Z-AJ8MRbJis/edit?usp=sharing">Class Presentation</a>, and <a class="reference external" href="https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing">Poster</a> at Furman Engaged.</strong></em></p>
+<p>In addition to our seminar discussions, many class sessions will be devoted to instruction on planning, executing, and presenting your project.</p>
+<p>The steps of your project are to mirror the steps of the scientific method:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might want to start by identifying a data set to ground your question.</p>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Identify a question</strong> that you want to answer.</p></li>
+<li><p><strong>Identify a data set (evidence)</strong> that will help you answer the question.</p></li>
+<li><p><strong><span class="xref myst">Conduct a literature search</span></strong> to see what others have done.</p></li>
+<li><p><strong>Identify a model (hypothesis)</strong> that will help you answer the question.</p></li>
+<li><p><strong>Analyze the results</strong> using the model and data.</p></li>
+<li><p><strong>Draw conclusions</strong> from the results.</p></li>
+<li><p><strong>Presentation</strong> of your findings</p></li>
+</ol>
+<!-- 
+* Each student will be responsible to turn in **3-5 page project proposals/literature search and progress reports** as of the dates above.   -->
+<!-- 
+Your project will likely take one of three forms: 
+
+1. Conduct an extensive and systematic literature review on a particular topic in computer science.
+2. Create an application.
+3. Data Analysis project. 
+
+Note that an application need not be robust, but must be sufficiently functional to illustrate your argument.  -->
+<!-- 1. What is the problem you are trying to solve?
+2. Why is it important?
+3. Why is it challenging?
+4. What is the data you are using?
+5. What is the model you are using?
+6. What are the results?
+8. What are the conclusions? -->
+<!-- 
+**Peer Grading**: A substantial part of the grading of the projects will be done by peers: each student will be charged with grading three other projects on the same topic. _Peer review is how research papers are selected for publication in academia_, and I hope this will be revealing.  I am hoping that this review will provide insights to improve your own projects as well.
+
+~~To preserve **anonymity in submissions**, it is important that the papers you submit online for grading **not contain your names** or ID numbers. Indeed, the peer grading form/rubric will include a question if the grader can figure out whose paper they have, and if so we will take off points.~~
+
+**Your project code should be on [Github](https://github.com) and your manuscript should be on [Overleaf](https://overleaf.com).** See links below for more details.  -->
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Good places to look for data sets:</p>
+<ul>
+<li><p><strong><a class="reference external" href="https://datasetsearch.research.google.com">Google’s Dataset Search</a></strong></p></li>
+<li><p><strong><a class="reference external" href="https://www.kaggle.com/datasets">Kaggle</a></strong></p></li>
+<li><p><strong><a class="reference external" href="https://github.com/awesomedata/awesome-public-datasets">“Awesome Public Datsets” github repository</a></strong></p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference external" href="https://paperswithcode.com/">Papers with Code</a></strong> is a great resource of published papers with open-source code.</p></li>
+<li><p><strong><a class="reference external" href="https://libguides.furman.edu/resources/statistics/home">Data &amp; Statistics resources</a></strong> from James B. Duke Library</p></li>
+<li><p><a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebook User Guide</a></p></li>
+<li><p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook by Jake VanderPlas</a></p></li>
+<li><p><strong>Python</strong>: <a class="reference external" href="https://www.cs.swarthmore.edu/courses/CS21Book/">How to Think Like a Computer Scientist (Swarthmore Edition) by Jeffrey Elkner, Allen B. Downey, and Chris Meyers (free, open textbook)</a></p></li>
+</ul>
+<p><strong><a class="reference external" href="https://fahadsultan.com/potpourri/latex.html">LaTeX tutorial from class</a></strong></p>
+<p>You are expected to use LaTeX for your final report. You can use any Latex editor you like. I recommend <a class="reference external" href="https://www.overleaf.com/">Overleaf</a>. It is free and easy to use.</p>
+</section>
+<section id="latex-template">
+<h2>LaTeX Template<a class="headerlink" href="#latex-template" title="Permalink to this headline">#</a></h2>
+<p>Your final report should be in the <a class="reference external" href="https://www.ieee.org/conferences/publishing/templates.html">IEEE Conference Template</a>. Overleaf version of the template can be found <a class="reference external" href="https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn">here</a>.</p>
+<p>Your report should be at least 4 pages long. You can use the following sections in your report:</p>
+<ul class="simple">
+<li><p>Introduction</p></li>
+<li><p>Related Work</p></li>
+<li><p>Data</p></li>
+<li><p>Methods</p></li>
+<li><p>Results</p></li>
+<li><p>Conclusion</p></li>
+<li><p>References</p></li>
+</ul>
+<!-- ### Latex Resources -->
+<!-- * [Overleaf](https://www.overleaf.com/) -->
+<!-- * [Latex Tips](https://www.overleaf.com/learn/latex/Articles/Getting_started_with_LaTeX) -->
+<!-- * [Latex Tutorial](https://www.latex-tutorial.com/tutorials/) -->
+<!-- * [Latex Wiki](https://en.wikibooks.org/wiki/LaTeX) -->
+<!-- * [Latex Cheat Sheet](https://wch.github.io/latexsheet/) -->
+<!-- * [Latex Symbols 1](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) -->
+<!-- * [Latex Symbols 2](https://www.caam.rice.edu/~heinken/latex/symbols.pdf) -->
+<!-- * [Latex Symbols 3](https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf) -->
+<!-- 
+## Github
+
+Code for your project should be in a **public [Github](https://github.com) repository**. You can use any repo name you like. Link to your repo should be in your final report, presentation, and poster. -->
+<!-- 
+## Github Tutorial
+
+You can find the official [Github tutorial here](https://guides.github.com/activities/hello-world/). You might also find [this Github tutorial](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners) helpful. If you prefer video tutorial, [this short youtube video](https://www.youtube.com/watch?v=0fKg7e37bQE) might be useful. -->
+<!-- 
+## Git
+
+Github uses Git. Git is a version control system. You can find a [Git tutorial here](https://www.atlassian.com/git/tutorials/what-is-version-control). You can also find a [Git tutorial here](https://www.youtube.com/watch?v=HVsySz-h9r4). -->
+<!-- ### Git Cheat Sheets -->
+<!-- * [Git Cheat Sheet 1](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet) -->
+<!-- * [Git Cheat Sheet 2](https://education.github.com/git-cheat-sheet-education.pdf) -->
+<!-- * [Git Cheat Sheet 3](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) -->
+<!-- 
+<br/>
+
+Following data sets and ideas are only there to give you a starting point. You are free to propose a data set or project idea not listed here. 
+
+{: .tip }
+**[Google's Dataset Search](https://datasetsearch.research.google.com)**, **[Kaggle](https://www.kaggle.com/datasets)** and the **["Awesome Public Datsets" github repository](https://github.com/awesomedata/awesome-public-datasets)** are good places to look for data sets 
+
+{: .tip }
+**[Data & Statistics resources](https://libguides.furman.edu/resources/statistics/home)** from James B. Duke Library
+
+## Example Data sets
+
+* **Movies**: i) [Scripts data](https://www.kaggle.com/datasets/gufukuro/movie-scripts-corpus) ii) [Subtitles data](https://datasetsearch.research.google.com/search?src=0&query=subtitles) iii) [IMDB Dataset](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset)
+
+* **Music**: i) [Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/) ii) [Last.fm Dataset](http://millionsongdataset.com/lastfm/) iii) [Spotify Dataset](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks) iv) [Lyrics data](https://datasetsearch.research.google.com/search?src=0&query=lyrics&docid=L2cvMTFzMXQ2azkybg%3D%3D)
+
+* **TV series**: i) [TV Series Dataset](https://www.kaggle.com/ruchi798/tv-shows-on-netflix-prime-video-hulu-and-disney) ii) [Subtitles data](https://datasetsearch.research.google.com/search?src=0&query=subtitles) iii) [IMDB Dataset](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset)
+
+* **Books**: i) [Goodreads Dataset](https://www.kaggle.com/jealousleopard/goodreadsbooks) ii) [Book Reviews Dataset](https://www.kaggle.com/ruchi798/bookcrossing-dataset) iii) [Book Summaries Dataset](https://www.kaggle.com/philippsp/booksummaries)
+
+* **Socio-Economic**: i) [S&P 500](https://www.kaggle.com/datasets/andrewmvd/sp-500-stocks) ii) [World Development Indicators](https://www.kaggle.com/datasets/kaggle/world-development-indicators)
+
+* **Environment**: i) [Earth Surface Temperature](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) ii) [US Pollution Data](https://www.kaggle.com/datasets/sogun3/uspollution)
+
+* **Sports**: i) [College Basketball](https://www.kaggle.com/datasets/andrewsundberg/college-basketball-dataset) ii) [FIFA Soccer Rankings](https://www.kaggle.com/datasets/tadhgfitzgerald/fifa-international-soccer-mens-ranking-1993now) iii) [Cricket](https://www.kaggle.com/datasets/jaykay12/odi-cricket-matches-19712017) -->
+<!--- ## Example Project Ideas
+<!-- ### Movie / Song / TV Recommendation System   -->
+<!-- * Implement a **Recommendation System** using the data sets above. **Unsupervised**{: .label .label-purple }   -->
+<!-- **Tabular**{: .label .label-purple } **Text**{: .label .label-purple }  -->
+<!-- * Predict the **Genre / Artist** of the media using the data sets above. **Classification**{: .label .label-purple }   -->
+<!-- **Tabular**{: .label .label-purple } **Text**{: .label .label-purple }  -->
+<!-- * Predict the **Rating / Popularity / Revenue** of the media using the data sets above. **Regression**{: .label .label-purple }  -->
+ <!-- **Tabular**{: .label .label-purple } **Text**{: .label .label-purple }  -->
+<!-- * Use **historical trend to predict future value of an indicator**. **Time Series**{: .label .label-purple }  -->
+</section>
+<section id="fall-2023-projects">
+<h2>Fall 2023 Projects<a class="headerlink" href="#fall-2023-projects" title="Permalink to this headline">#</a></h2>
+<section id="csc-272">
+<h3>CSC-272<a class="headerlink" href="#csc-272" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Louisa Brown (Math ‘24), Nathan Sarro (Applied Math ‘24) <em><span class="xref myst">Finding Fraud in the Figures: Predicting Credit Card Transactions</span></em></p></li>
+<li><p>Gregory Kubista (Chemistry ‘25), Evan Barker (Economics ‘24), Andrew Farrell (Physics ‘25), <em><span class="xref myst">Analyzing Drug Offences in NYC</span></em></p></li>
+<li><p>Disha Patel (IT ‘25), Grace Warren (CS, ‘24), <em><span class="xref myst">Predicting the Prevalence of Chronic Conditions in Medicare Beneficiaries</span></em></p></li>
+<li><p>Abby Stapelton (Chemistry ‘24), Conor Bready (Chemistry ‘24), Julian Ashby (Physics ‘24), <em><span class="xref myst">Predicting Nobel Prize Award Category By Country Educational Statistics</span></em></p></li>
+<li><p>Hannah Lee (Biology ‘24), Braden Burke (Economics ‘24), William Adams (Economics ‘24), <em><span class="xref myst">Predicting Airbnb Ratings</span></em></p></li>
+<li><p>Anna Holland (Chemistry ‘25), Victoria Fenwick (Business Administration ‘25), <em><span class="xref myst">Predicting Anxiety Response</span></em></p></li>
+<li><p>Cole Chapple (Economics ‘24), Ivey Shiver (Business Administration ‘24), <em><span class="xref myst">Predicting Arrests in Chicago</span></em></p></li>
+<li><p>Jonathan Lawrence (CS ‘24), <em><span class="xref myst">NCAA Basketball Analytics: Predicting Post-Season Tournament Teams</span></em></p></li>
+</ul>
+</section>
+<section id="csc-475">
+<h3>CSC-475<a class="headerlink" href="#csc-475" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Title</p></th>
+<th class="head"><p>Poster</p></th>
+<th class="head"><p>Present</p></th>
+<th class="head"><p>Final Report</p></th>
+<th class="head"><p>Website</p></th>
+<th class="head"><p>Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Autoregressive Stock Prediction Modeling</strong></p></td>
+<td><p>Emil Westling</p></td>
+<td><p><a class="reference download internal" download="" href="../_downloads/c57817e0f5a69b5d899c4dcf395eff17/Emil%20Westling_687892_assignsubmission_file_Poster%20CSC475.pdf"><span class="xref download myst">🪧</span></a></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><a class="reference download internal" download="" href="../_downloads/8ed1bcd7161f3dc86b575f155bdf4fa7/Emil%20Westling_687928_assignsubmission_file_CSC_475_Final_Report_Emil_Westling-3.pdf"><span class="xref download myst">📝</span></a></p></td>
+<td><p><span class="xref myst">🌐</span></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Making MacroEconomic Indicators Accessible</strong></p></td>
+<td><p>Joshua Hutson</p></td>
+<td><p><span class="xref myst">🪧</span></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><span class="xref myst">📝</span></p></td>
+<td><p><span class="xref myst">🌐</span></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Olympic Swimming and Running Trends</strong></p></td>
+<td><p>Grace Houser</p></td>
+<td><p><span class="xref myst">🪧</span></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><a class="reference download internal" download="" href="../_downloads/d810620054f338a38ad0e4c56dd10a6e/Grace%20Houser_687927_assignsubmission_file_Houser_Report.pdf"><span class="xref download myst">📝</span></a></p></td>
+<td><p><span class="xref myst">🌐</span></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>A Computational Approach to Language Learning: Examining the Efficacy of Spaced Repetition</strong></p></td>
+<td><p>Jace Rettig</p></td>
+<td><p><span class="xref myst">🪧</span></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><span class="xref myst">📝</span></p></td>
+<td><p><span class="xref myst">🌐</span></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Visualizing Data of Changes in Air Pollution in Seoul, South Korea</strong></p></td>
+<td><p>Ting Chen</p></td>
+<td><p><span class="xref myst">🪧</span></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><span class="xref myst">📝</span></p></td>
+<td><p><span class="xref myst">🌐</span></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SkateNet: A Data Set for Competitive Skating</strong></p></td>
+<td><p>Mason Taylor</p></td>
+<td><p><span class="xref myst">🪧</span></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><span class="xref myst">📝</span></p></td>
+<td><p><span class="xref myst">🌐</span></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tableu to Bokeh: A Case Study of Basketball Analytics Reporting</strong></p></td>
+<td><p>Jonathan Lawrence</p></td>
+<td><p><span class="xref myst">🪧</span></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><a class="reference download internal" download="" href="../_downloads/d13db3db46592651d8cb00bb228dce75/Jonny%20Lawrence_687923_assignsubmission_file_Basketball%20Analytics%20Final%20Report.pdf"><span class="xref download myst">📝</span></a></p></td>
+<td><p><a class="reference external" href="https://jonnylaw23.github.io/Furman_Basketball/index">🌐</a></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Transportation Around New York City: Assessing the Use of the Citi Bike System Alongside the Taxi System</strong></p></td>
+<td><p>Sally Stahl</p></td>
+<td><p><a class="reference download internal" download="" href="../_downloads/2976d0dccf6c296fde575b4dc19c5159/Sally%20Stahl_687899_assignsubmission_file_Poster-Final.pdf"><span class="xref download myst">🪧</span></a></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><a class="reference download internal" download="" href="../_downloads/83332e56b32b4c6a4f8d6a3092cbe628/Sally%20Stahl_687926_assignsubmission_file_CSC-final-writeup.pdf"><span class="xref download myst">📝</span></a></p></td>
+<td><p><span class="xref myst">🌐</span></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Animatlas</strong></p></td>
+<td><p>Sophie Ngo</p></td>
+<td><p><a class="reference download internal" download="" href="../_downloads/85fc60aee91291a6a099c1ac57f1d1c0/Sophie%20Ngo_687893_assignsubmission_file_final%20poster.pdf"><span class="xref download myst">🪧</span></a></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><a class="reference download internal" download="" href="../_downloads/9fb5cb1b367b7d7fef51c6f84a4ef598/Sophie%20Ngo_687925_assignsubmission_file_CSC_475_Final_Report___Sophie_Ngo.pdf"><span class="xref download myst">📝</span></a></p></td>
+<td><p><a class="reference external" href="https://animatlas.me/">🌐</a></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Enhancing Financial Analysis Through Generative AI and Evolving Data Frameworks</strong></p></td>
+<td><p>Shaukat Ibrahim</p></td>
+<td><p><span class="xref myst">🪧</span></p></td>
+<td><p><span class="xref myst">📽</span></p></td>
+<td><p><span class="xref myst">📝</span></p></td>
+<td><p><span class="xref myst">🌐</span></p></td>
+<td><p><span class="xref myst">💻</span></p></td>
+</tr>
+</tbody>
+</table>
+<!-- * Emil Westling (CS '24) _[Autoregressive Stock Prediction Modeling](fall23_reports/Emil Westling_687928_assignsubmission_file_CSC_475_Final_Report_Emil_Westling-3.pdf)_
+
+* Grace Houser (CS '24), _[Olympic Swimming and Running Trends](fall23_reports/Grace%20Houser_687927_assignsubmission_file_Houser_Report.pdf)_
+
+* Jace Rettig (CS '24), _[A Computational Approach to Language Learning: Examining the Efficacy of Spaced Repetition](fall23_reports/Jace%20Rettig_687920_assignsubmission_file_CSC_475_Efficacy_of_Spaced_Repetition_Preliminary_Report-3.pdf)_
+
+* Ting Chen (CS '24), _[Visualizing Data of Changes in Air Pollution in Seoul, South Korea](fall23_reports/Ting%20Chen_687929_assignsubmission_file_Chen_CSC_475_Final_Report.pdf)_
+
+* Mason Taylor (CS '24), _[SkateNet: A Data Set for Competitive Skating](fall23_reports/John%20Taylor_687921_assignsubmission_file_CSC_475_Preliminary_Report__Copy_-4.pdf)_
+
+* Jonathan Lawrence (CS '24),<br/> **_Tableu to Bokeh: A Case Study of Basketball Analytics Reporting_** <br/>
+[🪧 Poster](fall23_posters/) <br/>
+[📽 Presentation]() <br/>
+[📝 Final Report](fall23_reports/Jonny%20Lawrence_687923_assignsubmission_file_Basketball%20Analytics%20Final%20Report.pdf) <br/>
+[🌐 Website](https://jonnylaw23.github.io/Furman_Basketball/index) <br/>
+[💻 Code](https://github.com/jonnylaw23/Furman_Basketball) 
+
+* Sally Stahl (CS '24), **_Transportation Around New York City: Assessing the Use of the Citi Bike System Alongside the Taxi System_**
+[🪧 Poster](fall23_posters/Sally%20Stahl_687899_assignsubmission_file_Poster-Final.pdf)
+[📽 Presentation]()
+[📝 Final Report](fall23_reports/Sally%20Stahl_687926_assignsubmission_file_CSC-final-writeup.pdf)
+[🌐 Website]() <br/>
+[💻 Code]()
+
+* Sophie Ngo (CS '24), _[Animatlas]()_
+[🪧 Poster](fall23_posters/Sophie%20Ngo_687893_assignsubmission_file_final%20poster.pdf) <br/>
+[📽 Presentation]() <br/>
+[📝 Final Report](fall23_reports/Sophie%20Ngo_687925_assignsubmission_file_CSC_475_Final_Report___Sophie_Ngo.pdf) <br/>
+[🌐 Website](https://animatlas.me/) <br/> 
+[💻 Code](https://github.com/Sophie-Ngo/AnimAtlas) <br/>
+
+<br/>
+
+* Shaukat Ibrahim (CS '24), _[Enhancing Financial Analysis Through Generative AI and Evolving Data Frameworks]()_
+
+* Joshua Hutson (CS '24), _[Making MacroEconomic Indicators Accessible]()_ -->
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./project"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../pathways.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Purposeful Pathways</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="preproposal.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Preproposal</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex-template">LaTeX Template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fall-2023-projects">Fall 2023 Projects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csc-272">CSC-272</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csc-475">CSC-475</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
