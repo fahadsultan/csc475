@@ -1,0 +1,52 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts: 
+  - caption: 
+    chapters:
+    - file: policies/index
+      sections: 
+      - file: policies/grading
+      - file: policies/academic_success
+      - file: policies/accomodations
+      - file: policies/integrity
+      - file: policies/title_9
+    - file: pathways
+      # sections: 
+      # - file: class_discussions/readings
+  - caption: Project
+    chapters:
+      - file: project/index
+      - file: project/preproposal
+      - file: project/proposal
+      - file: project/litreview
+      - file: project/report
+    # - file: project/index
+
+  - caption: Readings
+    chapters:
+      - file: class_discussions/readings
+      - file: class_discussions/index
+  - caption: Tutorials
+    chapters:
+    # - file: tutorials/index
+    #   sections: 
+      - file: tutorials/latex
+      - file: tutorials/shell
+      - file: tutorials/ssh
+      - file: tutorials/git
+      - file: tutorials/github
+      - file: tutorials/github_pages
+      - file: tutorials/bokeh
+      - file: tutorials/10_dataops
+        sections: 
+        - file: tutorials/pandas1
+        - file: tutorials/pandas2
+        - file: tutorials/pandas3
+      - file: tutorials/20_visualization
+        sections: 
+        - file: tutorials/21_univariate
+        - file: tutorials/22_multivariate
+        - file: tutorials/23_dosdonts
