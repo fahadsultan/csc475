@@ -2,7 +2,7 @@
 # Preproposal 
 
 ```{important}
-Due Monday, January 16th, 2024 11:59 PM
+Due Tuesday, January 16th, 2024 11:59 PM
 (5% of the course grade) 
 ``` 
 

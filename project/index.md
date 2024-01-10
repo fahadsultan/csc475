@@ -186,7 +186,7 @@ Following data sets and ideas are only there to give you a starting point. You a
 <!-- * Use **historical trend to predict future value of an indicator**. **Time Series**{: .label .label-purple }  -->
 
 ## Fall 2023 Projects 
-
+<!-- 
 ### CSC-272 
 
 * Louisa Brown (Math '24), Nathan Sarro (Applied Math '24) _[Finding Fraud in the Figures: Predicting Credit Card Transactions]()_
@@ -203,7 +203,7 @@ Following data sets and ideas are only there to give you a starting point. You a
 
 * Cole Chapple (Economics '24), Ivey Shiver (Business Administration '24), _[Predicting Arrests in Chicago]()_
 
-* Jonathan Lawrence (CS '24), _[NCAA Basketball Analytics: Predicting Post-Season Tournament Teams]()_
+* Jonathan Lawrence (CS '24), _[NCAA Basketball Analytics: Predicting Post-Season Tournament Teams]()_ -->
 
 ### CSC-475 
 
