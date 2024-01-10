@@ -9,9 +9,25 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 👇🏾 Below, you can find important links and important announcements.
 
 
+
 ```{important}
-Please fill out the **[Pre-course survey](https://courses.furman.edu/mod/feedback/view.php?id=670705)** as soon as possible. 
-``` 
+**[Project PreProposal](project/preproposal.md)** is due on **Tuesday, January 16th, 2024 11:59 PM**
+```
+
+
+```{important}
+
+First discussion is **next Tuesday, 16th January**
+
+**[Orientation](assets/papers/Orientation.pdf)**<br/>
+Richard W. Hamming,\
+_The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
+<br/>
+
+**[You and Your Research](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
+Richard W. Hamming,\
+_The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
+```
 
 ```{tip}
 I have an **Open-Door Policy** and am in my office (_Riley Hall 200-D_) between 9 AM - 5 PM most weekdays. Please drop by with your questions or just to say hi! <br/>

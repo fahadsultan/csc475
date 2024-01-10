@@ -24,7 +24,7 @@ Wigner, Eugene P. \
 _Mathematics and Science_. 1990. 291-306.
 <br/><br/>
     
-    **[Mathematics](../../assets/Mathematics.pdf)**<br/>
+    **[Mathematics](../assets/Mathematics.pdf)**<br/>
     Richard W. Hamming,\
     _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
 
@@ -68,7 +68,7 @@ _The Internet's Own Boy_  includes content involving depression, self-harm, and 
 
 <hr/>
 
-10. **[A Few Useful Things to Know about Machine Learning](../../assets/papers/AFewUsefulThingsAboutML.pdf)**<br/>
+10. **[A Few Useful Things to Know about Machine Learning](../assets/papers/AFewUsefulThingsAboutML.pdf)**<br/>
 Domingos, Pedro.\
 _Communications of the ACM_ 55.10 (2012): 78-87
 
