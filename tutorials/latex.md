@@ -917,7 +917,7 @@ Step 1. Go to **[Google Scholar](https://scholar.google.com/)**
 
 Step 2. Search for your topic of interest
 
-```{image} assets/scholar1.png
+```{image} ../assets/scholar1.png
 :width: 80%
 :align: center
 ```
@@ -925,7 +925,7 @@ Step 2. Search for your topic of interest
 
 Step 3. For the paper you want to cite, click on the quotation mark icon with "Cite" on its right side
 
-```{image} assets/scholar2.png
+```{image} ../assets/scholar2.png
 :width: 100%
 :align: center
 ```
@@ -934,7 +934,7 @@ Step 3. For the paper you want to cite, click on the quotation mark icon with "C
 
 Step 4. From the bottom of the pop-up window, select _BibTeX_
 
-```{image} assets/scholar3.png
+```{image} ../assets/scholar3.png
 :width: 60%
 :align: center
 ```

@@ -1,7 +1,7 @@
 
-# Purposeful Pathways 
+# Purposeful Pathways (Spring '24)
 
-Schedule of Experiences for Spring 2024
+Schedule of Experiences for this semester:
 
 ## January
 
