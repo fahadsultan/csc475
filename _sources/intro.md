@@ -8,12 +8,9 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 
 👇🏾 Below, you can find important links and important announcements.
 
-
-
 ```{important}
 **[Project PreProposal](project/preproposal.md)** is due on **Tuesday, January 16th, 2024 11:59 PM**
 ```
-
 
 ```{important}
 
