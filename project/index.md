@@ -80,7 +80,7 @@ Note that an application need not be robust, but must be sufficiently functional
 * **[Papers with Code](https://paperswithcode.com/)** is a great resource of published papers with open-source code. 
 
 * **[Data & Statistics resources](https://libguides.furman.edu/resources/statistics/home)** from James B. Duke Library
-
+<!-- 
 * [Jupyter Notebook User Guide](https://jupyter-notebook.readthedocs.io/en/stable/)
 
 * [Python Data Science Handbook by Jake VanderPlas](https://jakevdp.github.io/PythonDataScienceHandbook/)
@@ -104,7 +104,7 @@ Your report should be at least 4 pages long. You can use the following sections 
 * Methods
 * Results
 * Conclusion
-* References
+* References -->
 
 <!-- ### Latex Resources -->
 
@@ -209,7 +209,7 @@ Following data sets and ideas are only there to give you a starting point. You a
 
 | Name | Title | Poster | Present | Final Report | Website | Code |
 |------|-------|--------|--------------|--------------|---------|------|
-| **Autoregressive Stock Prediction Modeling** | Emil Westling | [🪧](fall23_posters/Emil%20Westling_687892_assignsubmission_file_Poster%20CSC475.pdf) | [📽]() | [📝](fall23_reports/Emil%20Westling_687928_assignsubmission_file_CSC_475_Final_Report_Emil_Westling-3.pdf) | [🌐]() | [💻]() |
+| **Autoregressive Stock Prediction Modeling** | Emil Westling | [🪧](fall23_posters/Emil%20Westling_687892_assignsubmission_file_Poster%20CSC475.pdf) |  | <a href="fall23_reports/EmilReport.pdf">📝</a> | <a href="https://emilwestling.com/AlgorithmTrading/">🌐</a> | [💻]() |
 | **Making MacroEconomic Indicators Accessible** | Joshua Hutson | [🪧]() | [📽]() | [📝]() | [🌐]() | [💻]() |
 | **Olympic Swimming and Running Trends** | Grace Houser | [🪧](fall23_posters/Grace%20Houser_687891_assignsubmission_file_Poster.pdf) | [📽]() | [📝](fall23_reports/Grace%20Houser_687927_assignsubmission_file_Houser_Report.pdf) | [🌐]() | [💻]() |
 | **A Computational Approach to Language Learning: Examining the Efficacy of Spaced Repetition** | Jace Rettig | [🪧](fall23_posters/Jace%20Rettig_687890_assignsubmission_file_CSC_475_Efficacy_of_Spaced_Repetition_Preliminary_Report-3.pdf) | [📽]() | [📝](fall23_reports/Jace%20Rettig_687920_assignsubmission_file_CSC_475_Efficacy_of_Spaced_Repetition_Final_Report.pdf) | [🌐]() | [💻]() |

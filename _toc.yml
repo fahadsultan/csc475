@@ -19,10 +19,14 @@ parts:
   - caption: Project
     chapters:
       - file: project/index
-      - file: project/preproposal
-      - file: project/proposal
-      - file: project/litreview
-      - file: project/report
+      - file: project/deliverables
+        sections: 
+        - file: project/preproposal
+        - file: project/proposal
+        - file: project/litreview
+        - file: project/report
+        - file: project/poster
+        - file: project/presentation
     # - file: project/index
 
   - caption: Readings

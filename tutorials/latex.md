@@ -13,7 +13,7 @@ kernelspec:
 numbered: true
 ---
 
-# $\LaTeX$
+# **LaTeX**
 
 
 ```{note}
