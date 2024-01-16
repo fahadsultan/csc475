@@ -172,10 +172,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/preproposal.html">Preproposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/preproposal.html">Preproposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/poster.html">Poster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/presentation.html">Presentation</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
 <ul class="nav bd-sidenav">
@@ -184,20 +189,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="latex.html"><span class="math notranslate nohighlight">\(\LaTeX\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><strong>LaTeX</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github.html"><strong>Github</strong>: Social Media for Programmers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas II: Selection, Filtering and Dropping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
@@ -891,7 +896,7 @@ dtype: int64
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/iloc.png"><img alt="https://fahadsultan.com/datascience_ml/_images/iloc.png" src="https://fahadsultan.com/datascience_ml/_images/iloc.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.iloc[i,</span> <span class="pre">j]</span></code> returns value(s) where row <strong>location</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column <strong>location</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.iloc[i,</span> <span class="pre">j]</span></code> returns value(s) where row <strong>location</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column <strong>location</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1195,7 +1200,7 @@ dtype: int64
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/loc.png"><img alt="https://fahadsultan.com/datascience_ml/_images/loc.png" src="https://fahadsultan.com/datascience_ml/_images/loc.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.loc[i,</span> <span class="pre">j]</span></code> returns value(s) where row <strong>label</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column <strong>label</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.loc[i,</span> <span class="pre">j]</span></code> returns value(s) where row <strong>label</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column <strong>label</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1434,7 +1439,7 @@ Name: Candidate, Length: 182, dtype: object
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/squarebrackets.png"><img alt="https://fahadsultan.com/datascience_ml/_images/squarebrackets.png" src="https://fahadsultan.com/datascience_ml/_images/squarebrackets.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.iloc[i,</span> <span class="pre">j]</span></code> returns value(s) where row(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.iloc[i,</span> <span class="pre">j]</span></code> returns value(s) where row(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -3259,13 +3264,13 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>90</th>
-      <td>1936</td>
-      <td>Alf Landon</td>
+      <th>113</th>
+      <td>1964</td>
+      <td>Barry Goldwater</td>
       <td>Republican</td>
-      <td>16679543</td>
+      <td>27175754</td>
       <td>loss</td>
-      <td>36.648285</td>
+      <td>38.655297</td>
     </tr>
   </tbody>
 </table>
@@ -3307,49 +3312,49 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>148</th>
-      <td>1996</td>
-      <td>John Hagelin</td>
-      <td>Natural Law</td>
-      <td>113670</td>
+      <th>180</th>
+      <td>2020</td>
+      <td>Jo Jorgensen</td>
+      <td>Libertarian</td>
+      <td>1865724</td>
       <td>loss</td>
-      <td>0.118219</td>
+      <td>1.177979</td>
     </tr>
     <tr>
-      <th>65</th>
-      <td>1908</td>
-      <td>William Taft</td>
-      <td>Republican</td>
-      <td>7678335</td>
+      <th>44</th>
+      <td>1888</td>
+      <td>Clinton B. Fisk</td>
+      <td>Prohibition</td>
+      <td>249819</td>
+      <td>loss</td>
+      <td>2.196299</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>1964</td>
+      <td>Lyndon Johnson</td>
+      <td>Democratic</td>
+      <td>43127041</td>
       <td>win</td>
-      <td>52.013300</td>
+      <td>61.344703</td>
     </tr>
     <tr>
-      <th>24</th>
-      <td>1860</td>
-      <td>John Bell</td>
-      <td>Constitutional Union</td>
-      <td>590901</td>
+      <th>121</th>
+      <td>1976</td>
+      <td>Eugene McCarthy</td>
+      <td>Independent</td>
+      <td>740460</td>
       <td>loss</td>
-      <td>12.639283</td>
+      <td>0.911649</td>
     </tr>
     <tr>
-      <th>89</th>
-      <td>1932</td>
-      <td>William Z. Foster</td>
-      <td>Communist</td>
-      <td>103307</td>
+      <th>50</th>
+      <td>1896</td>
+      <td>John M. Palmer</td>
+      <td>National Democratic</td>
+      <td>134645</td>
       <td>loss</td>
-      <td>0.261069</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>1856</td>
-      <td>John C. Frémont</td>
-      <td>Republican</td>
-      <td>1342345</td>
-      <td>loss</td>
-      <td>33.139919</td>
+      <td>0.969566</td>
     </tr>
   </tbody>
 </table>
@@ -3391,40 +3396,40 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>133</th>
-      <td>1984</td>
-      <td>Ronald Reagan</td>
+      <th>152</th>
+      <td>2000</td>
+      <td>George W. Bush</td>
       <td>Republican</td>
-      <td>54455472</td>
+      <td>50456002</td>
       <td>win</td>
-      <td>59.023326</td>
+      <td>47.974666</td>
     </tr>
     <tr>
-      <th>74</th>
-      <td>1916</td>
-      <td>Woodrow Wilson</td>
-      <td>Democratic</td>
-      <td>9126868</td>
-      <td>win</td>
-      <td>49.367987</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>1912</td>
-      <td>Woodrow Wilson</td>
-      <td>Democratic</td>
-      <td>6296284</td>
-      <td>win</td>
-      <td>41.933422</td>
-    </tr>
-    <tr>
-      <th>140</th>
-      <td>1992</td>
+      <th>144</th>
+      <td>1996</td>
       <td>Bill Clinton</td>
       <td>Democratic</td>
-      <td>44909806</td>
+      <td>47400125</td>
       <td>win</td>
-      <td>43.118485</td>
+      <td>49.296938</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>2020</td>
+      <td>Joseph Biden</td>
+      <td>Democratic</td>
+      <td>81268924</td>
+      <td>win</td>
+      <td>51.311515</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>1996</td>
+      <td>Bill Clinton</td>
+      <td>Democratic</td>
+      <td>47400125</td>
+      <td>win</td>
+      <td>49.296938</td>
     </tr>
   </tbody>
 </table>
@@ -3642,13 +3647,13 @@ Length: 182, dtype: int64
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis0b.png"><img alt="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis0b.png" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis0b.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df.apply(f,</span> <span class="pre">axis=0)</span></code> results in <span class="math notranslate nohighlight">\(D\)</span> concurrent calls to <span class="math notranslate nohighlight">\(f\)</span>. Each function call is passed a column.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df.apply(f,</span> <span class="pre">axis=0)</span></code> results in <span class="math notranslate nohighlight">\(D\)</span> concurrent calls to <span class="math notranslate nohighlight">\(f\)</span>. Each function call is passed a column.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis1b.png"><img alt="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis1b.png" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis1b.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df.apply(f,</span> <span class="pre">axis=1)</span></code> results in <span class="math notranslate nohighlight">\(N\)</span> concurrent calls to <span class="math notranslate nohighlight">\(f\)</span>. Each function call is passed a row.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df.apply(f,</span> <span class="pre">axis=1)</span></code> results in <span class="math notranslate nohighlight">\(N\)</span> concurrent calls to <span class="math notranslate nohighlight">\(f\)</span>. Each function call is passed a row.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

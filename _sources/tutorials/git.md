@@ -73,7 +73,14 @@ These details will be associated with any commits that you make and blame will b
 Git init is a one-time command you use during the initial setup of a new repo. Executing this command will create a new Git repository in the current directory. This will create a new subdirectory named .git that contains all of your necessary repository files — a Git repository skeleton. At this point, nothing in your project is tracked yet. (See the next section to learn how to start tracking files.)
 
 
-<img align="center" src="assets/git_init.png" width="75%">
+<!-- <img align="center" src="assets/git_init.png" width="75%"> -->
+```{figure} ../assets/git_init.png
+---
+name: git_init
+width: 75%
+---
+Git init
+```
 
 #### Link it to your Github repository: `git remote add origin`
 
@@ -87,8 +94,14 @@ $ git remote add origin <remote repository URL>
 $ git remote -v
 ```
 
-<img align="center" src="assets/git_remote.png">
-
+<!-- <img align="center" src="assets/git_remote.png"> -->
+```{figure} ../assets/git_remote.png
+---
+name: git_init
+width: 75%
+---
+git remote
+```
 <br/>
 
 The remote repository URL is the URL of the repository on GitHub. The `git remote -v` command lists the URLs that Git has stored for the shortname to be used when reading and writing to that remote.
@@ -123,20 +136,41 @@ In git, there are four main states that your files can reside in. They are:
 
 * **pushed**: means that your data has been transferred to a remote repository.
 
-<img src="assets/git.png">
+<!-- <img src="assets/git.png"> -->
+```{figure} ../assets/git.png
+---
+name: git_init
+width: 75%
+---
+git flow of operations
+```
 
 ### 1. `git status`
 
 Git status is a command that displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven’t, and which files aren’t being tracked by Git. Status output does not show you any information regarding the committed project history. For this, you need to use git log.
 
-<img width="70%" align="center" src="assets/git_status.png">
+<!-- <img width="70%" align="center" src="assets/git_status.png"> -->
+```{figure} ../assets/git_status.png
+---
+name: git_init
+width: 75%
+---
+git status
+```
 
 ### * `git diff` (optional)
 
 Git diff is a multi-use Git command that when executed runs a diff function on Git data sources. These data sources can be commits, branches, files and more. The git diff command is often used along with git status and git log to analyze the current state of a Git repo.
 
 
-<img align="center" src="assets/git_diff.png">
+<!-- <img align="center" src="assets/git_diff.png"> -->
+```{figure} ../assets/git_diff.png
+---
+name: git_init
+width: 75%
+---
+git diff
+```
 
 ### 2. `git add`
 
@@ -190,7 +224,15 @@ Git log is a command used to display the commit history of a repository. By defa
 
 It is often a good idea to use `git log --oneline` to get a more concise view of the commit history.
 
-<img align="center" src="assets/git_log.png">
+<!-- <img align="center" src="assets/git_log.png"> -->
+
+```{figure} ../assets/git_log.png
+---
+name: git_init
+width: 75%
+---
+git log
+```
 
 <br/>
 

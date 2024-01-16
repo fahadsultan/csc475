@@ -172,10 +172,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/preproposal.html">Preproposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/preproposal.html">Preproposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/poster.html">Poster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/presentation.html">Presentation</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
 <ul class="nav bd-sidenav">
@@ -184,20 +189,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="latex.html"><span class="math notranslate nohighlight">\(\LaTeX\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><strong>LaTeX</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github.html"><strong>Github</strong>: Social Media for Programmers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas III: Aggregation, Merging and Concatenation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
@@ -2381,7 +2386,7 @@ Name: letter, dtype: int64
 <figure class="align-default" id="pivot-table">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/pivot.png"><img alt="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/pivot.png" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/pivot.png" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">A pivot table is a way of summarizing data in a DataFrame for a particular purpose. It makes heavy use of the aggregation function. A pivot table is itself a DataFrame, where the rows represent one variable that you’re interested in, the columns another, and the cell’s some aggregate value. A pivot table also tends to include marginal values (like sums) for each row and column.</span><a class="headerlink" href="#pivot-table" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">A pivot table is a way of summarizing data in a DataFrame for a particular purpose. It makes heavy use of the aggregation function. A pivot table is itself a DataFrame, where the rows represent one variable that you’re interested in, the columns another, and the cell’s some aggregate value. A pivot table also tends to include marginal values (like sums) for each row and column.</span><a class="headerlink" href="#pivot-table" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can even include multiple values in the index or columns of our pivot tables.</p>

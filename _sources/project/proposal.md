@@ -1,7 +1,10 @@
 # Proposal 
 
+```{note}
+You can access the **[Overleaf template here](https://www.overleaf.com/read/qqktkgdpbkkx#fae525)**.
+```
 
-The project proposal must be at least one page, \textit{excluding} references. Some key information to include:
+The project proposal must be at least one page, _excluding_ references. Some key information to include:
 
 ## Project Title.
 

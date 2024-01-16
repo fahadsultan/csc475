@@ -19,7 +19,16 @@ SSH keys are two files that are generated together: a public key and a private k
 Never share or upload your private SSH key! 
 ```
 
-<img align="center" width="70%" src="assets/ssh.png">
+
+<!-- <img align="center" width="70%" src="../assets/ssh.png"> -->
+
+```{figure} ../assets/ssh.png
+---
+name: ssh
+width: 70%
+---
+SSH keys
+```
 
 
 ### Check if you already have an SSH key

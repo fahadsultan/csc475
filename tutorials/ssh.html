@@ -170,10 +170,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/preproposal.html">Preproposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/preproposal.html">Preproposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/poster.html">Poster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/presentation.html">Presentation</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
 <ul class="nav bd-sidenav">
@@ -182,20 +187,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="latex.html"><span class="math notranslate nohighlight">\(\LaTeX\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><strong>LaTeX</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github.html"><strong>Github</strong>: Social Media for Programmers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
@@ -425,7 +430,13 @@ document.write(`
 <p class="admonition-title">Warning</p>
 <p>Never share or upload your private SSH key!</p>
 </div>
-<img align="center" width="70%" src="assets/ssh.png">
+<!-- <img align="center" width="70%" src="../assets/ssh.png"> -->
+<figure class="align-default" id="ssh">
+<a class="reference internal image-reference" href="../_images/ssh.png"><img alt="../_images/ssh.png" src="../_images/ssh.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">SSH keys</span><a class="headerlink" href="#ssh" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <section id="check-if-you-already-have-an-ssh-key">
 <h3>Check if you already have an SSH key<a class="headerlink" href="#check-if-you-already-have-an-ssh-key" title="Permalink to this headline">#</a></h3>
 <p>If you want to check if you already have an SSH key, you can use the following command:</p>

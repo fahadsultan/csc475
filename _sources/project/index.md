@@ -80,7 +80,7 @@ Note that an application need not be robust, but must be sufficiently functional
 * **[Papers with Code](https://paperswithcode.com/)** is a great resource of published papers with open-source code. 
 
 * **[Data & Statistics resources](https://libguides.furman.edu/resources/statistics/home)** from James B. Duke Library
-
+<!-- 
 * [Jupyter Notebook User Guide](https://jupyter-notebook.readthedocs.io/en/stable/)
 
 * [Python Data Science Handbook by Jake VanderPlas](https://jakevdp.github.io/PythonDataScienceHandbook/)
@@ -104,7 +104,7 @@ Your report should be at least 4 pages long. You can use the following sections 
 * Methods
 * Results
 * Conclusion
-* References
+* References -->
 
 <!-- ### Latex Resources -->
 
@@ -209,16 +209,16 @@ Following data sets and ideas are only there to give you a starting point. You a
 
 | Name | Title | Poster | Present | Final Report | Website | Code |
 |------|-------|--------|--------------|--------------|---------|------|
-| **Autoregressive Stock Prediction Modeling** | Emil Westling | [🪧](fall23_posters/Emil%20Westling_687892_assignsubmission_file_Poster%20CSC475.pdf) | [📽]() | [📝](fall23_reports/Emil%20Westling_687928_assignsubmission_file_CSC_475_Final_Report_Emil_Westling-3.pdf) | [🌐]() | [💻]() |
-| **Making MacroEconomic Indicators Accessible** | Joshua Hutson | [🪧]() | [📽]() | [📝]() | [🌐]() | [💻]() |
-| **Olympic Swimming and Running Trends** | Grace Houser | [🪧](fall23_posters/Grace%20Houser_687891_assignsubmission_file_Poster.pdf) | [📽]() | [📝](fall23_reports/Grace%20Houser_687927_assignsubmission_file_Houser_Report.pdf) | [🌐]() | [💻]() |
-| **A Computational Approach to Language Learning: Examining the Efficacy of Spaced Repetition** | Jace Rettig | [🪧](fall23_posters/Jace%20Rettig_687890_assignsubmission_file_CSC_475_Efficacy_of_Spaced_Repetition_Preliminary_Report-3.pdf) | [📽]() | [📝](fall23_reports/Jace%20Rettig_687920_assignsubmission_file_CSC_475_Efficacy_of_Spaced_Repetition_Final_Report.pdf) | [🌐]() | [💻]() |
-| **Visualizing Data of Changes in Air Pollution in Seoul, South Korea** | Ting Chen | [🪧](fall23_posters/Ting%20Chen_687889_assignsubmission_file_Chen_CSC_475_Preliminary_Report__Copy_-4.pdf) | [📽]() | [📝](fall23_reports/Ting%20Chen_687929_assignsubmission_file_Chen_CSC_475_Final_Report___Ting_Chen.pdf) | [🌐]() | [💻]() |
-|**SkateNet: A Data Set for Competitive Skating** |  Mason Taylor | [🪧](fall23_posters/John%20Taylor_687888_assignsubmission_file_CSC_475_Preliminary_Report__Copy_-4.pdf) | [📽]() | [📝](fall23_reports/John%20Taylor_687921_assignsubmission_file_CSC_475_Final_Report__Copy_-4.pdf) | [🌐]() | [💻]() |
-| **Tableu to Bokeh: A Case Study of Basketball Analytics Reporting** | Jonathan Lawrence | [🪧](fall23_posters/Jonny%20Lawrence_687887_assignsubmission_file_Poster.pdf) | [📽]() | [📝](fall23_reports/Jonny%20Lawrence_687923_assignsubmission_file_Basketball%20Analytics%20Final%20Report.pdf) | [🌐](https://jonnylaw23.github.io/Furman_Basketball/index) | [💻]() | 
-| **Transportation Around New York City: Assessing the Use of the Citi Bike System Alongside the Taxi System** | Sally Stahl | [🪧](fall23_posters/Sally%20Stahl_687899_assignsubmission_file_Poster-Final.pdf) | [📽]() | [📝](fall23_reports/Sally%20Stahl_687926_assignsubmission_file_CSC-final-writeup.pdf) | [🌐]() | [💻]() |
-| **Animatlas** | Sophie Ngo | [🪧](fall23_posters/Sophie%20Ngo_687893_assignsubmission_file_final%20poster.pdf) | [📽]() | [📝](fall23_reports/Sophie%20Ngo_687925_assignsubmission_file_CSC_475_Final_Report___Sophie_Ngo.pdf) | [🌐](https://animatlas.me/) | [💻]()
-| **Enhancing Financial Analysis Through Generative AI and Evolving Data Frameworks** | Shaukat Ibrahim | [🪧]() | [📽]() | [📝]() | [🌐]() | [💻]() |
+| **Animatlas** | Sophie Ngo | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Sophie%20Ngo_687893_assignsubmission_file_final%20poster.pdf) | [📽]() | [📝](fall23_reports/Sophie%20Ngo_687925_assignsubmission_file_CSC_475_Final_Report___Sophie_Ngo.pdf) | [🌐](https://animatlas.me/) | [💻](https://github.com/Sophie-Ngo/AnimAtlas)
+| **Autoregressive Stock Prediction Modeling** | Emil Westling | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Emil%20Westling_687892_assignsubmission_file_Poster%20CSC475.pdf) |  | <a href="fall23_reports/EmilReport.pdf">📝</a> | <a href="https://emilwestling.com/AlgorithmTrading/">🌐</a> | [💻](https://github.com/emilwestling/AlgorithmTrading) |
+| **Making MacroEconomic Indicators Accessible** | Joshua Hutson | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Joshua%20Hutson_687894_assignsubmission_file_Hutson%20CSC-475%20Poster.pdf) | [📽]() | [📝]() | [🌐](https://penguin-del.github.io/CSC-475_Project/) | [💻](https://github.com/penguin-del/CSC-475_Project) |
+| **Tableu to Bokeh: A Case Study of Basketball Analytics Reporting** | Jonathan Lawrence |  | [📽]() | [📝](fall23_reports/Jonny%20Lawrence_687923_assignsubmission_file_Basketball%20Analytics%20Final%20Report.pdf) | [🌐](https://jonnylaw23.github.io/Furman_Basketball/) | [💻](https://github.com/jonnylaw23/Furman_Basketball) | 
+| **A Computational Approach to Language Learning: Examining the Efficacy of Spaced Repetition** | Jace Rettig | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Jace%20Rettig_687896_assignsubmission_file_Seminar%20Poster%20.pdf) | [📽]() | [📝](fall23_reports/Jace%20Rettig_687920_assignsubmission_file_CSC_475_Efficacy_of_Spaced_Repetition_Final_Report.pdf) | [🌐]() | [💻]() |
+| **Visualizing Data of Changes in Air Pollution in Seoul, South Korea** | Ting Chen | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Ting%20Chen_687891_assignsubmission_file_CSC475%20Final%20Poster.pdf) | [📽]() | [📝](fall23_reports/Ting%20Chen_687929_assignsubmission_file_Chen_CSC_475_Final_Report___Ting_Chen.pdf) | [🌐]() | [💻]() |
+|**SkateNet: A Data Set for Competitive Skating** |  Mason Taylor | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/John%20Taylor_687901_assignsubmission_file_Copy%20of%20Poster%20Template.pdf) | [📽]() | [📝](fall23_reports/John%20Taylor_687921_assignsubmission_file_CSC_475_Final_Report__Copy_-4.pdf) | [🌐]() | [💻]() |
+| **Transportation Around New York City: Assessing the Use of the Citi Bike System Alongside the Taxi System** | Sally Stahl | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Sally%20Stahl_687899_assignsubmission_file_Poster-Final.pdf) | [📽]() | [📝](fall23_reports/Sally%20Stahl_687926_assignsubmission_file_CSC-final-writeup.pdf) | [🌐]() |  |
+| **Olympic Swimming and Running Trends** | Grace Houser | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Grace%20Houser_687900_assignsubmission_file_Seminar%20Poster.pdf) | [📽]() | [📝](fall23_reports/Grace%20Houser_687927_assignsubmission_file_Houser_Report.pdf) | [🌐]() |  |
+| **Enhancing Financial Analysis Through Generative AI and Evolving Data Frameworks** | Shaukat Ibrahim | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Shaukat%20Ibrahim_687897_assignsubmission_file_Shaukat_png_format.png) | [📽]() | [📝]() | [🌐]() |  |
 
 
 <!-- * Emil Westling (CS '24) _[Autoregressive Stock Prediction Modeling](fall23_reports/Emil Westling_687928_assignsubmission_file_CSC_475_Final_Report_Emil_Westling-3.pdf)_
