@@ -953,3 +953,23 @@ Step 5. You should see a dictionary-like structure with all the meta-data of the
 }
 ```
 
+### Citing a URL 
+
+To cite a URL, you can use the `@misc` entry type, which is designed for citing a variety of sources that don’t fit into any of the other categories. 
+
+An example of a `@misc` entry is shown below:
+
+``` bib
+@misc{bworld,
+  author = {Ingo Lütkebohle},
+  title = {{BWorld Robot Control Software}},
+  howpublished = "\url{http://aiweb.techfak.uni-bielefeld.de/content/bworld-robot-control-software/}",
+  year = {2008}, 
+  note = "[Online; accessed 19-July-2008]"
+}
+```
+
+When using `@misc` for citing a link in your reports, you must include the following two pieces of information:
+
+1. `\url` in the `howpublished` field, as shown in example above.
+2. a `note` field with the date you accessed the website, as also shown in the example above.
