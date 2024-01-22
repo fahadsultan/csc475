@@ -441,6 +441,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">Bibliography</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-bib-information">Finding <code class="docutils literal notranslate"><span class="pre">bib</span></code> information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-a-url">Citing a URL</a></li>
 </ul>
 </li>
 </ul>
@@ -1166,6 +1167,25 @@ This example produces the following output:
 </pre></div>
 </div>
 </section>
+<section id="citing-a-url">
+<h3>Citing a URL<a class="headerlink" href="#citing-a-url" title="Permalink to this headline">#</a></h3>
+<p>To cite a URL, you can use the <code class="docutils literal notranslate"><span class="pre">&#64;misc</span></code> entry type, which is designed for citing a variety of sources that don’t fit into any of the other categories.</p>
+<p>An example of a <code class="docutils literal notranslate"><span class="pre">&#64;misc</span></code> entry is shown below:</p>
+<div class="highlight-bib notranslate"><div class="highlight"><pre><span></span><span class="nc">@misc</span><span class="p">{</span><span class="nl">bworld</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Ingo Lütkebohle}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{{BWorld Robot Control Software}}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">howpublished</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;\url{http://aiweb.techfak.uni-bielefeld.de/content/bworld-robot-control-software/}&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2008}</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="na">note</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;[Online; accessed 19-July-2008]&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>When using <code class="docutils literal notranslate"><span class="pre">&#64;misc</span></code> for citing a link in your reports, you must include the following two pieces of information:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\url</span></code> in the <code class="docutils literal notranslate"><span class="pre">howpublished</span></code> field, as shown in example above.</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">note</span></code> field with the date you accessed the website, as also shown in the example above.</p></li>
+</ol>
+</section>
 </section>
 </section>
 
@@ -1276,6 +1296,7 @@ This example produces the following output:
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliography">Bibliography</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-bib-information">Finding <code class="docutils literal notranslate"><span class="pre">bib</span></code> information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citing-a-url">Citing a URL</a></li>
 </ul>
 </li>
 </ul>

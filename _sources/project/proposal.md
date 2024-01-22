@@ -2,7 +2,7 @@
 
 
 ```{important}
-Due Tuesday, January 26th, 2024 4:00 PM
+Due **Friday, 4:00 PM January 26th**, 2024 
 (5% of the course grade) 
 ``` 
 
@@ -10,7 +10,13 @@ Due Tuesday, January 26th, 2024 4:00 PM
 You can access the **[Overleaf template here](https://www.overleaf.com/read/qqktkgdpbkkx#fae525)**.
 ```
 
-The project proposal must be at least one page, _excluding_ references. Some key information to include:
+The project proposal must meet the following three requirements:  
+
+1. You must use $\LaTeX$ to typeset your proposal. Use [this template](https://www.overleaf.com/read/qqktkgdpbkkx#fae525).
+2. At least one page, _excluding_ references. 
+3. You must have at least 2 citations.
+
+Some key information to include:
 
 ## Project Title.
 
@@ -25,7 +31,7 @@ Include your name and email address in the author description above.
 Set the scene for the project. 
 What problems are you attempting to solve, or what knowledge are you hoping to discover?
 What motivations and problems make this work important? 
-Include statistics related to the problem to argue why the problem needs attention and cite their source(s) e.g. "Dietary increase in glucose consumption over the past 100 years has led to a national epidemic of type 2 diabetes"~\cite{dabelea2014prevalence}
+Include statistics related to the problem to argue why the problem needs attention and cite their source(s) e.g. "Dietary increase in glucose consumption over the past 100 years has led to a national epidemic of type 2 diabetes" {cite:p}`dabelea2014prevalence` 
 
 ## Goal
 
@@ -50,4 +56,10 @@ If applicable, describe how you might quantitatively or qualitatively evaluate y
 
 ## Dissemination
 
-Specify how you are going to disseminate your project. Would the final software and/or its code be publicly available to everyone? If so, how? Would you be willing to make your final report public on a preprint server such as arXiv~\footnote{\url{http://www.arxiv.org}}. In addition to the course presentation and poster presentation, would you live demo your project on a computer at Furman Engaged? 
+Specify how you are going to disseminate your project. Would the final software and/or its code be publicly available to everyone? If so, how? Would you be willing to make your final report public on a preprint server such as arXiv. In addition to the course presentation and poster presentation, would you live demo your project on a computer at Furman Engaged? 
+
+<hr/>
+
+```{bibliography}
+:style: unsrt
+```
