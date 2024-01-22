@@ -1,5 +1,5 @@
 
-# Preproposal 
+# Pre-Proposal
 
 ```{important}
 Due Tuesday, January 16th, 2024 11:59 PM

@@ -1,7 +1,7 @@
 
 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" align="right" width="20%">
 
-# **Github**: Social Media for Programmers
+# **Github**: Social Network of Programmers
 
 GitHub is a code hosting platform for version control and and social network for collaboration. It lets you and others work together on projects from anywhere.
 

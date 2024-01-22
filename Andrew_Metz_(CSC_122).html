@@ -1,0 +1,1003 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Question 1. Find Minimum Value &#8212; CSC-475</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Andrew_Metz_(CSC_122)';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    CSC-475 (Seminar in CS)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="policies/index.html">Syllabus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="policies/grading.html">Grading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/academic_success.html">Academic Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/accomodations.html">Accomodations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies/integrity.html">Academic Integrity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="policies/title_9.html">Nondiscrimination Policy and Sexual Misconduct</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pathways.html">Purposeful Pathways (Spring ‘24)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="project/index.html">Project</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="project/deliverables.html">Deliverables</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="project/preproposal.html">Preproposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/proposal.html">Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/litreview.html">Literature Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/report.html">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/poster.html">Poster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/presentation.html">Presentation</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="class_discussions/readings.html">Readings / Viewings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_discussions/index.html">Class Discussions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tutorials/latex.html"><strong>LaTeX</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/github.html"><strong>Github</strong>: Social Media for Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pandas1.html">Pandas I: Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/21_univariate.html">Univariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/22_multivariate.html">Multivariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/23_dosdonts.html">Dos and Donts of Visualization</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAndrew_Metz_(CSC_122).html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Andrew_Metz_(CSC_122).ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Question 1.  Find Minimum Value</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Question 1</strong>.  Find Minimum Value</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-reversing-a-list"><strong>Question 2.</strong> Reversing a List</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-sort-ascending"><strong>Question 3.</strong> Sort Ascending</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-sort-descending"><strong>Question 4.</strong> Sort Descending</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-factorial-n"><strong>Question 5.</strong> Factorial <span class="math notranslate nohighlight">\(n!\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-fibonacci-sequence"><strong>Question 6.</strong> Fibonacci Sequence</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <center>
+<h1><b></b></h1>
+<h1><b>CSC-122: DATA STRUCTURES AND ALGORITHMS</b></h1>
+<h1><b>PROGRAMMING ASSIGNMENT 1</b></h1>
+<h1><b>SPRING 2024</b></h1>
+</center>
+<br/>
+<hr/>
+<br/>
+<p><strong>Instructions</strong>:</p>
+<ul>
+<li><p>This environment is called <strong>Google Colab</strong>. It essentially allows you to run Python code in the browser without any hassle of needing to download or install anything.</p>
+<p>You can read more about Colab at <strong><a class="reference external" href="https://colab.research.google.com/?utm_source=scs-index">this link</a></strong>.</p>
+</li>
+<li><p>Each file in Colab is linked to a Google account. This one is linked to mine. You can edit this file and run the code, but your edits won’t be saved.</p>
+<p>In order to edit and save, you need to make a copy of this notebook.</p>
+<ol class="arabic simple">
+<li><p>First <code class="docutils literal notranslate"><span class="pre">Sign</span> <span class="pre">In</span></code> with your Gmail/Google account from the top right corner.</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">File</span></code> from the menu bar in the top left.</p></li>
+<li><p>From the dropdown click on <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">a</span> <span class="pre">copy</span> <span class="pre">in</span> <span class="pre">Drive</span></code>.</p></li>
+<li><p>Now, the copy of this file is linked to your Google Account.</p></li>
+</ol>
+<p>It might be a good idea to append your name to the copied file name to avoid any confusion between the two copies. You can do so by clicking on the filename in the top-left corner above the menu bar.</p>
+<p>This file is titled <code class="docutils literal notranslate"><span class="pre">Assignment</span> <span class="pre">1.ipynb</span></code>. If your name is Fahad, you should change the file name to <code class="docutils literal notranslate"><span class="pre">Assignment</span> <span class="pre">1</span> <span class="pre">(Fahad).ipynb</span></code></p>
+</li>
+<li><p>When you are finished working on this assignment, click on <code class="docutils literal notranslate"><span class="pre">File</span></code> from the menu bar and select <code class="docutils literal notranslate"><span class="pre">Download</span></code> and then <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">.ipynb</span></code>.</p>
+<p>Doing so would download the file onto your computer that you can then submit on Moodle.</p>
+</li>
+<li><p>Please note that this assignment will only be graded in person.</p></li>
+<li><p>Please note that using any AI agent in any manner for this assignment will be considered plagiarism.</p></li>
+<li><p>Please note that you are not allowed to use any built-in functions for this assignments other than for insertion, deletion and update in lists.</p></li>
+</ul>
+<br/>
+<hr/>
+<br/><center>
+<h5></h5>
+<h1><b>Algorithms</b></h1>
+</center>
+<img width="18%" align="right" src="https://science4fun.info/wp-content/uploads/2019/05/Muhammad-ibn-Musa-al-Khwarizmi-portrait.jpg">
+<p>The word <em>Algorithm</em> is the Latinization of the name of a ninth century polymath in Baghdad: <a class="reference external" href="https://en.wikipedia.org/wiki/Al-Khwarizmi">Al-Khwarizmi</a>.</p>
+<br/>
+<div class="math notranslate nohighlight">
+\[\text{Al-Khwarizmi} \rightarrow \text{Al-gorismus} \rightarrow \text{Algorithm}\]</div>
+<br/>
+<p>Al-Khwarizmi is also known to be the father of <em>Algebra</em> (Latinization of <em><a class="reference external" href="https://en.wikipedia.org/wiki/Al-Jabr">Al Jabr</a></em> meaning the Completion ; <em>‘Al’</em> means <em>‘the’</em> in Arabic). His books <em>“Book of Indian computation”</em> and <em>“Addition and subtraction in Indian arithmetic”</em> also introduced Indian numerals to the Western world. In this books, Al-Khwarizmi introduced procedures that were precise, unambiguous, mechanical, efficient, and correct. In short, they were modern-day “algorithms”.</p>
+<br/>
+<hr/>
+<br/>
+<p>For each of the questions below, reflect on the scalability of your solutions.</p>
+<p>Pick from “constant”, “logarithmic”, “linear”, “quadratic” or “worse” and briefly comment on the reasons of your choice.</p>
+<br/>
+<center><img  src="https://i.ibb.co/0JR3dRN/0-A-o-Cua-GGKOdoxm-Ny.png" width="50%"></center>
+<br/>
+<p>Please note that your answers on scalability of your code is <em>not graded for completeness</em> in this assigment.</p>
+<hr/>
+<section class="tex2jax_ignore mathjax_ignore" id="question-1-find-minimum-value">
+<h1><strong>Question 1</strong>.  Find Minimum Value<a class="headerlink" href="#question-1-find-minimum-value" title="Permalink to this headline">#</a></h1>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">minimum</span></code> that accepts as input a list of integers or floats and return the list item with the <strong>minimum</strong> value.</p>
+<p>Return <code class="docutils literal notranslate"><span class="pre">None</span></code> is the list of numbers passed is empty.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="nb">min</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">:</span>
+            <span class="nb">min</span> <span class="o">=</span> <span class="n">item</span>
+    <span class="k">return</span> <span class="nb">min</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Test your implementation using the test cases below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">minimum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>     <span class="s2">&quot;Test case 1 failed&quot;</span>
+<span class="k">assert</span> <span class="n">minimum</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>          <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>     <span class="s2">&quot;Test case 2 failed&quot;</span>
+<span class="k">assert</span> <span class="n">minimum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>     <span class="s2">&quot;Test case 3 failed&quot;</span>
+<span class="k">assert</span> <span class="n">minimum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>   <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>    <span class="s2">&quot;Test case 4 failed&quot;</span>
+<span class="k">assert</span> <span class="n">minimum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>    <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>     <span class="s2">&quot;Test case 5 failed&quot;</span>
+<span class="k">assert</span> <span class="n">minimum</span><span class="p">([])</span>           <span class="o">==</span> <span class="kc">None</span><span class="p">,</span>  <span class="s2">&quot;Test case 5 failed&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All test cases passed successfully :)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All test cases passed successfully :)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">Q1b. For how you might think your code scales with increasing data, pick</span>
+<span class="sd">one of the four below by marking your choice with an &#39;X&#39; inside the square brackets</span>
+
+<span class="sd">- [ ] Constant</span>
+<span class="sd">- [ ] Logarithmic</span>
+<span class="sd">- [X] Linear</span>
+<span class="sd">- [ ] Quadratic</span>
+
+<span class="sd">Q1c. Briefly explain your choice below:</span>
+<span class="sd">My code will be Linear because it executes precisely 2 lines of code within the</span>
+<span class="sd">loop for each item in the list.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;\n\nQ1b. For how you might think your code scales with increasing data, pick\none of the four below by marking your choice with an &#39;X&#39; inside the square brackets\n\n- [ ] Constant\n- [ ] Logarithmic\n- [X] Linear\n- [ ] Quadratic\n\nQ1c. Briefly explain your choice below:\nMy code will be Linear because it executes precisely 2 lines of code within the\nloop for each item in the list.\n&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<hr/>
+<br/>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-2-reversing-a-list">
+<h1><strong>Question 2.</strong> Reversing a List<a class="headerlink" href="#question-2-reversing-a-list" title="Permalink to this headline">#</a></h1>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">reverse</span></code> that accepts as input a list of numbers <code class="docutils literal notranslate"><span class="pre">numbers</span></code> and <strong>returns a new list</strong> which has the values from <code class="docutils literal notranslate"><span class="pre">numbers</span></code> reversed.</p>
+<p>You are required to use a loop for this question. No clever slicing operation allowed.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">numbers</span> <span class="pre">=</span> <span class="pre">[4,</span> <span class="pre">1,</span> <span class="pre">3,</span> <span class="pre">2]</span></code> returns <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">4]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+  <span class="n">numbers_r</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="n">numbers_r</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">numbers_r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: unexpected indent
+</pre></div>
+</div>
+</div>
+</div>
+<p>Test your implementation using the test cases below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">reverse</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;Test case 1 failed&quot;</span>
+<span class="k">assert</span> <span class="n">reverse</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>          <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span>          <span class="s2">&quot;Test case 2 failed&quot;</span>
+<span class="k">assert</span> <span class="n">reverse</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;Test case 3 failed&quot;</span>
+<span class="k">assert</span> <span class="n">reverse</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>    <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>    <span class="s2">&quot;Test case 4 failed&quot;</span>
+<span class="k">assert</span> <span class="n">reverse</span><span class="p">([])</span>           <span class="o">==</span> <span class="p">[],</span>           <span class="s2">&quot;Test case 5 failed&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All test cases passed successfully :)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All test cases passed successfully :)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">Q2b. For how you might think your code scales with increasing data, pick</span>
+<span class="sd">one of the four below by marking your choice with an &#39;X&#39; inside the square brackets</span>
+
+<span class="sd">- [ ] Constant</span>
+<span class="sd">- [ ] Logarithmic</span>
+<span class="sd">- [X] Linear</span>
+<span class="sd">- [ ] Quadratic</span>
+
+<span class="sd">Q2c. Briefly explain your choice below:</span>
+<span class="sd">Yet again, it executes the exact same number of lines for each number in the list.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<hr/>
+<br/>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-3-sort-ascending">
+<h1><strong>Question 3.</strong> Sort Ascending<a class="headerlink" href="#question-3-sort-ascending" title="Permalink to this headline">#</a></h1>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">sort_ascending</span></code> that accepts as input a list of numbers <code class="docutils literal notranslate"><span class="pre">numbers</span></code> and <strong>returns a new list</strong> which has the values from <code class="docutils literal notranslate"><span class="pre">numbers</span></code> sorted in <strong>ascending order</strong>.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">numbers</span> <span class="pre">=</span> <span class="pre">[4,</span> <span class="pre">1,</span> <span class="pre">3,</span> <span class="pre">2]</span></code> returns <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code></p>
+<p><strong>Use <code class="docutils literal notranslate"><span class="pre">minimum</span></code> from Q1</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="nb">min</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">:</span>
+            <span class="nb">min</span> <span class="o">=</span> <span class="n">item</span>
+    <span class="k">return</span> <span class="nb">min</span>
+
+<span class="k">def</span> <span class="nf">sort_ascending</span><span class="p">(</span><span class="n">numberss</span><span class="p">):</span>
+    <span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numberss</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">minimum</span><span class="p">(</span><span class="n">numberss</span><span class="p">))</span>
+        <span class="n">numberss</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">minimum</span><span class="p">(</span><span class="n">numberss</span><span class="p">))</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">new_list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Test your implementation using the test cases below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">sort_ascending</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;Test case 1 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_ascending</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;Test case 2 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_ascending</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;Test case 3 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_ascending</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>          <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span>          <span class="s2">&quot;Test case 4 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_ascending</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;Test case 5 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_ascending</span><span class="p">([])</span>           <span class="o">==</span> <span class="p">[],</span>         <span class="s2">&quot;Test case 5 failed&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All test cases passed successfully :)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">Q3b. For how you might think your code scales with increasing data, pick</span>
+<span class="sd">one of the four below by marking your choice with an &#39;X&#39; inside the square brackets</span>
+
+<span class="sd">- [ ] Constant</span>
+<span class="sd">- [ ] Logarithmic</span>
+<span class="sd">- [X] Linear</span>
+<span class="sd">- [ ] Quadratic</span>
+
+<span class="sd">Q3c. Briefly explain your choice below:</span>
+<span class="sd">Same as the other two</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<hr/>
+<br/>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-4-sort-descending">
+<h1><strong>Question 4.</strong> Sort Descending<a class="headerlink" href="#question-4-sort-descending" title="Permalink to this headline">#</a></h1>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">sort_descending</span></code> that accepts as input a list of numbers <code class="docutils literal notranslate"><span class="pre">numbers</span></code> and <strong>returns a new list</strong> which has the values from <code class="docutils literal notranslate"><span class="pre">numbers</span></code> sorted in <strong>descending order</strong>.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">numbers</span> <span class="pre">=</span> <span class="pre">[4,</span> <span class="pre">1,</span> <span class="pre">3,</span> <span class="pre">2]</span></code> returns <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">1]</span></code></p>
+<p><strong>Use <code class="docutils literal notranslate"><span class="pre">sort_ascending</span></code> from Q3. and <code class="docutils literal notranslate"><span class="pre">reverse</span></code> from Q2.</strong>_</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="nb">min</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="nb">min</span><span class="p">:</span>
+            <span class="nb">min</span> <span class="o">=</span> <span class="n">item</span>
+    <span class="k">return</span> <span class="nb">min</span>
+
+<span class="k">def</span> <span class="nf">sort_ascending</span><span class="p">(</span><span class="n">numberss</span><span class="p">):</span>
+    <span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numberss</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">minimum</span><span class="p">(</span><span class="n">numberss</span><span class="p">))</span>
+        <span class="n">numberss</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">minimum</span><span class="p">(</span><span class="n">numberss</span><span class="p">))</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">new_list</span>
+
+<span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">numbersss</span><span class="p">):</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="n">sort_ascending</span><span class="p">(</span><span class="n">numbersss</span><span class="p">)</span>
+    <span class="n">numbers_r</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="n">numbers_r</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numbers_r</span>
+
+<span class="k">def</span> <span class="nf">sort_descending</span><span class="p">(</span><span class="n">stuff</span><span class="p">):</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Test your implementation using the test cases below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">sort_descending</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;Test case 1 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_descending</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;Test case 2 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_descending</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;Test case 3 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_descending</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>          <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span>          <span class="s2">&quot;Test case 4 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_descending</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;Test case 5 failed&quot;</span>
+<span class="k">assert</span> <span class="n">sort_descending</span><span class="p">([])</span>           <span class="o">==</span> <span class="p">[],</span>           <span class="s2">&quot;Test case 5 failed&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All test cases passed successfully :)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">Q4b. For how you might think your code scales with increasing data, pick</span>
+<span class="sd">one of the four below by marking your choice with an &#39;X&#39; inside the square brackets</span>
+
+<span class="sd">- [ ] Constant</span>
+<span class="sd">- [ ] Logarithmic</span>
+<span class="sd">- [X] Linear</span>
+<span class="sd">- [ ] Quadratic</span>
+
+<span class="sd">Q4c. Briefly explain your choice below:</span>
+<span class="sd">Same reason</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<hr/>
+<br/>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-5-factorial-n">
+<h1><strong>Question 5.</strong> Factorial <span class="math notranslate nohighlight">\(n!\)</span><a class="headerlink" href="#question-5-factorial-n" title="Permalink to this headline">#</a></h1>
+<p>Factorial of a number <span class="math notranslate nohighlight">\(n\)</span> is the product of all positive integers less than or equal to <span class="math notranslate nohighlight">\(n\)</span> and denoted by that integer and an exclamation point <span class="math notranslate nohighlight">\(!\)</span> i.e.</p>
+<div class="math notranslate nohighlight">
+\[ n! = n~~\times~~(n-1)~~\times~~(n-2) \cdots \times 2 \times 1\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[ n! = \prod_{i=1}^{n} i\]</div>
+<p>For example, <span class="math notranslate nohighlight">\(5!\)</span></p>
+<p><span class="math notranslate nohighlight">\(  \\ = 5 \times 4 \times 3 \times 2 \times 1 \\ = 120\)</span></p>
+<br/>
+<p>Write a function that takes as input an integer <span class="math notranslate nohighlight">\(n\)</span> and returns as output <span class="math notranslate nohighlight">\(n!\)</span> using the formula above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">rnum</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">rnum</span> <span class="o">*=</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">rnum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Test your implementation using the test cases below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>         <span class="s2">&quot;Test case 1 failed&quot;</span>
+<span class="k">assert</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">2</span><span class="p">,</span>         <span class="s2">&quot;Test case 2 failed&quot;</span>
+<span class="k">assert</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">120</span><span class="p">,</span>       <span class="s2">&quot;Test case 3 failed&quot;</span>
+<span class="k">assert</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">3628800</span><span class="p">,</span>  <span class="s2">&quot;Test case 4 failed&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All test cases passed successfully :)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">Q5b. For how you might think your code scales with increasing data, pick</span>
+<span class="sd">one of the four below by marking your choice with an &#39;X&#39; inside the square brackets</span>
+
+<span class="sd">- [ ] Constant</span>
+<span class="sd">- [ ] Logarithmic</span>
+<span class="sd">- [ ] Linear</span>
+<span class="sd">- [X] Quadratic</span>
+
+<span class="sd">Q5c. Briefly explain your choice below:</span>
+<span class="sd">The output will be significantly greater for each input than the last</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><br/><hr/><br/></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="question-6-fibonacci-sequence">
+<h1><strong>Question 6.</strong> Fibonacci Sequence<a class="headerlink" href="#question-6-fibonacci-sequence" title="Permalink to this headline">#</a></h1>
+<img width="30%" align="right" src="https://images.squarespace-cdn.com/content/v1/56e9de518259b5a23fa3af55/1484199979655-GIW7J2RCMIBNNJCYOLV6/leonardo_de_pisa_fibonacci.jpg">
+<p>Al Khwarizmi’s work could not have gained a foothold in the West were it not for the efforts of one man: the 15th century Italian mathematician <a class="reference external" href="https://en.wikipedia.org/wiki/Fibonacci">Leonardo Fibonacci</a>, who saw the potential of the positional Indian numeral system and worked hard to develop it further and propagandize it. But today Fibonacci is most widely known for his famous sequence of numbers known commonly as <strong>Fibonacci sequence</strong>.</p>
+<br/>
+<p>The first two numbers of the Fibonacci sequence are 0 and 1 respectively.</p>
+<p>After the first two, each number in the sequence is the sum of the previous two numbers.</p>
+<p>The first few numbers of the Fibonacci sequence are 0, 1, 1, 2, 3, 5, 8, …</p>
+<p>The value after 8 is 5 + 8 = 13.</p>
+<p>The sequence can be summarized as follows:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(F_0 = 0\)</span> <br />
+<span class="math notranslate nohighlight">\(F_1 = 1\)</span></p>
+<p>For all <span class="math notranslate nohighlight">\(n\)</span> &gt; 1,</p>
+<p><span class="math notranslate nohighlight">\(F_n = F_{n-1} + F_{n-2}\)</span></p>
+</div></blockquote>
+<p>Write a function that takes as input an integer <span class="math notranslate nohighlight">\(n\)</span> and returns as output the <span class="math notranslate nohighlight">\(𝑛\)</span>th Fibonacci number, using the formula above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fiblist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">fiblist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fiblist</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fiblist</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">fiblist</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Test your implementation using the test cases below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>  <span class="s2">&quot;Test case 1 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>  <span class="s2">&quot;Test case 2 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>  <span class="s2">&quot;Test case 3 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">2</span><span class="p">,</span>  <span class="s2">&quot;Test case 4 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">3</span><span class="p">,</span>  <span class="s2">&quot;Test case 5 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">5</span><span class="p">,</span>  <span class="s2">&quot;Test case 6 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">8</span><span class="p">,</span>  <span class="s2">&quot;Test case 7 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;Test case 8 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;Test case 9 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>  <span class="o">==</span> <span class="mi">34</span><span class="p">,</span> <span class="s2">&quot;Test case 10 failed&quot;</span>
+<span class="k">assert</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">55</span><span class="p">,</span> <span class="s2">&quot;Test case 11 failed&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All test cases passed successfully :)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">Q6b. For how you might think your code scales with increasing data, pick</span>
+<span class="sd">one of the four below by marking your choice with an &#39;X&#39; inside the square brackets</span>
+
+<span class="sd">- [ ] Constant</span>
+<span class="sd">- [ ] Logarithmic</span>
+<span class="sd">- [ ] Linear</span>
+<span class="sd">- [X] Quadratic</span>
+
+<span class="sd">Q6c. Briefly explain your choice below:</span>
+<span class="sd">Output increases exponentially with greater inputs</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<br/>
+<p>Fibonacci numbers appear unexpectedly often in nature. They have appeared as branching in trees, the arrangement of leaves on a stem, the fruit sprouts of a pineapple, the flowering of an artichoke, and the arrangement of a pine cone’s bracts, though they do not occur in all species:</p>
+<br/>
+<center>
+<img align="center" width="50%" src="https://img1.wsimg.com/isteam/ip/256c2eac-6fce-4fa6-8cc2-cb0858d3cc58/1*JAeKhx6wAxTytrbeVpDyIA.webp/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280">
+</center>
+<br/>
+<p>We will talk more on Fibonacci numbers in the near future in this course…</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Question 1</strong>.  Find Minimum Value</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-reversing-a-list"><strong>Question 2.</strong> Reversing a List</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-sort-ascending"><strong>Question 3.</strong> Sort Ascending</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-sort-descending"><strong>Question 4.</strong> Sort Descending</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-factorial-n"><strong>Question 5.</strong> Factorial <span class="math notranslate nohighlight">\(n!\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-fibonacci-sequence"><strong>Question 6.</strong> Fibonacci Sequence</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Syed Fahad Sultan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
