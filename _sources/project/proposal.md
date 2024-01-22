@@ -14,7 +14,7 @@ The project proposal must meet the following three requirements:
 
 1. You must use $\LaTeX$ to typeset your proposal. Use [this template](https://www.overleaf.com/read/qqktkgdpbkkx#fae525).
 2. At least one page, _excluding_ references. 
-3. You must have at least 2 citations.
+3. You must have at least 2 citations. These could be URLs. See [here](https://fahadsultan.com/csc475/tutorials/latex.html#citing-a-url) for how to cite URLs in $\LaTeX$. 
 
 Some key information to include:
 
