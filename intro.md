@@ -9,21 +9,29 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 👇🏾 Below, you can find important links and important announcements.
 
 ```{important}
-**[Project PreProposal](project/preproposal.md)** is due on **Tuesday, January 16th, 2024 11:59 PM**
+**[Project Proposal](project/proposal.md)** is due on **Friday, January 26th, 2024 4:00 PM**
 ```
 
 ```{important}
 
-First discussion is **next Tuesday, 16th January**
+Reading for discussion due **next week Tuesday, 30th January**
 
-**[Orientation](assets/papers/Orientation.pdf)**<br/>
-Richard W. Hamming,\
-_The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
-<br/>
+**[2023 Developer Survey](https://survey.stackoverflow.co/2023/)** Stack Overflow, 2023.
+```
 
-**[You and Your Research](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
-Richard W. Hamming,\
-_The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
+```{important}
+
+Readings for discussion due **next week Thursday, 30th January**
+
+**[GitHub Copilot AI pair programmer: Asset or Liability?](https://arxiv.org/pdf/2206.15331)**<br/>
+Dakhel, Arghavan Moradi, et al. \
+arXiv preprint arXiv:2206.15331 (2022). <br/><br/>
+
+
+**[An Empirical Evaluation of GitHub copilot's code suggestions](https://dl.acm.org/doi/abs/10.1145/3524842.3528470)**<br/>
+Nguyen, Nhan, and Sarah Nadi. \
+Proceedings of the 19th International Conference on Mining Software Repositories. 2022.
+
 ```
 
 ```{tip}

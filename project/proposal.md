@@ -1,5 +1,11 @@
 # Proposal 
 
+
+```{important}
+Due Tuesday, January 26th, 2024 4:00 PM
+(5% of the course grade) 
+``` 
+
 ```{note}
 You can access the **[Overleaf template here](https://www.overleaf.com/read/qqktkgdpbkkx#fae525)**.
 ```
