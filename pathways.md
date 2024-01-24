@@ -1,6 +1,39 @@
 
 # Purposeful Pathways (Spring '24)
 
+During the semester, you **must attend two events** that are designated as **Purposeful Pathways** events for Computer Science.
+
+A list of such events will be provided to you, and you may ask for approval of additional events not on the list.
+
+You are required to write a **1-2 page reflection on each event**.
+
+Each reflection must include:
+
+* Key insights from the event
+* What you learned about yourself
+* How you will apply what you learned
+
+<hr/>
+
+**_If you declared your major after August 1, 2023_**, then, as a **graduation requirement for Computer Science or Information Technology**, you are required to attend at least **two events from each of the three categories**:
+
+1. Career Exploration
+2. Professional Preparation
+3. Networking & Employer Engagement
+
+_AND_
+
+Required to attend and reflect upon two activities for each of the following courses:
+* All 300-level electives (CSC-332 and CSC-348 this semester)
+* CSC-475 or CSC-502
+* CSC-122
+
+Implementation of this requirement will be through standardized, graded requirements in individual courses. 
+
+This will allow **IT majors will ultimately participate in a minimum of six activities**, while **CS majors will ultimately participate in 10**, during their time at Furman.
+
+<hr/>
+
 Schedule of Experiences for this semester:
 
 ## January

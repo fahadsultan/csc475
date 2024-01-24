@@ -21,7 +21,7 @@ Reading for discussion due **next week Tuesday, 30th January**
 
 ```{important}
 
-Readings for discussion due **next week Thursday, 30th January**
+Readings for discussion due **next week Thursday, 1st February**
 
 **[GitHub Copilot AI pair programmer: Asset or Liability?](https://arxiv.org/pdf/2206.15331)**<br/>
 Dakhel, Arghavan Moradi, et al. \
