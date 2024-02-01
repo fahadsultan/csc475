@@ -9,17 +9,6 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 👇🏾 Below, you can find important links and important announcements.
 
 ```{important}
-**[Project Proposal](project/proposal.md)** is due on **Friday, January 26th, 2024 4:00 PM**
-```
-
-```{important}
-
-Reading for discussion due **next week Tuesday, 30th January**
-
-**[2023 Developer Survey](https://survey.stackoverflow.co/2023/)** Stack Overflow, 2023.
-```
-
-```{important}
 
 Readings for discussion due **next week Thursday, 1st February**
 
