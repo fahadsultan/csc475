@@ -10,18 +10,19 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 
 ```{important}
 
-Readings for discussion due **next week Thursday, 1st February**
+Please watch the Paywall documentary for discussion in class on **February 8th**:
 
-**[GitHub Copilot AI pair programmer: Asset or Liability?](https://arxiv.org/pdf/2206.15331)**<br/>
-Dakhel, Arghavan Moradi, et al. \
-arXiv preprint arXiv:2206.15331 (2022). <br/><br/>
+**[Paywall: The Business of Scholarship 🎥](https://archive.org/details/PaywallTheBusinessOfScholarshipFinalMovieMastered)**
+<br/> Jason Schmitt, <br/> 2018.
 
+The following documentary is strongly recommended for viewing but not required:
 
-**[An Empirical Evaluation of GitHub copilot's code suggestions](https://dl.acm.org/doi/abs/10.1145/3524842.3528470)**<br/>
-Nguyen, Nhan, and Sarah Nadi. \
-Proceedings of the 19th International Conference on Mining Software Repositories. 2022.
+**[The Internet's Own Boy: The Story of Aaron Swartz 🎥](https://archive.org/details/TheInternetsOwnBoyTheStoryOfAaronSwartz)**
+<br/> Brian Knappenberger, <br/> 2014.
 
-```
+```{warning}
+_The Internet's Own Boy_  includes content involving depression, self-harm, and suicide, which may be deeply distressing and triggering for those grappling with similar issues. Please remember that support is available for those in need. Speak with someone today at **988** hotline or contact **[Furman University Counseling Center](https://www.furman.edu/counseling-center/)** – Call the Counseling Center at **864-294-3031, press #3** (confidential, available 24/7/365 from anywhere).
+``````
 
 ```{tip}
 I have an **Open-Door Policy** and am in my office (_Riley Hall 200-D_) between 9 AM - 5 PM most weekdays. Please drop by with your questions or just to say hi! <br/>
