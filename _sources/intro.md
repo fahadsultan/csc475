@@ -30,6 +30,10 @@ The film includes content involving depression, self-harm, and suicide, which ma
 ``````
 
 
+```{important}
+**Literature Review** of the project is due on **February 13th** before class at 2:30 PM. <br/>Detailed instructions **[here](https://fahadsultan.com/csc475/project/litreview.html)**.
+```
+
 ```{tip}
 I have an **Open-Door Policy** and am in my office (_Riley Hall 200-D_) between 9 AM - 5 PM most weekdays. Please drop by with your questions or just to say hi! <br/>
 
