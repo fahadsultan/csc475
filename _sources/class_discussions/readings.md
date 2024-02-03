@@ -5,7 +5,9 @@
 The views expressed in the following articles/films do not necessarily reflect the views of the instructor, the CS department and/or Furman University. Read/watch with a critical eye. 
 ```
 
-## General 
+## Past 
+
+<s>
 
 <!-- **1.**  -->
 1. **[Orientation](../assets/papers/Orientation.pdf)**<br/>
@@ -18,6 +20,37 @@ _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
     _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
 
 <hr/>
+
+2. **[2023 Stack Overflow Annual Developer Survey](https://survey.stackoverflow.co/2023/)**
+
+3. **[GitHub Copilot AI pair programmer: Asset or Liability?](https://arxiv.org/pdf/2206.15331)**<br/>
+Dakhel, Arghavan Moradi, et al. \
+arXiv preprint arXiv:2206.15331 (2022). <br/><br/>
+
+
+    **[An Empirical Evaluation of GitHub copilot's code suggestions](https://dl.acm.org/doi/abs/10.1145/3524842.3528470)**<br/>
+    Nguyen, Nhan, and Sarah Nadi. \
+    Proceedings of the 19th International Conference on Mining Software Repositories. 2022.
+
+</s>
+
+## Literature Review 
+
+5. **[Paywall: The Business of Scholarship 🎥](https://archive.org/details/PaywallTheBusinessOfScholarshipFinalMovieMastered)**
+<br/> Jason Schmitt, <br/> 2018.
+
+    **[The Internet's Own Boy: The Story of Aaron Swartz 🎥](https://archive.org/details/TheInternetsOwnBoyTheStoryOfAaronSwartz)**
+    <br/> Brian Knappenberger, <br/> 2014.
+
+
+```{warning}
+_The Internet's Own Boy_  includes content involving depression, self-harm, and suicide, which may be deeply distressing and triggering for those grappling with similar issues. Please remember that support is available for those in need. Speak with someone today at **988** hotline or contact **[Furman University Counseling Center](https://www.furman.edu/counseling-center/)** – Call the Counseling Center at **864-294-3031, press #3** (confidential, available 24/7/365 from anywhere).
+```
+
+<hr/>
+
+## General 
+
 
 2. **[The Unreasonable Effectiveness of Mathematics](https://www.maths.ed.ac.uk/~v1ranick/papers/wigner.pdf)** <br/>
 Wigner, Eugene P. \
@@ -48,20 +81,6 @@ _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.<
 
 ---
 
-## Literature Review 
-
-5. **[Paywall: The Business of Scholarship 🎥](https://archive.org/details/PaywallTheBusinessOfScholarshipFinalMovieMastered)**
-<br/> Jason Schmitt, <br/> 2018.
-
-    **[The Internet's Own Boy: The Story of Aaron Swartz 🎥](https://archive.org/details/TheInternetsOwnBoyTheStoryOfAaronSwartz)**
-    <br/> Brian Knappenberger, <br/> 2014.
-
-
-```{warning}
-_The Internet's Own Boy_  includes content involving depression, self-harm, and suicide, which may be deeply distressing and triggering for those grappling with similar issues. Please remember that support is available for those in need. Speak with someone today at **988** hotline or contact **[Furman University Counseling Center](https://www.furman.edu/counseling-center/)** – Call the Counseling Center at **864-294-3031, press #3** (confidential, available 24/7/365 from anywhere).
-```
-
-<hr/>
 
 ## AI 
 
@@ -122,8 +141,6 @@ Abrams, 2019.
 
 ## Software 
 
-6. **[2023 Stack Overflow Annual Developer Survey](https://survey.stackoverflow.co/2023/)**
-
 4. **Program or be Programmed**
     <br/> **[Introduction](../assets/papers/ProgOrbeProged-Intro.pdf)** 
     <br/> **[Chapter 10](../assets/papers/ProgOrbeProged-Ch10.pdf)** <br/>
@@ -136,14 +153,7 @@ Abrams, 2019.
 
 <hr/>
 
-7. **[GitHub Copilot AI pair programmer: Asset or Liability?](https://arxiv.org/pdf/2206.15331)**<br/>
-Dakhel, Arghavan Moradi, et al. \
-arXiv preprint arXiv:2206.15331 (2022). <br/><br/>
 
-
-    **[An Empirical Evaluation of GitHub copilot's code suggestions](https://dl.acm.org/doi/abs/10.1145/3524842.3528470)**<br/>
-    Nguyen, Nhan, and Sarah Nadi. \
-    Proceedings of the 19th International Conference on Mining Software Repositories. 2022.
 
 **[Gartner Hype Cycle](https://www.gartner.com/en/research/methodologies/gartner-hype-cycle)**
 
