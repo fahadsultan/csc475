@@ -187,12 +187,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="latex.html"><strong>LaTeX</strong>: Typesetting Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html"><strong>Github</strong>: Social Network of Programmers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
@@ -526,7 +527,7 @@ $ git remote -v
 </ul>
 <!-- <img src="assets/git.png"> -->
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="../_images/git.png"><img alt="../_images/git.png" src="../_images/git.png" style="width: 75%;" /></a>
+<a class="reference internal image-reference" href="https://i.ibb.co/gdSwjCr/git.png"><img alt="https://i.ibb.co/gdSwjCr/git.png" src="https://i.ibb.co/gdSwjCr/git.png" style="width: 75%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 8 </span><span class="caption-text">git flow of operations</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -609,7 +610,8 @@ git add &lt;file-name-n&gt;
 <h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">revert</span></code><a class="headerlink" href="#git-revert" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">revert</span></code> is the command we use when we want to take a previous <code class="docutils literal notranslate"><span class="pre">commit</span></code> and add it as a new <code class="docutils literal notranslate"><span class="pre">commit</span></code>, keeping the <code class="docutils literal notranslate"><span class="pre">log</span></code> intact.</p>
 <p><strong>Step 1</strong>: Find the previous <code class="docutils literal notranslate"><span class="pre">commit</span></code>:</p>
-<img width="60%" src="https://www.w3schools.com/git/img_revert_part1.gif">
+<!-- <img width="60%" src="https://www.w3schools.com/git/img_revert_part1.gif"> -->
+<img width="60%" src="https://i.ibb.co/1Gp478j/git-revert.png">
 <p>1.1. First thing, we need to find the point we want to return to. To do that, we need to go through the <code class="docutils literal notranslate"><span class="pre">log</span></code>.</p>
 <p>To avoid the very long log list, we are going to use the <code class="docutils literal notranslate"><span class="pre">--oneline</span></code> option, which gives just one line per commit showing i) the first seven characters of the <code class="docutils literal notranslate"><span class="pre">commit</span> <span class="pre">hash</span></code> and ii) the <code class="docutils literal notranslate"><span class="pre">commit</span> <span class="pre">message</span></code></p>
 <p><strong>Step 2</strong>: Use it to make a new <code class="docutils literal notranslate"><span class="pre">commit</span></code>:</p>
@@ -621,7 +623,8 @@ git add &lt;file-name-n&gt;
 <section id="git-reset">
 <h3><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code><a class="headerlink" href="#git-reset" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">reset</span></code> is the command we use when we want to go back to a previous <code class="docutils literal notranslate"><span class="pre">commit</span></code> and erase everything that happened after it.</p>
-<img width="60%" align="center" src="https://www.w3schools.com/git/img_reset_part1.gif">
+<!-- <img width="60%" align="center" src="https://www.w3schools.com/git/img_reset_part1.gif"> -->
+<img width="60%" align="center" src="https://i.ibb.co/9Y0ypHk/git-reset.png">
 <img width="60%" align="center" src="https://www.w3schools.com/git/img_reset_part2.gif">
 <p>Similar to <code class="docutils literal notranslate"><span class="pre">revert</span></code>, we first need to find the <code class="docutils literal notranslate"><span class="pre">commit</span></code> we want to go back to using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p>
 <p>Next, we need to use the <code class="docutils literal notranslate"><span class="pre">reset</span></code> command.</p>
@@ -678,7 +681,7 @@ git add &lt;file-name-n&gt;
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Github</strong>: Social Network of Programmers</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

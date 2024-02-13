@@ -137,7 +137,7 @@ In git, there are four main states that your files can reside in. They are:
 * **pushed**: means that your data has been transferred to a remote repository.
 
 <!-- <img src="assets/git.png"> -->
-```{figure} ../assets/git.png
+```{figure} https://i.ibb.co/gdSwjCr/git.png
 ---
 name: git_init
 width: 75%
@@ -246,7 +246,9 @@ Git reset is a powerful command that is used to undo local changes to the state 
 
 **Step 1**: Find the previous `commit`:
 
-<img width="60%" src="https://www.w3schools.com/git/img_revert_part1.gif">
+<!-- <img width="60%" src="https://www.w3schools.com/git/img_revert_part1.gif"> -->
+<img width="60%" src="https://i.ibb.co/1Gp478j/git-revert.png">
+
 
 1.1. First thing, we need to find the point we want to return to. To do that, we need to go through the `log`.
 
@@ -266,7 +268,9 @@ To revert to earlier commits, use `git revert HEAD~x` (x being a number. 1 going
 
 `reset` is the command we use when we want to go back to a previous `commit` and erase everything that happened after it.
 
-<img width="60%" align="center" src="https://www.w3schools.com/git/img_reset_part1.gif">
+<!-- <img width="60%" align="center" src="https://www.w3schools.com/git/img_reset_part1.gif"> -->
+<img width="60%" align="center" src="https://i.ibb.co/9Y0ypHk/git-reset.png">
+
 
 <img width="60%" align="center" src="https://www.w3schools.com/git/img_reset_part2.gif">
 

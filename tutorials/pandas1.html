@@ -187,12 +187,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="latex.html"><strong>LaTeX</strong>: Typesetting Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html"><strong>Github</strong>: Social Network of Programmers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas I: Data Structures</a></li>
@@ -601,14 +602,14 @@ document.write(`
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/data_structure.png"><img alt="https://fahadsultan.com/datascience_ml/_images/data_structure.png" src="https://fahadsultan.com/datascience_ml/_images/data_structure.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Three fundamental <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data structures: <strong>Series</strong>, <strong>DataFrame</strong>, <strong>Index</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Three fundamental <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data structures: <strong>Series</strong>, <strong>DataFrame</strong>, <strong>Index</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Notice how the <strong>DataFrame</strong> is a two-dimensional object – it contains both rows and columns. The <strong>Series</strong> above is a singular column of this <strong>DataFrame</strong>, namely, the <code class="docutils literal notranslate"><span class="pre">Result</span></code> column. Both contain an <strong>Index</strong>, or a shared list of row labels (here, the integers from 0 to 4, inclusive).</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png"><img alt="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Schematic of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> and  <strong>Series</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Schematic of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> and  <strong>Series</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -797,13 +798,13 @@ dtype: int64
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/df_cols.png"><img alt="https://fahadsultan.com/datascience_ml/_images/df_cols.png" src="https://fahadsultan.com/datascience_ml/_images/df_cols.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Each column of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.index</span></code></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Each column of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.index</span></code></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/df_rows.png"><img alt="https://fahadsultan.com/datascience_ml/_images/df_rows.png" src="https://fahadsultan.com/datascience_ml/_images/df_rows.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Each row of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.columns</span></code></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Each row of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.columns</span></code></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="creating-a-dataframe">

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>matplotlib: Visualizing Data &#8212; CSC-475</title>
+    <title>Markdown: Writing Content &#8212; CSC-475</title>
   
   
   
@@ -60,11 +60,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/20_visualization';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/markdown';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Univariate Visualizations" href="21_univariate.html" />
-    <link rel="prev" title="Pandas III: Aggregation, Merging and Concatenation" href="pandas3.html" />
+    <link rel="next" title="bokeh: Dashboards" href="bokeh.html" />
+    <link rel="prev" title="Github Pages: Create a Website" href="github_pages.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -193,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
@@ -278,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/20_visualization.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/markdown.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/tutorials/20_visualization.ipynb" target="_blank"
+      <li><a href="../_sources/tutorials/markdown.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -377,7 +377,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -388,11 +390,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>matplotlib: Visualizing Data</h1>
+    <h1>Markdown: Writing Content</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-syntax">Extended Syntax</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -402,266 +414,159 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="matplotlib-visualizing-data">
-<h1><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data<a class="headerlink" href="#matplotlib-visualizing-data" title="Permalink to this headline">#</a></h1>
-<p>Visualizing data is a key part of data science.  It is not only a way to communicate your findings to others but,  more importantly, <strong>it is a way to understand your data</strong>, models and algorithms better.</p>
-<p>In this section, we will learn how to use the libraries <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to create visualizations.</p>
-<p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is the primary plotting library in Python.  It is a very powerful and highly customizable library that can be used to create a wide variety of plots and graphs. However, despite its power, is can often be not very user-friendly, requiring a lot of code to create even simple plots.</p>
-<p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is a data visualization library built on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> that is easier to use and creates more visually appealing plots.  I will try to use <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> whenever possible, but may have to fall back occasionally to <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> for formatting details and customization.</p>
-<p>Just as <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is conventionally imported as <code class="docutils literal notranslate"><span class="pre">pd</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> is conventionally imported as <code class="docutils literal notranslate"><span class="pre">plt</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is conventionally imported as <code class="docutils literal notranslate"><span class="pre">sns</span></code>.</p>
-<p>Let’s start by importing the libraries we will need.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="markdown-writing-content">
+<h1><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content<a class="headerlink" href="#markdown-writing-content" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The content in this tutorial is from <a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">Markdown CheatSheet</a> by <a class="reference external" href="https://www.markdownguide.org/">Matt Cone</a>.</p>
 </div>
-</div>
-</div>
-<hr/>
-<p>There has long been an impression amongst academics and practitioners that <em>“numerical calculations are exact, but graphs are rough”</em>. In 1973, Francis Anscombe set out to counter this common misconception by creating a set of four datasets that are today known as <strong>Anscombe’s quartet</strong>.</p>
-<p>The code cell below downloads and loads it as <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> this data set:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anscombe</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;anscombe&quot;</span><span class="p">)</span>
-<span class="n">anscombe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dataset</th>
-      <th>x</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>I</td>
-      <td>10.0</td>
-      <td>8.04</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>I</td>
-      <td>8.0</td>
-      <td>6.95</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>I</td>
-      <td>13.0</td>
-      <td>7.58</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>I</td>
-      <td>9.0</td>
-      <td>8.81</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>I</td>
-      <td>11.0</td>
-      <td>8.33</td>
-    </tr>
-  </tbody>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for basic syntax and extended syntax.</p>
+</section>
+<section id="basic-syntax">
+<h2>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permalink to this headline">#</a></h2>
+<p>These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Markdown Syntax</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Heading</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">H1</span></code><br><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">H2</span></code><br><code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">H3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bold</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">**bold</span> <span class="pre">text**</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Italic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*italicized</span> <span class="pre">text*</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Blockquote</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">blockquote</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Ordered List</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.</span> <span class="pre">First</span> <span class="pre">item</span></code><br><code class="docutils literal notranslate"><span class="pre">2.</span> <span class="pre">Second</span> <span class="pre">item</span></code><br><code class="docutils literal notranslate"><span class="pre">3.</span> <span class="pre">Third</span> <span class="pre">item</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Unordered List</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">First</span> <span class="pre">item</span></code><br><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">Second</span> <span class="pre">item</span></code><br><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">Third</span> <span class="pre">item</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">`code`</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Horizontal Rule</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">---</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Link</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[title](https://www.example.com)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Image</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">![alt</span> <span class="pre">text](image.jpg)</span></code></p></td>
+</tr>
+</tbody>
 </table>
-</div></div></div>
-</div>
-<p>Now let’s see what the summary statistics of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> features look like, with respect to <code class="docutils literal notranslate"><span class="pre">dataset</span></code> feature:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anscombe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;dataset&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="8" halign="left">x</th>
-      <th colspan="8" halign="left">y</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th>count</th>
-      <th>mean</th>
-      <th>std</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-      <th>count</th>
-      <th>mean</th>
-      <th>std</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-    </tr>
-    <tr>
-      <th>dataset</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>I</th>
-      <td>11.0</td>
-      <td>9.0</td>
-      <td>3.316625</td>
-      <td>4.0</td>
-      <td>6.5</td>
-      <td>9.0</td>
-      <td>11.5</td>
-      <td>14.0</td>
-      <td>11.0</td>
-      <td>7.500909</td>
-      <td>2.031568</td>
-      <td>4.26</td>
-      <td>6.315</td>
-      <td>7.58</td>
-      <td>8.57</td>
-      <td>10.84</td>
-    </tr>
-    <tr>
-      <th>II</th>
-      <td>11.0</td>
-      <td>9.0</td>
-      <td>3.316625</td>
-      <td>4.0</td>
-      <td>6.5</td>
-      <td>9.0</td>
-      <td>11.5</td>
-      <td>14.0</td>
-      <td>11.0</td>
-      <td>7.500909</td>
-      <td>2.031657</td>
-      <td>3.10</td>
-      <td>6.695</td>
-      <td>8.14</td>
-      <td>8.95</td>
-      <td>9.26</td>
-    </tr>
-    <tr>
-      <th>III</th>
-      <td>11.0</td>
-      <td>9.0</td>
-      <td>3.316625</td>
-      <td>4.0</td>
-      <td>6.5</td>
-      <td>9.0</td>
-      <td>11.5</td>
-      <td>14.0</td>
-      <td>11.0</td>
-      <td>7.500000</td>
-      <td>2.030424</td>
-      <td>5.39</td>
-      <td>6.250</td>
-      <td>7.11</td>
-      <td>7.98</td>
-      <td>12.74</td>
-    </tr>
-    <tr>
-      <th>IV</th>
-      <td>11.0</td>
-      <td>9.0</td>
-      <td>3.316625</td>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>19.0</td>
-      <td>11.0</td>
-      <td>7.500909</td>
-      <td>2.030579</td>
-      <td>5.25</td>
-      <td>6.170</td>
-      <td>7.04</td>
-      <td>8.19</td>
-      <td>12.50</td>
-    </tr>
-  </tbody>
+</section>
+<section id="extended-syntax">
+<h2>Extended Syntax<a class="headerlink" href="#extended-syntax" title="Permalink to this headline">#</a></h2>
+<p>These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Markdown Syntax</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Table</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">|</span> <span class="pre">Syntax</span> <span class="pre">|</span> <span class="pre">Description</span> <span class="pre">|</span></code><br><code class="docutils literal notranslate"><span class="pre">|</span> <span class="pre">-----------</span> <span class="pre">|</span> <span class="pre">-----------</span> <span class="pre">|</span></code><br><code class="docutils literal notranslate"><span class="pre">|</span> <span class="pre">Header</span> <span class="pre">|</span> <span class="pre">Title</span> <span class="pre">|</span></code><br><code class="docutils literal notranslate"><span class="pre">|</span> <span class="pre">Paragraph</span> <span class="pre">|</span> <span class="pre">Text</span> <span class="pre">|</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Fenced Code Block</p></td>
+<td><p><pre>```{<br>  “firstName”: “John”,<br>  “lastName”: “Smith”,<br>  “age”: 25<br>}<br>```</p></td>
+</tr>
+<tr class="row-even"><td><p>Footnote</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Here's</span> <span class="pre">a</span> <span class="pre">sentence</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">footnote.</span> <span class="pre">[^1]&lt;br&gt;[^1]:</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">footnote.</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Heading ID</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">My</span> <span class="pre">Great</span> <span class="pre">Heading</span> <span class="pre">{#custom-id}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Definition List</p></td>
+<td><p><pre>Term 1<br>: Definition 1<br>Term 2<br>: Definition 2</pre></p></td>
+</tr>
+<tr class="row-odd"><td><p>Strikethrough</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">~~The</span> <span class="pre">world</span> <span class="pre">is</span> <span class="pre">flat.~~</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Task List</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[x]</span> <span class="pre">Write</span> <span class="pre">the</span> <span class="pre">press</span> <span class="pre">release</span></code><br><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">Update</span> <span class="pre">the</span> <span class="pre">website</span></code><br><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">Contact</span> <span class="pre">the</span> <span class="pre">media</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Emoji</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:smile:</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Highlight</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">==highlighted==</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Subscript</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">H~2~O</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Superscript</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4^th^</span></code></p></td>
+</tr>
+</tbody>
 </table>
-</div></div></div>
-</div>
-<p>Note that for all four unique values of <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, we have eleven (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>) values, as seen in <code class="docutils literal notranslate"><span class="pre">count</span></code>.</p>
-<p>For each value of <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> have nearly <strong>identical simple descriptive statistics</strong>.</p>
-<p>Now let’s create a scatter plot of the data using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">anscombe</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;dataset&quot;</span><span class="p">);</span>
-<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/aad26c65f9fe005d3adb2242c58a8078f43e9039e244a68f63e6e04f4e4f90d5.png" src="../_images/aad26c65f9fe005d3adb2242c58a8078f43e9039e244a68f63e6e04f4e4f90d5.png" />
-</div>
-</div>
-<p>Anscombe’s quartet demonstrates both the <strong>importance of graphing data before analyzing</strong> it and the <strong>effect of outliers</strong> and other influential observations on statistical properties.</p>
-<hr/>
-<p>Data Visualization is arguably the most mistake-prone part of the data science process.  It is very easy to create misleading visualizations that lead to incorrect conclusions.  It is therefore important to be aware of the common pitfalls and to avoid them.</p>
-<p>The following is a useful taxonomy for choosing the right visualization depending on your goals for your data:</p>
-<img src="http://www.perceptualedge.com/blog/wp-content/uploads/2015/07/Abelas-Chart-Selection-Diagram.jpg" width="100%">
-<!-- <img src="https://datavizblog.files.wordpress.com/2013/04/andrew-abela-chart-chooser-in-color.jpg"> --><div class="toctree-wrapper compound">
-</div>
+<!-- 
+Whether you write your book's content in Jupyter Notebooks (`.ipynb`) or
+in regular markdown files (`.md`), you'll write in the same flavor of markdown
+called **MyST Markdown**.
+This is a simple file to help you get started and show off some syntax.
+
+## What is MyST?
+
+MyST stands for "Markedly Structured Text". It
+is a slight variation on a flavor of markdown called "CommonMark" markdown,
+with small syntax extensions to allow you to write **roles** and **directives**
+in the Sphinx ecosystem.
+
+For more about MyST, see [the MyST Markdown Overview](https://jupyterbook.org/content/myst.html).
+
+## Sample Roles and Directives
+
+Roles and directives are two of the most powerful tools in Jupyter Book. They
+are kind of like functions, but written in a markup language. They both
+serve a similar purpose, but **roles are written in one line**, whereas
+**directives span many lines**. They both accept different kinds of inputs,
+and what they do with those inputs depends on the specific role or directive
+that is being called.
+
+Here is a "note" directive:
+
+```{note}
+Here is a note
+```
+
+It will be rendered in a special box when you build your book.
+
+Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
+
+
+## Citations
+
+You can also cite references that are stored in a `bibtex` file. For example,
+the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
+this: {cite}`holdgraf_evidence_2014`.
+
+Moreover, you can insert a bibliography into your page with this syntax:
+The `{bibliography}` directive must be used for all the `{cite}` roles to
+render properly.
+For example, if the references for your book are stored in `references.bib`,
+then the bibliography is inserted with:
+
+```{bibliography}
+```
+
+## Learn more
+
+This is just a simple starter to get you started.
+You can learn a lot more at [jupyterbook.org](https://jupyterbook.org). -->
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -696,20 +601,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pandas3.html"
+       href="github_pages.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pandas III: Aggregation, Merging and Concatenation</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</p>
       </div>
     </a>
     <a class="right-next"
-       href="21_univariate.html"
+       href="bokeh.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Univariate Visualizations</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -722,6 +627,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-syntax">Extended Syntax</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

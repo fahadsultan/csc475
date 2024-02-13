@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Markdown Files &#8212; CSC-475</title>
+    <title>Markdown: Writing Content &#8212; CSC-475</title>
   
   
   
@@ -185,12 +185,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tutorials/latex.html"><strong>LaTeX</strong>: Typesetting Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/latex.html"><strong><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code></strong>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/github.html"><strong>Github</strong>: Social Network of Programmers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/pandas1.html">Pandas I: Data Structures</a></li>
@@ -387,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown Files</h1>
+    <h1>Markdown: Writing Content</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,10 +397,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-syntax">Extended Syntax</a></li>
 </ul>
             </nav>
         </div>
@@ -412,61 +411,158 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this headline">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this headline">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
-</section>
-<section id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Permalink to this headline">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are kind of like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="markdown-writing-content">
+<h1>Markdown: Writing Content<a class="headerlink" href="#markdown-writing-content" title="Permalink to this headline">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here is a note</p>
+<p>The content in this tutorial is from <a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">Markdown CheatSheet</a> by <a class="reference external" href="https://www.markdownguide.org/">Matt Cone</a>.</p>
 </div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for basic syntax and extended syntax.</p>
 </section>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="project/proposal.html#id4" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">2</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
+<section id="basic-syntax">
+<h2>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permalink to this headline">#</a></h2>
+<p>These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Markdown Syntax</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Heading</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">H1</span></code><br><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">H2</span></code><br><code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">H3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bold</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">**bold</span> <span class="pre">text**</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Italic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">*italicized</span> <span class="pre">text*</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Blockquote</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">blockquote</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Ordered List</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.</span> <span class="pre">First</span> <span class="pre">item</span></code><br><code class="docutils literal notranslate"><span class="pre">2.</span> <span class="pre">Second</span> <span class="pre">item</span></code><br><code class="docutils literal notranslate"><span class="pre">3.</span> <span class="pre">Third</span> <span class="pre">item</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Unordered List</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">First</span> <span class="pre">item</span></code><br><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">Second</span> <span class="pre">item</span></code><br><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">Third</span> <span class="pre">item</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">`code`</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Horizontal Rule</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">---</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Link</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[title](https://www.example.com)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Image</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">![alt</span> <span class="pre">text](image.jpg)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="extended-syntax">
+<h2>Extended Syntax<a class="headerlink" href="#extended-syntax" title="Permalink to this headline">#</a></h2>
+<p>These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Markdown Syntax</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Table</p></td>
+<td><p>`</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fenced Code Block</p></td>
+<td><p><pre><code class="docutils literal notranslate"><span class="pre">&lt;br&gt;{&lt;br&gt;</span>&#160; <span class="pre">&quot;firstName&quot;:</span> <span class="pre">&quot;John&quot;,&lt;br&gt;</span>&#160; <span class="pre">&quot;lastName&quot;:</span> <span class="pre">&quot;Smith&quot;,&lt;br&gt;</span>&#160; <span class="pre">&quot;age&quot;:</span> <span class="pre">25&lt;br&gt;}&lt;br&gt;</span></code></pre></p></td>
+</tr>
+<tr class="row-even"><td><p>Footnote</p></td>
+<td><p>Here’s a sentence with a footnote. [^1]<br>[^1]: This is the footnote.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Heading ID</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">My</span> <span class="pre">Great</span> <span class="pre">Heading</span> <span class="pre">{#custom-id}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Definition List</p></td>
+<td><p><pre>Term 1<br>: Definition 1<br>Term 2<br>: Definition 2</pre></p></td>
+</tr>
+<tr class="row-odd"><td><p>Strikethrough</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">~~The</span> <span class="pre">world</span> <span class="pre">is</span> <span class="pre">flat.~~</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Task List</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[x]</span> <span class="pre">Write</span> <span class="pre">the</span> <span class="pre">press</span> <span class="pre">release</span></code><br><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">Update</span> <span class="pre">the</span> <span class="pre">website</span></code><br><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">Contact</span> <span class="pre">the</span> <span class="pre">media</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Emoji</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:smile:</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Highlight</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">==highlighted==</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Subscript</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">H~2~O</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Superscript</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4^th^</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<!-- 
+Whether you write your book's content in Jupyter Notebooks (`.ipynb`) or
+in regular markdown files (`.md`), you'll write in the same flavor of markdown
+called **MyST Markdown**.
+This is a simple file to help you get started and show off some syntax.
+
+## What is MyST?
+
+MyST stands for "Markedly Structured Text". It
+is a slight variation on a flavor of markdown called "CommonMark" markdown,
+with small syntax extensions to allow you to write **roles** and **directives**
+in the Sphinx ecosystem.
+
+For more about MyST, see [the MyST Markdown Overview](https://jupyterbook.org/content/myst.html).
+
+## Sample Roles and Directives
+
+Roles and directives are two of the most powerful tools in Jupyter Book. They
+are kind of like functions, but written in a markup language. They both
+serve a similar purpose, but **roles are written in one line**, whereas
+**directives span many lines**. They both accept different kinds of inputs,
+and what they do with those inputs depends on the specific role or directive
+that is being called.
+
+Here is a "note" directive:
+
+```{note}
+Here is a note
+```
+
+It will be rendered in a special box when you build your book.
+
+Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
+
+
+## Citations
+
+You can also cite references that are stored in a `bibtex` file. For example,
+the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
+this: {cite}`holdgraf_evidence_2014`.
+
+Moreover, you can insert a bibliography into your page with this syntax:
+The `{bibliography}` directive must be used for all the `{cite}` roles to
 render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id3"><span class="brackets">DMDS+14</span></dt>
-<dd><p>Dana Dabelea, Elizabeth J Mayer-Davis, Sharon Saydah, Giuseppina Imperatore, Barbara Linder, Jasmin Divers, Ronny Bell, Angela Badaru, Jennifer W Talton, Tessa Crume, and others. Prevalence of type 1 and type 2 diabetes among children and adolescents from 2001 to 2009. <em>Jama</em>, 311(17):1778–1786, 2014.</p>
-</dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
-<dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</dd>
-</dl>
-</div>
-</section>
-<section id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Permalink to this headline">#</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
+For example, if the references for your book are stored in `references.bib`,
+then the bibliography is inserted with:
+
+```{bibliography}
+```
+
+## Learn more
+
+This is just a simple starter to get you started.
+You can learn a lot more at [jupyterbook.org](https://jupyterbook.org). -->
 </section>
 </section>
 
@@ -519,10 +615,9 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">Basic Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-syntax">Extended Syntax</a></li>
 </ul>
   </nav></div>
 

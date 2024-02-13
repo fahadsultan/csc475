@@ -39,6 +39,14 @@ If you want to check if you already have an SSH key, you can use the following c
 ls -al ~/.ssh
 ```
 
+```{note} For Windows Users
+If you are using Windows and the above command does not work, you can use the following commands: `dir ~/.ssh` or `notepad ~/.ssh/id_rsa.pub`
+
+Alternatively, check `[your home directory]/.ssh/id_rsa` where `[your home directory]` is the directory where your home directory (C:\Users\username) is located.
+
+Worst case, just download and install [Git Bash](https://git-scm.com/downloads) or [PuTTY](https://www.putty.org/).
+```
+
 `ls`: prints the contents of a directory
 `-a`: list all files in long format
 `-l`: use a long listing format

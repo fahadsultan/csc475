@@ -187,12 +187,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="latex.html"><strong>LaTeX</strong>: Typesetting Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html"><strong>Github</strong>: Social Network of Programmers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><strong>Github Pages</strong>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
@@ -442,6 +443,13 @@ document.write(`
 <p>If you want to check if you already have an SSH key, you can use the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -al ~/.ssh
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For Windows Users
+If you are using Windows and the above command does not work, you can use the following commands: <code class="docutils literal notranslate"><span class="pre">dir</span> <span class="pre">~/.ssh</span></code> or <code class="docutils literal notranslate"><span class="pre">notepad</span> <span class="pre">~/.ssh/id_rsa.pub</span></code></p>
+<p>Alternatively, check <code class="docutils literal notranslate"><span class="pre">[your</span> <span class="pre">home</span> <span class="pre">directory]/.ssh/id_rsa</span></code> where <code class="docutils literal notranslate"><span class="pre">[your</span> <span class="pre">home</span> <span class="pre">directory]</span></code> is the directory where your home directory (C:\Users\username) is located.</p>
+<p>Worst case, just download and install <a class="reference external" href="https://git-scm.com/downloads">Git Bash</a> or <a class="reference external" href="https://www.putty.org/">PuTTY</a>.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code>: prints the contents of a directory
 <code class="docutils literal notranslate"><span class="pre">-a</span></code>: list all files in long format

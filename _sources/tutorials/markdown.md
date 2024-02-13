@@ -1,4 +1,4 @@
-# Markdown: Writing Content
+# `Markdown`: Writing Content
 
 ```{note}
 The content in this tutorial is from [Markdown CheatSheet](https://www.markdownguide.org/cheat-sheet/) by [Matt Cone](https://www.markdownguide.org/).
@@ -31,9 +31,9 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 
 | Element | Markdown Syntax |
 | --- | --- |
-| Table | `| Syntax | Description |`<br>`| ----------- | ----------- |`<br>`| Header | Title |`<br>`| Paragraph | Text |` |
-| Fenced Code Block | <pre>```<br>{<br>  "firstName": "John",<br>  "lastName": "Smith",<br>  "age": 25<br>}<br>```</pre> |
-| Footnote | Here's a sentence with a footnote. [^1]<br>[^1]: This is the footnote. |
+| Table | `\| Syntax \| Description \|`<br>`\| ----------- \| ----------- \|`<br>`\| Header \| Title \|`<br>`\| Paragraph \| Text \|` |
+| Fenced Code Block | <pre>\```{<br>  "firstName": "John",<br>  "lastName": "Smith",<br>  "age": 25<br>}<br>\``` |
+| Footnote | `Here's a sentence with a footnote. [^1]<br>[^1]: This is the footnote.` |
 | Heading ID | `### My Great Heading {#custom-id}` |
 | Definition List | <pre>Term 1<br>: Definition 1<br>Term 2<br>: Definition 2</pre> |
 | Strikethrough | `~~The world is flat.~~` |
