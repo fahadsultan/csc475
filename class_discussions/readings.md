@@ -4,8 +4,8 @@
 ```{note}
 The views expressed in the following articles/films do not necessarily reflect the views of the instructor, the CS department and/or Furman University. Read/watch with a critical eye. 
 ```
-
-## Past 
+<!-- 
+## Past  -->
 
 <s>
 
@@ -15,31 +15,32 @@ Richard W. Hamming,\
 _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
 <br/><br/>
 
-    **[You and Your Research](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
-    Richard W. Hamming,\
-    _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
+2. **[You and Your Research](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
+Richard W. Hamming,\
+_The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
 
 <hr/>
 
-2. **[2023 Stack Overflow Annual Developer Survey](https://survey.stackoverflow.co/2023/)**
+3. **[2023 Stack Overflow Annual Developer Survey](https://survey.stackoverflow.co/2023/)**
+<br/><br/>
 
-3. **[GitHub Copilot AI pair programmer: Asset or Liability?](https://arxiv.org/pdf/2206.15331)**<br/>
+4. **[GitHub Copilot AI pair programmer: Asset or Liability?](https://arxiv.org/pdf/2206.15331)**<br/>
 Dakhel, Arghavan Moradi, et al. \
 arXiv preprint arXiv:2206.15331 (2022). <br/><br/>
 
 
-    **[An Empirical Evaluation of GitHub copilot's code suggestions](https://dl.acm.org/doi/abs/10.1145/3524842.3528470)**<br/>
+5. **[An Empirical Evaluation of GitHub copilot's code suggestions](https://dl.acm.org/doi/abs/10.1145/3524842.3528470)**<br/>
     Nguyen, Nhan, and Sarah Nadi. \
     Proceedings of the 19th International Conference on Mining Software Repositories. 2022.
 
-</s>
+<br/>
 
-## Literature Review 
-
-5. **[Paywall: The Business of Scholarship 🎥](https://archive.org/details/PaywallTheBusinessOfScholarshipFinalMovieMastered)**
+6. **[Paywall: The Business of Scholarship 🎥](https://archive.org/details/PaywallTheBusinessOfScholarshipFinalMovieMastered)**
 <br/> Jason Schmitt, <br/> 2018.
 
-    **[The Internet's Own Boy: The Story of Aaron Swartz 🎥](https://archive.org/details/TheInternetsOwnBoyTheStoryOfAaronSwartz)**
+<br/>
+
+7. **[The Internet's Own Boy: The Story of Aaron Swartz 🎥](https://archive.org/details/TheInternetsOwnBoyTheStoryOfAaronSwartz)**
     <br/> Brian Knappenberger, <br/> 2014.
 
 
@@ -47,9 +48,10 @@ arXiv preprint arXiv:2206.15331 (2022). <br/><br/>
 _The Internet's Own Boy_  includes content involving depression, self-harm, and suicide, which may be deeply distressing and triggering for those grappling with similar issues. Please remember that support is available for those in need. Speak with someone today at **988** hotline or contact **[Furman University Counseling Center](https://www.furman.edu/counseling-center/)** – Call the Counseling Center at **864-294-3031, press #3** (confidential, available 24/7/365 from anywhere).
 ```
 
+</s>
 <hr/>
 
-## General 
+
 
 
 2. **[The Unreasonable Effectiveness of Mathematics](https://www.maths.ed.ac.uk/~v1ranick/papers/wigner.pdf)** <br/>
@@ -79,10 +81,10 @@ _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.<
     * Richard R. Hamming,\
     _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
 
----
+<!-- --- -->
 
 
-## AI 
+<!-- ## AI  -->
 
 
 <hr/>
@@ -107,9 +109,9 @@ _Nature_ 521.7553 (2015): 436-444.<br/>
 * Bender, Emily M., et al.\
 _Proceedings of the 2021 ACM conference on fairness, accountability, and transparency_. 2021. 
 
-<hr/>
+<!-- <hr/>
 
-## Ethics 
+## Ethics  -->
 
 
 9. **[You Get What You Measure](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
@@ -136,10 +138,10 @@ _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.<
 13. **[Invisible women: Data bias in a world designed for men](https://cdn.waterstones.com/images/1/4718/extract_invisiblewomen.pdf)**<br/>
 * Perez, Caroline Criado. \
 Abrams, 2019.
-
+<!-- 
 <hr/>
 
-## Software 
+## Software  -->
 
 4. **Program or be Programmed**
     <br/> **[Introduction](../assets/papers/ProgOrbeProged-Intro.pdf)** 

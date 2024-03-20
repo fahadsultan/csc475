@@ -8,30 +8,47 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 
 👇🏾 Below, you can find important links and important announcements.
 
+
 ```{note}
-The views expressed in the following articles/films do not reflect the views of the instructor, the Computer Science department or Furman University. Watch with a critical eye.
+_[Purposeful Pathways]()_ event: **Data Mania @ Furman University** from **March 22 - 24**. <br/>Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details. 
+```
+
+
+```{important}
+**[Preliminary Poster]()** due **Thursday, March 28th**, the day before Spring Recess. <br/>
+You can download the template for the poster **[here](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)**. Feel free to get inspiration from [posters in previous semesters](https://fahadsultan.com/csc475/project/index.html#fall-2023-projects).
 ```
 
 ```{important}
+**[Final Poster](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)** due **Thursday, April 4th 11:59 PM**, a week before Furman Engaged. 
+```
 
-Please watch the following documentaries for discussion in class on **February 8th**:
+```{note}
+_[Purposeful Pathways]()_ event: **[ASA DataFest 2024](https://sites.google.com/wfu.edu/datafest2020/home)** April 5th to April 7th at Wake Forest University. <br/>Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details
+```
 
-**[Paywall: The Business of Scholarship 🎥](https://archive.org/details/PaywallTheBusinessOfScholarshipFinalMovieMastered)**
-<br/> Jason Schmitt, <br/> 2018.
-
-
-**[The Internet's Own Boy: The Story of Aaron Swartz 🎥](https://archive.org/details/TheInternetsOwnBoyTheStoryOfAaronSwartz)**
-<br/> Brian Knappenberger, <br/> 2014.
-
-```{warning}
-Please note that _Internet's Own Boy_ is strongly recommended but not strictly required. <br/>
-
-The film includes content involving depression, self-harm, and suicide, which may be  distressing and triggering for those grappling with similar issues. Please remember that support is available for those in need. Speak with someone today at **988** hotline or contact **[Furman University Counseling Center](https://www.furman.edu/counseling-center/)** – Call the Counseling Center at **864-294-3031, press #3** (confidential, available 24/7/365 from anywhere).
-``````
+```{important}
+**Furman Engaged** is on Friday, **April 12th**. You are all expected to give a poster presentation on your seminar course project at the event.  You can find the schedule for the day **[here](https://virtual.oxfordabstracts.com/#/e/fe2024/program)**. 
+```
 
 
 ```{important}
-**Literature Review** of the project is due on **February 13th** before class at 2:30 PM. <br/>Detailed instructions **[here](https://fahadsultan.com/csc475/project/litreview.html)**.
+**[Preliminary Report](https://www.overleaf.com/read/zncrzrtqppsk#e9cf6b)** due **Thursday, April 19th** by 11:59 PM. Templates for the report can be found **[here](https://www.overleaf.com/read/zncrzrtqppsk#e9cf6b)**
+
+The report can be a PDF generated from a LaTeX document or a webpage (project page on your github.io account) generated from a Markdown file. 
+```
+
+
+```{important}
+**[Final Report](https://www.overleaf.com/read/zncrzrtqppsk#e9cf6b)** due **Thursday, April 25th** at **11:59 PM**. Note that this is during the final exam period and a day before the final for the course. 
+```
+
+```{important}
+**[Final Presentations]()** are on **Friday, April 26th** from **3:30 - 6:00 PM** in **Riley Hall 204**. 
+
+Template for the slides can be found **[here](https://docs.google.com/presentation/d/1y4OMQq9ChapHJF-cUaYQa6J7IUvhlgL5Z-AJ8MRbJis/edit?usp=sharing)**.
+
+Note that these presentations are going to be during the final exam period and will be graded as part of the final exam. 
 ```
 
 ```{tip}

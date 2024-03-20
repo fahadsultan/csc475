@@ -43,6 +43,7 @@ parts:
       - file: tutorials/git
       - file: tutorials/github
       - file: tutorials/github_pages
+      - file: tutorials/markdown
       - file: tutorials/bokeh
       - file: tutorials/10_dataops
         sections: 
@@ -54,3 +55,4 @@ parts:
         - file: tutorials/21_univariate
         - file: tutorials/22_multivariate
         - file: tutorials/23_dosdonts
+      - file: tutorials/gmaps

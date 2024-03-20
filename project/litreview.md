@@ -1,7 +1,7 @@
 # Literature Review 
 
 ```{important}
-Literature Review is due on February 13th at 2:30 PM. 
+Literature Review is due on **February 20th** at 2:30 PM. 
 ```
 
 For the next phase of the project, you are to conduct a literature review for your proposed project. Add a "Literature Review" section to the same Overleaf project as your Project Proposal.
