@@ -31,8 +31,6 @@ Please note that you must have access to your CliftonStrengths for Students repo
 Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details
 ```
 
-```
-
 ```{important}
 **Furman Engaged** is on Friday, **April 12th**.
 
