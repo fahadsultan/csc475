@@ -8,33 +8,47 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 
 👇🏾 Below, you can find important links and important announcements.
 
+
 ```{note}
-Upcoming Purposeful Pathways event: 
-
-**Leveraging CliftonStrengths for CS and IT Interviews**  will be held in the **Good Collab (Riley 106)** on **March 20th** at **12:30 PM**. A short description of the event is as follows:
-
-_Worried about upcoming interviews? Interested in developing strategies to overcome mental blocks and manage stress? This workshop will equip you with the language and tools to present your best self through the lens of your unique talent DNA - your top 5 CliftonStrengths. By understanding how you most naturally absorb and analyze information through your strengths, you can develop a specialized toolkit to handle new situations, think through tough problems, and convey the behaviors that make you a unique and qualified applicant. An understanding of what you are most naturally good at will allow you to leverage those innate talents in any situation thrown your way, including the search for a job, internship, or graduate program. Please review your top 5 CliftonStrengths for Students report at [https://login.gallup.com/](https://login.gallup.com/) in advance of this workshop. This workshop is open to any major who has previously completed the Gallup CliftonStrengths assessment._
-
-Please note that you must have access to your CliftonStrengths for Students report, taken during your 1st and 2nd year Pathways course. 
-
-**Lunch** will be provided. If you plan to attend, please RSVP here ASAP: [https://calendly.com/proftreu/cliftonstrengths-for-cs-and-it](https://calendly.com/proftreu/cliftonstrengths-for-cs-and-it)
+_[Purposeful Pathways]()_ event: **Data Mania @ Furman University** from **March 22 - 24**. <br/>Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details. 
 ```
 
 
-```{note}
-**Upcoming Purposeful Pathways Events**
-
-* **Data Mania @ Furman University** March 22nd to 24th.<br/><br/>
-
-* **[ASA DataFest 2024](https://sites.google.com/wfu.edu/datafest2020/home)** April 5th to April 7th at Wake Forest University.
-
-Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details
+```{important}
+**[Preliminary Poster]()** due **Thursday, March 28th**, the day before Spring Recess. <br/>
+You can download the template for the poster **[here](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)**. Feel free to get inspiration from [posters in previous semesters](https://fahadsultan.com/csc475/project/index.html#fall-2023-projects).
 ```
 
 ```{important}
-**Furman Engaged** is on Friday, **April 12th**.
+**[Final Poster](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)** due **Thursday, April 4th 11:59 PM**, a week before Furman Engaged. 
+```
 
-You are all expected to present your course project at the event. Here is the poster template for the event: [Furman Engaged Poster Template](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)
+```{note}
+_[Purposeful Pathways]()_ event: **[ASA DataFest 2024](https://sites.google.com/wfu.edu/datafest2020/home)** April 5th to April 7th at Wake Forest University. <br/>Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details
+```
+
+```{important}
+**Furman Engaged** is on Friday, **April 12th**. You are all expected to give a poster presentation on your seminar course project at the event.  You can find the schedule for the day **[here](https://virtual.oxfordabstracts.com/#/e/fe2024/program)**. 
+```
+
+
+```{important}
+**[Preliminary Report](https://www.overleaf.com/read/zncrzrtqppsk#e9cf6b)** due **Thursday, April 19th** by 11:59 PM. Templates for the report can be found **[here](https://www.overleaf.com/read/zncrzrtqppsk#e9cf6b)**
+
+The report can be a PDF generated from a LaTeX document or a webpage (project page on your github.io account) generated from a Markdown file. 
+```
+
+
+```{important}
+**[Final Report](https://www.overleaf.com/read/zncrzrtqppsk#e9cf6b)** due **Thursday, April 25th** at **11:59 PM**. Note that this is during the final exam period and a day before the final for the course. 
+```
+
+```{important}
+**[Final Presentations]()** are on **Friday, April 26th** from **3:30 - 6:00 PM** in **Riley Hall 204**. 
+
+Template for the slides can be found **[here](https://docs.google.com/presentation/d/1y4OMQq9ChapHJF-cUaYQa6J7IUvhlgL5Z-AJ8MRbJis/edit?usp=sharing)**.
+
+Note that these presentations are going to be during the final exam period and will be graded as part of the final exam. 
 ```
 
 ```{tip}
