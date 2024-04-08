@@ -10,29 +10,6 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 
 
 ```{note}
-_[Purposeful Pathways]()_ event: **Data Mania @ Furman University** from **March 22 - 24**. <br/>Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details. 
-
-**Last day** to submit the two required **reflections** for this course is the last day of class: Tuesday, April 23rd by 11:59 PM.
-```
-
-
-```{important}
-**[Preliminary Poster]()** due **Thursday, March 28th**, the day before Spring Recess. <br/>
-You can download the template for the poster **[here](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)**. Feel free to get inspiration from [posters in previous semesters](https://fahadsultan.com/csc475/project/index.html#fall-2023-projects).
-```
-
-```{important}
-**[Final Poster](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)** due **Thursday, April 4th 11:59 PM**, a week before Furman Engaged. 
-```
-
-```{note}
-_[Purposeful Pathways]()_ event: **[ASA DataFest 2024](https://sites.google.com/wfu.edu/datafest2020/home)** **April 5th to April 7th** at Wake Forest University. <br/>Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details.
-
-**Last day** to submit the two required **reflections** for this course is the last day of class: Tuesday, April 23rd by 11:59 PM.
-```
-
-
-```{note}
 _[Purposeful Pathways](https://fahadsultan.com/csc475/pathways.html)_ event: **Paladin Pitch Competition** – Professional Preparation
 **Thursday, April 11, 4:00 – 5:30pm** in (Watkins Room, Trone Student Center)
 For additional information, [click here](https://www.furman.edu/innovation-entrepreneurship/innovation-entrepreneurship/paladin-pitch-competition/)
