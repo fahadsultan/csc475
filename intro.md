@@ -9,26 +9,32 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 👇🏾 Below, you can find important links and important announcements.
 
 
+```{important}
+**[Anatomy of an AI System](https://anatomyof.ai/)** Crawford, K., & Joler, V. (2018).
+
+Please make sure to carefully read both: **1. [Visualization](https://anatomyof.ai/img/ai-anatomy-map.pdf)** **AND 2. the text** (scroll down on the link above).
+
+Alternatively, watch **Dr. Kate Crawford**'s **[video lecture 🎥](https://www.youtube.com/watch?v=uM7gqPnmDDc&t=2541s&ab_channel=UNSW)** on the subject. 
+
+Class Discussion on **Tuesday, April 16th** in **Riley 105** in class at **2:30 PM**. 
+
+```
+
+```{important}
+
+**[ENIAC Girls Vanish](ENIAC%20Girls%20Vanish.pdf)**
+
+Chapter 7 from _[Coders: The Making of a New Tribe and the Remaking of the World](https://bookshop.org/p/books/coders-the-making-of-a-new-tribe-and-the-remaking-of-the-world-clive-thompson/12477150?ean=9780735220584)_ by Clive Thompson
+
+[Citations for the chapter](ENIAC%20Girls%20Vanish%20(citations).pdf)
+
+Class Discussion on **Thursday, April 18th** in **Riley 105** in class at **2:30 PM**. 
+```
+
 ```{note}
-_[Purposeful Pathways]()_ event: **Data Mania @ Furman University** from **March 22 - 24**. <br/>Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details. 
-```
+_[Purposeful Pathways](https://fahadsultan.com/csc475/pathways.html)_ event: **PowerPoint Night** is on **April 16, 6-7:30 PM** Jennifer McHan Good Collab in **Riley 106**
 
-
-```{important}
-**[Preliminary Poster]()** due **Thursday, March 28th**, the day before Spring Recess. <br/>
-You can download the template for the poster **[here](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)**. Feel free to get inspiration from [posters in previous semesters](https://fahadsultan.com/csc475/project/index.html#fall-2023-projects).
-```
-
-```{important}
-**[Final Poster](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing)** due **Thursday, April 4th 11:59 PM**, a week before Furman Engaged. 
-```
-
-```{note}
-_[Purposeful Pathways]()_ event: **[ASA DataFest 2024](https://sites.google.com/wfu.edu/datafest2020/home)** April 5th to April 7th at Wake Forest University. <br/>Contact [Data Science and Machine Learning club](https://furman.campuslabs.com/engage/organization/datascience) for more details
-```
-
-```{important}
-**Furman Engaged** is on Friday, **April 12th**. You are all expected to give a poster presentation on your seminar course project at the event.  You can find the schedule for the day **[here](https://virtual.oxfordabstracts.com/#/e/fe2024/program)**. 
+**Last day** to submit the two required **reflections** for this course is the last day of class: Tuesday, April 23rd by 11:59 PM.
 ```
 
 
