@@ -9,18 +9,27 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 👇🏾 Below, you can find important links and important announcements.
 
 
-```{note}
-_[Purposeful Pathways](https://fahadsultan.com/csc475/pathways.html)_ event: **Paladin Pitch Competition** – Professional Preparation
-**Thursday, April 11, 4:00 – 5:30pm** in (Watkins Room, Trone Student Center)
-For additional information, [click here](https://www.furman.edu/innovation-entrepreneurship/innovation-entrepreneurship/paladin-pitch-competition/)
+```{important}
+**[Anatomy of an AI System](https://anatomyof.ai/)** Crawford, K., & Joler, V. (2018).
+
+Please make sure to carefully read both: **1. [Visualization](https://anatomyof.ai/img/ai-anatomy-map.pdf)** **AND 2. the text** (scroll down on the link above).
+
+Alternatively, watch **Dr. Kate Crawford**'s **[video lecture 🎥](https://www.youtube.com/watch?v=uM7gqPnmDDc&t=2541s&ab_channel=UNSW)** on the subject. 
+
+Class Discussion on **Tuesday, April 16th** in **Riley 105** in class at **2:30 PM**. 
+
 ```
 
 ```{important}
-**Furman Engaged** is on Friday, **April 12th**. You are all expected to give a poster presentation on your seminar course project at the event.  You can find the schedule for the day **[here](https://virtual.oxfordabstracts.com/#/e/fe2024/program)**. 
 
-Please note that if you a session at Furman Engaged other than the poster session of your project, you can submit a reflection on that session as well towards one of two required reflections. 
+**[ENIAC Girls Vanish](ENIAC%20Girls%20Vanish.pdf)**
+
+Chapter 7 from _[Coders: The Making of a New Tribe and the Remaking of the World](https://bookshop.org/p/books/coders-the-making-of-a-new-tribe-and-the-remaking-of-the-world-clive-thompson/12477150?ean=9780735220584)_ by Clive Thompson
+
+[Citations for the chapter](ENIAC%20Girls%20Vanish%20(citations).pdf)
+
+Class Discussion on **Thursday, April 18th** in **Riley 105** in class at **2:30 PM**. 
 ```
-
 
 ```{note}
 _[Purposeful Pathways](https://fahadsultan.com/csc475/pathways.html)_ event: **PowerPoint Night** is on **April 16, 6-7:30 PM** Jennifer McHan Good Collab in **Riley 106**

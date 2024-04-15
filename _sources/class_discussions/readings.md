@@ -52,8 +52,29 @@ _The Internet's Own Boy_  includes content involving depression, self-harm, and 
 <hr/>
 
 
+8. **[Anatomy of an AI System](https://anatomyof.ai/)**
+
+    Please make sure to carefully read both: **1. [Visualization](https://anatomyof.ai/img/ai-anatomy-map.pdf)** **AND 2. the text** (scroll down on the link above).
+
+    Alternatively, watch **Dr. Kate Crawford**'s **[video lecture 🎥](https://www.youtube.com/watch?v=uM7gqPnmDDc&t=2541s&ab_channel=UNSW)** on the subject. 
+
+    Crawford, K., & Joler, V. (2018).\
+    Retrieved September, 18, 2018.
+
+<hr/>
+
+9. **[ENIAC Girls Vanish](../ENIAC%20Girls%20Vanish.pdf)**
+
+    Chapter 7 from [Coders: The Making of a New Tribe and the Remaking of the World by Clive Thompson](https://bookshop.org/p/books/coders-the-making-of-a-new-tribe-and-the-remaking-of-the-world-clive-thompson/12477150?ean=9780735220584)
+
+    [Citations for the chapter](../ENIAC%20Girls%20Vanish%20(citations).pdf)
+
+    Discussion on **April 18th** in **Riley 105** in class at **2:30 PM**. 
 
 
+10. 
+
+<!-- 
 2. **[The Unreasonable Effectiveness of Mathematics](https://www.maths.ed.ac.uk/~v1ranick/papers/wigner.pdf)** <br/>
 Wigner, Eugene P. \
 _Mathematics and Science_. 1990. 291-306.
@@ -70,7 +91,7 @@ _Mathematics and Science_. 1990. 291-306.
 Halevy, Alon, Peter Norvig, and Fernando Pereira.\
 IEEE intelligent systems 24.2 (2009): 8-12.
 
-<hr/>
+<hr/> 
 
 
 4. **[Experts](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/> 
@@ -80,11 +101,6 @@ _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.<
     * **[Creativity](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
     * Richard R. Hamming,\
     _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
-
-<!-- --- -->
-
-
-<!-- ## AI  -->
 
 
 <hr/>
@@ -107,11 +123,7 @@ _Nature_ 521.7553 (2015): 436-444.<br/>
 
 12. **[On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?🦜](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922)**<br/> 
 * Bender, Emily M., et al.\
-_Proceedings of the 2021 ACM conference on fairness, accountability, and transparency_. 2021. 
-
-<!-- <hr/>
-
-## Ethics  -->
+<!-- _Proceedings of the 2021 ACM conference on fairness, accountability, and transparency_. 2021. 
 
 
 9. **[You Get What You Measure](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
@@ -124,30 +136,17 @@ _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.<
 
 <hr/>
 
-8. **[Anatomy of an AI System](https://anatomyof.ai/)**
-
-    Please make sure to carefully read both: **1. [Visualization](https://anatomyof.ai/img/ai-anatomy-map.pdf)** **AND 2. the text** (scroll down on the link above).
-
-    Alternatively, watch **Dr. Kate Crawford**'s **[video lecture 🎥](https://www.youtube.com/watch?v=uM7gqPnmDDc&t=2541s&ab_channel=UNSW)** on the subject. 
-
-    Crawford, K., & Joler, V. (2018).\
-    Retrieved September, 18, 2018.
-
-<hr/>
 
 13. **[Invisible women: Data bias in a world designed for men](https://cdn.waterstones.com/images/1/4718/extract_invisiblewomen.pdf)**<br/>
 * Perez, Caroline Criado. \
 Abrams, 2019.
-<!-- 
-<hr/>
 
-## Software  -->
 
 4. **Program or be Programmed**
     <br/> **[Introduction](../assets/papers/ProgOrbeProged-Intro.pdf)** 
     <br/> **[Chapter 10](../assets/papers/ProgOrbeProged-Ch10.pdf)** <br/>
     Douglas Rushkoff,\
-    Or Books, 2010.
+    Or Books, 2010. 
 
 <hr/>
 
