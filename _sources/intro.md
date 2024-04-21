@@ -8,6 +8,12 @@ I am excited to talk all things Computer Science 💻 🤖 📊 🌐 in this cou
 
 👇🏾 Below, you can find important links and important announcements.
 
+```{important}
+For the last meeting and class discussion of the semester on **Tuesday, April 23rd**, please read **[Bomb Parts - What is a Model?](Bomb_Parts.pdf)** from the book **[Weapons of Math Destruction](https://bookshop.org/p/books/weapons-of-math-destruction-how-big-data-increases-inequality-and-threatens-democracy-cathy-o-neil/11438502?ean=9780553418835)** by Cathy O'Neil. 
+
+Alternatively, watch Dr. O'Neil's video lecture 🎥 on the subject: **[Weapons of Math Destruction | Cathy O'Neil | Talks at Google](https://www.youtube.com/watch?v=TQHs8SA1qpk)**
+```
+
 
 ```{important}
 **[Final Report](https://www.overleaf.com/read/zncrzrtqppsk#e9cf6b)** due **Thursday, April 25th** at **11:59 PM**. Note that this is during the final exam period and a day before the final for the course. 
