@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Readings / Viewings &#8212; CSC-475</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'class_discussions/readings';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class Discussions" href="index.html" />
+    <link rel="prev" title="Presentation" href="../project/presentation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo2.png" class="logo__image only-light" alt="CSC-475 - Home"/>
+    <script>document.write(`<img src="../_static/logo2.png" class="logo__image only-dark" alt="CSC-475 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    CSC-475 (Seminar in CS)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../policies/grading.html">Grading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/academic_success.html">Academic Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/accomodations.html">Accomodations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/integrity.html">Academic Integrity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../policies/title_9.html">Nondiscrimination Policy and Sexual Misconduct</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/preproposal.html">Pre-Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/poster.html">Poster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/presentation.html">Presentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Readings / Viewings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Class Discussions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pandas1.html">Pandas I: Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/21_univariate.html">Univariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/22_multivariate.html">Multivariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/23_dosdonts.html">Dos and Donts of Visualization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/gmaps.html">Google Maps</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fclass_discussions/readings.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/class_discussions/readings.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Readings / Viewings</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="readings-viewings">
+<h1>Readings / Viewings<a class="headerlink" href="#readings-viewings" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The views expressed in the following articles/films do not necessarily reflect the views of the instructor, the CS department and/or Furman University. Read/watch with a critical eye.</p>
+</div>
+<!-- 
+## Past  -->
+<s>
+<!-- **1.**  -->
+<ol class="arabic simple">
+<li><p><strong><a class="reference download internal" download="" href="../_downloads/3f8d5139ce04ff35807c56e2733bc6b8/Orientation.pdf"><span class="xref download myst">Orientation</span></a></strong><br/>
+Richard W. Hamming,<br />
+<em>The Art of Doing Science and Engineering: Learning to Learn</em>, CRC Press, 1997.
+<br/><br/></p></li>
+<li><p><strong><a class="reference external" href="https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf">You and Your Research</a></strong><br/>
+Richard W. Hamming,<br />
+<em>The Art of Doing Science and Engineering: Learning to Learn</em>, CRC Press, 1997.</p></li>
+</ol>
+<hr/>
+<ol class="arabic simple" start="3">
+<li><p><strong><a class="reference external" href="https://survey.stackoverflow.co/2023/">2023 Stack Overflow Annual Developer Survey</a></strong>
+<br/><br/></p></li>
+<li><p><strong><a class="reference external" href="https://arxiv.org/pdf/2206.15331">GitHub Copilot AI pair programmer: Asset or Liability?</a></strong><br/>
+Dakhel, Arghavan Moradi, et al. <br />
+arXiv preprint arXiv:2206.15331 (2022). <br/><br/></p></li>
+<li><p><strong><a class="reference external" href="https://dl.acm.org/doi/abs/10.1145/3524842.3528470">An Empirical Evaluation of GitHub copilot’s code suggestions</a></strong><br/>
+Nguyen, Nhan, and Sarah Nadi. <br />
+Proceedings of the 19th International Conference on Mining Software Repositories. 2022.</p></li>
+</ol>
+<br/>
+<ol class="arabic simple" start="6">
+<li><p><strong><a class="reference external" href="https://archive.org/details/PaywallTheBusinessOfScholarshipFinalMovieMastered">Paywall: The Business of Scholarship 🎥</a></strong>
+<br/> Jason Schmitt, <br/> 2018.</p></li>
+</ol>
+<br/>
+<ol class="arabic simple" start="7">
+<li><p><strong><a class="reference external" href="https://archive.org/details/TheInternetsOwnBoyTheStoryOfAaronSwartz">The Internet’s Own Boy: The Story of Aaron Swartz 🎥</a></strong>
+<br/> Brian Knappenberger, <br/> 2014.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>The Internet’s Own Boy</em>  includes content involving depression, self-harm, and suicide, which may be deeply distressing and triggering for those grappling with similar issues. Please remember that support is available for those in need. Speak with someone today at <strong>988</strong> hotline or contact <strong><a class="reference external" href="https://www.furman.edu/counseling-center/">Furman University Counseling Center</a></strong> – Call the Counseling Center at <strong>864-294-3031, press #3</strong> (confidential, available 24/7/365 from anywhere).</p>
+</div>
+</s>
+<hr/>
+<ol class="arabic" start="8">
+<li><p><strong><a class="reference external" href="https://anatomyof.ai/">Anatomy of an AI System</a></strong></p>
+<p>Please make sure to carefully read both: <strong>1. <a class="reference external" href="https://anatomyof.ai/img/ai-anatomy-map.pdf">Visualization</a></strong> <strong>AND 2. the text</strong> (scroll down on the link above).</p>
+<p>Alternatively, watch <strong>Dr. Kate Crawford</strong>’s <strong><a class="reference external" href="https://www.youtube.com/watch?v=uM7gqPnmDDc&amp;amp;t=2541s&amp;amp;ab_channel=UNSW">video lecture 🎥</a></strong> on the subject.</p>
+<p>Crawford, K., &amp; Joler, V. (2018).<br />
+Retrieved September, 18, 2018.</p>
+</li>
+</ol>
+<hr/>
+<ol class="arabic" start="9">
+<li><p><strong><a class="reference download internal" download="" href="../_downloads/a56f34f1a85740d7316ca5c910618586/ENIAC%20Girls%20Vanish.pdf"><span class="xref download myst">ENIAC Girls Vanish</span></a></strong></p>
+<p>Chapter 7 from <a class="reference external" href="https://bookshop.org/p/books/coders-the-making-of-a-new-tribe-and-the-remaking-of-the-world-clive-thompson/12477150?ean=9780735220584">Coders: The Making of a New Tribe and the Remaking of the World by Clive Thompson</a></p>
+<p><a class="reference download internal" download="" href="../_downloads/b3c0d8f2b19de3cd9dd7f5bdf387bf38/ENIAC%20Girls%20Vanish%20%28citations%29.pdf"><span class="xref download myst">Citations for the chapter</span></a></p>
+<p>Discussion on <strong>April 18th</strong> in <strong>Riley 105</strong> in class at <strong>2:30 PM</strong>.</p>
+</li>
+<li></li>
+</ol>
+<!-- 
+2. **[The Unreasonable Effectiveness of Mathematics](https://www.maths.ed.ac.uk/~v1ranick/papers/wigner.pdf)** <br/>
+Wigner, Eugene P. \
+_Mathematics and Science_. 1990. 291-306.
+<br/><br/>
+    
+    **[Mathematics](../assets/Mathematics.pdf)**<br/>
+    Richard W. Hamming,\
+    _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
+
+<hr/>
+
+3. **[The Unreasonable Effectiveness of Data 🎥](https://www.youtube.com/watch?v=yvDCzhbjYWs)**<br/>
+[The Unreasonable Effectiveness of Data (article)](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/35179.pdf)<br/>
+Halevy, Alon, Peter Norvig, and Fernando Pereira.\
+IEEE intelligent systems 24.2 (2009): 8-12.
+
+<hr/> 
+
+
+4. **[Experts](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/> 
+Richard R. Hamming,\
+_The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.<br/>
+
+    * **[Creativity](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
+    * Richard R. Hamming,\
+    _The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.
+
+
+<hr/>
+
+10. **[A Few Useful Things to Know about Machine Learning](../assets/papers/AFewUsefulThingsAboutML.pdf)**<br/>
+Domingos, Pedro.\
+_Communications of the ACM_ 55.10 (2012): 78-87
+
+<hr/>
+
+11. **[Deep Learning](https://www.nature.com/articles/nature14539)**<br/>
+LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton.\
+_Nature_ 521.7553 (2015): 436-444.<br/>
+
+    **[Deep learning: A Critical Appraisal](https://arxiv.org/pdf/1801.00631.pdf)**,<br/>
+    Marcus, Gary.\
+    arXiv preprint arXiv:1801.00631 (2018).
+
+<hr/>
+
+12. **[On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?🦜](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922)**<br/> 
+* Bender, Emily M., et al.\
+<!-- _Proceedings of the 2021 ACM conference on fairness, accountability, and transparency_. 2021. 
+
+
+9. **[You Get What You Measure](https://d37ugbyn3rpeym.cloudfront.net/stripe-press/TAODSAE_zine_press.pdf)**<br/>
+Richard R. Hamming,\
+_The Art of Doing Science and Engineering: Learning to Learn_, CRC Press, 1997.<br/>
+
+    **[Weapons of Math Destuction - Going to College](../assets/papers/WMDs-GoingToCollege.pdf)** <br/>
+    Cathy O Neil,\
+    _Weapons of Math Destruction_, Crown, 2016.
+
+<hr/>
+
+
+13. **[Invisible women: Data bias in a world designed for men](https://cdn.waterstones.com/images/1/4718/extract_invisiblewomen.pdf)**<br/>
+* Perez, Caroline Criado. \
+Abrams, 2019.
+
+
+4. **Program or be Programmed**
+    <br/> **[Introduction](../assets/papers/ProgOrbeProged-Intro.pdf)** 
+    <br/> **[Chapter 10](../assets/papers/ProgOrbeProged-Ch10.pdf)** <br/>
+    Douglas Rushkoff,\
+    Or Books, 2010. 
+
+<hr/>
+
+* **[TIOBE index](https://www.tiobe.com/tiobe-index/)**
+
+<hr/>
+
+
+
+**[Gartner Hype Cycle](https://www.gartner.com/en/research/methodologies/gartner-hype-cycle)**
+
+<hr/>
+
+
+<hr/>
+
+
+
+<!-- **2.**  -->
+<!-- ### **[How to Read a Paper](https://www.albany.edu/spatial/training/3-How%20to%20read%20a%20paper.pdf)**<br/>
+Srinivasan Keshav,\
+_ACM SIGCOMM Computer Communication Review_ 37.3 (2007): 83-84.
+
+Mitzenmacher, M.,\
+**[How to Read a Research Paper](https://www.eecs.harvard.edu/~michaelm/postscripts/ReadPaper.pdf)**
+ -->
+<!-- 
+18. **[Datasheets for datasets](https://arxiv.org/pdf/1803.09010.pdf)** <br/>
+* Gebru, Timnit, et al. \
+_Communications of the ACM_ 64.12 (2021): 86-92.
+* **[Pause Giant AI Experiments: An Open Letter](https://futureoflife.org/open-letter/pause-giant-ai-experiments/)**
+<hr/> 
+-->
+<!-- ### **[Bitcoin: A peer-to-peer electronic cash system](https://assets.pubpub.org/d8wct41f/31611263538139.pdf)**<br/>
+Nakamoto, Satoshi.\
+Decentralized business review (2008): 21260.
+
+<hr/> -->
+<!-- * Dwivedi, Yogesh K., et al.\
+**[“So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy](https://www.sciencedirect.com/science/article/pii/S0268401223000233)**,<br/>
+International Journal of Information Management 71 (2023): 102642.
+
+<hr/>
+
+### **[Combining Satellite Imagery and Machine Learning to Predict Poverty](https://scholar.archive.org/work/hvolprbfevflbog7aw25cqqrwm/access/wayback/http://nealjean.com/papers/science_main.pdf)** <br/>
+Jean, Neal, et al.\
+Science 353.6301 (2016): 790-794.
+
+
+Blumenstock, Joshua, Gabriel Cadamuro, and Robert On. \
+**[Predicting Poverty and Wealth from Mobile Phone Metadata](https://dlab.epfl.ch/teaching/spring2019/cs718/papers/blumenstock2015predicting.pdf)**<br/>
+Science 350.6264 (2015): 1073-1076.
+
+<hr/> -->
+<!-- 
+### **[Science of Science](https://www.science.org/doi/full/10.1126/science.aao0185)**<br/>
+Fortunato, S., Bergstrom, C. T.,  ... & Barabási, A. L. (2018). \
+_Science_, 359(6379), eaao0185.
+
+* West, Jevin D., and Carl T. Bergstrom. \
+**[Misinformation in and about science](https://www.pnas.org/doi/full/10.1073/pnas.1912444117)**. <br/> 
+_Proceedings of the National Academy of Sciences_ 118.15 (2021): e1912444117.
+
+<hr/> -->
+<!-- * Ley, Michael. \
+**[The DBLP computer science bibliography: Evolution, research issues, perspectives.](https://link.springer.com/chapter/10.1007/3-540-45735-6_1)** <br/>
+String Processing and Information Retrieval: 9th International Symposium, SPIRE 2002 Lisbon, Portugal, September 11–13, 2002 Proceedings 9. Springer Berlin Heidelberg, 2002.
+
+* Ley, Michael. \
+**[DBLP: some lessons learned](https://dl.acm.org/doi/abs/10.14778/1687553.1687577?casa_token=w-XI6piavuMAAAAA%3AXYmmUBGnxlgrcv7pFU_av6t4XfAJFkNAR6Oi01cimIkt80KwsahPalhnYplbqv5f3RevxGv88og)** <br/>
+_Proceedings of the VLDB Endowment_ 2.2 (2009): 1493-1500.
+
+<hr/> -->
+<!-- 
+### **Computational Social Science**
+
+* Lazer, David, et al. "[Computational social science](https://www.science.org/doi/full/10.1126/science.1167742)." Science 323.5915 (2009): 721-723.
+
+* Wallach, Hanna. "[Computational social science≠ computer science+ social data](https://dl.acm.org/doi/fullHtml/10.1145/3132698)." Communications of the ACM 61.3 (2018): 42-44.
+
+* Zhang, Jun, et al. ["Data-driven computational social science: A survey."](https://arxiv.org/pdf/2008.12372.pdf) Big Data Research 21 (2020): 100145. -->
+<!--- ### **Seminal Papers** 
+
+* [Information Management a Proposal](https://cds.cern.ch/record/369245/files/dd-89-001.pdf)<br/>
+Tim Berners-Lee\
+CERN, 1989
+
+
+5. Future of Programming CHI 
+
+6. How Chat GPT works Wolfram 
+
+7. No SQL databases - Graph Databases 
+
+8. Future of the Web vs. Apps debate
+
+9. Future programming language 
+
+10. Software Engineering journal 
+
+<hr/> --->
+<!-- 
+* Nasehi, Seyed Mehdi, et al.\
+**[What makes a good code example?: A study of programming Q&A in StackOverflow](https://ieeexplore.ieee.org/abstract/document/6405249)**<br/>
+2012 28th IEEE International Conference on Software Maintenance (ICSM). IEEE, 2012.
+
+<hr/>
+
+
+* Dijkstra, Edger W. \
+**[On the Cruelty of Really Teaching Computing Science](https://www.psy.gla.ac.uk/~steve/educ/dijk/EWD1036.v4.pdf)**, <br/>
+Communications of the ACM 32.12 (1989): 1398-1404. -->
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./class_discussions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../project/presentation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Presentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class Discussions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Syed Fahad Sultan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
