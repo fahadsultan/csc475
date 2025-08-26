@@ -27,7 +27,7 @@ elections
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Input [0;32mIn [7][0m, in [0;36m<cell line: 4>[0;34m()[0m
+Cell [0;32mIn[7], line 4[0m
 [1;32m      1[0m [38;5;66;03m# `pd` is the conventional alias for Pandas, as `np` is for NumPy[39;00m
 [1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
 [0;32m----> 4[0m elections [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m../data/elections.csv[39;49m[38;5;124;43m"[39;49m[43m)[49m

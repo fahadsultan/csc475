@@ -1,74 +1,11 @@
 
 # Project 
 
-<!-- ## Ideas: 
-
-01. Bureau of Labor Statistics project
-02. Computational Finance project 
-03. NYC project? 
-04. ChatGPT API
-05. Spotify Project 
-06. Education IPEDS project
-07. VR code
-08. TikTok API bellingcat
-09. React.js project
-10. 
-
-* **[Project Prepreposal](https://docs.google.com/document/d/1feE6sO5X7wMhPAwt8HoIvxz0Gk6tUIKf_VOG4xqtdGU/edit)**
-* **[Project Proposal](https://www.overleaf.com/project/64fb72d8ef07452bcb240e6d)**
-* **[Literature Review](https://docs.google.com/document/d/1EEvQ-KIendOy5tNeTyO6JuYLzf9Xfkc8_ygL84kQ4uc/edit)**
-* **[Preliminary Report](https://www.overleaf.com/project/654d27387c4fce8510ef409e)** -->
-
 In this course, you will plan, execute, and present the results of a term-long project of your choosing. If you are an Information Technology major, your project must relate to your cognate discipline. 
 
 In the project, _**you will be asking a question and defending an argument in a Final Paper, in [Class Presentation](https://docs.google.com/presentation/d/1y4OMQq9ChapHJF-cUaYQa6J7IUvhlgL5Z-AJ8MRbJis/edit?usp=sharing), and [Poster](https://docs.google.com/presentation/d/12WyL8m-YKPqiJ7r9GkSo76Du0YdzAppPeT3xjPy1yj0/edit?usp=sharing) at Furman Engaged.**_
 
-In addition to our seminar discussions, many class sessions will be devoted to instruction on planning, executing, and presenting your project. 
-
-The steps of your project are to mirror the steps of the scientific method:
-
-```{note}
-You might want to start by identifying a data set to ground your question.
-```
-
-1. **Identify a question** that you want to answer. 
-
-2. **Identify a data set (evidence)** that will help you answer the question. 
-
-3. **[Conduct a literature search]()** to see what others have done. 
-
-4. **Identify a model (hypothesis)** that will help you answer the question. 
-
-5. **Analyze the results** using the model and data. 
-6. **Draw conclusions** from the results. 
-7. **Presentation** of your findings 
-
-<!-- 
-* Each student will be responsible to turn in **3-5 page project proposals/literature search and progress reports** as of the dates above.   -->
-
-<!-- 
-Your project will likely take one of three forms: 
-
-1. Conduct an extensive and systematic literature review on a particular topic in computer science.
-2. Create an application.
-3. Data Analysis project. 
-
-Note that an application need not be robust, but must be sufficiently functional to illustrate your argument.  -->
-
-<!-- 1. What is the problem you are trying to solve?
-2. Why is it important?
-3. Why is it challenging?
-4. What is the data you are using?
-5. What is the model you are using?
-6. What are the results?
-8. What are the conclusions? -->
-
-<!-- 
-**Peer Grading**: A substantial part of the grading of the projects will be done by peers: each student will be charged with grading three other projects on the same topic. _Peer review is how research papers are selected for publication in academia_, and I hope this will be revealing.  I am hoping that this review will provide insights to improve your own projects as well.
-
-~~To preserve **anonymity in submissions**, it is important that the papers you submit online for grading **not contain your names** or ID numbers. Indeed, the peer grading form/rubric will include a question if the grader can figure out whose paper they have, and if so we will take off points.~~
-
-**Your project code should be on [Github](https://github.com) and your manuscript should be on [Overleaf](https://overleaf.com).** See links below for more details.  -->
+**Your project code should be on [Github](https://github.com) and your manuscript should be on [Overleaf](https://overleaf.com).** See links below for more details.  
 
 ## Resources
 
@@ -185,30 +122,14 @@ Following data sets and ideas are only there to give you a starting point. You a
 
 <!-- * Use **historical trend to predict future value of an indicator**. **Time Series**{: .label .label-purple }  -->
 
-## Fall 2023 Projects 
-<!-- 
-### CSC-272 
+## Past CSC-475 Projects 
 
-* Louisa Brown (Math '24), Nathan Sarro (Applied Math '24) _[Finding Fraud in the Figures: Predicting Credit Card Transactions]()_
-
-* Gregory Kubista (Chemistry '25), Evan Barker (Economics '24), Andrew Farrell (Physics '25), _[Analyzing Drug Offences in NYC]()_
-
-* Disha Patel (IT '25), Grace Warren (CS, '24), _[Predicting the Prevalence of Chronic Conditions in Medicare Beneficiaries]()_
-
-* Abby Stapelton (Chemistry '24), Conor Bready (Chemistry '24), Julian Ashby (Physics '24), _[Predicting Nobel Prize Award Category By Country Educational Statistics]()_
-
-* Hannah Lee (Biology '24), Braden Burke (Economics '24), William Adams (Economics '24), _[Predicting Airbnb Ratings]()_
-
-* Anna Holland (Chemistry '25), Victoria Fenwick (Business Administration '25), _[Predicting Anxiety Response]()_
-
-* Cole Chapple (Economics '24), Ivey Shiver (Business Administration '24), _[Predicting Arrests in Chicago]()_
-
-* Jonathan Lawrence (CS '24), _[NCAA Basketball Analytics: Predicting Post-Season Tournament Teams]()_ -->
-
-### CSC-475 
 
 | Name | Title | Poster | Present | Final Report | Website | Code |
 |------|-------|--------|--------------|--------------|---------|------|
+| **Temptare** | Joshua Berger | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/Joshua%20Berger.pdf) | | | | |
+| **Dialect Dive** | Ainsley Yoshizumi | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/Ainsley%20Yoshizumi.pdf) | | | | |
+| **Analyzing MLB Contracts** | Caden Perry | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/Caden%20Parry_744352_assignsubmission_file_Furman%20Engaged%20Poster%20(Final).pdf) | | | |
 | **Animatlas** | Sophie Ngo | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Sophie%20Ngo_687893_assignsubmission_file_final%20poster.pdf) | [📽](https://docs.google.com/presentation/d/1RvoiPwSyw_So-QRNiprhGqxnmZblDsrb6_Za5Q-s5ZU/edit#slide=id.p1) | [📝](https://github.com/fahadsultan/csc475/blob/main/project/fall23_reports/Sophie%20Ngo_687925_assignsubmission_file_CSC_475_Final_Report___Sophie_Ngo.pdf) | [🌐](https://animatlas.net/) | [💻](https://github.com/Sophie-Ngo/AnimAtlas)
 | **Autoregressive Stock Prediction Modeling** | Emil Westling | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Emil%20Westling_687892_assignsubmission_file_Poster%20CSC475.pdf) | [📽](https://github.com/fahadsultan/csc475/blob/main/project/fall23_presentations/Emil%20Westling_688032_assignsubmission_file_Seminar%20presentation.pdf) | <a href="https://github.com/fahadsultan/csc475/blob/main/project/fall23_reports/EmilReport.pdf">📝</a> | <a href="https://emilwestling.com/AlgorithmTrading/">🌐</a> | [💻](https://github.com/emilwestling/AlgorithmTrading) |
 | **Making MacroEconomic Indicators Accessible** | Joshua Hutson | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Joshua%20Hutson_687894_assignsubmission_file_Hutson%20CSC-475%20Poster.pdf) | [📽](https://github.com/fahadsultan/csc475/blob/main/project/fall23_presentations/Joshua%20Hutson_688037_assignsubmission_file_Final%20Presentation%20Link.pdf) | [📝](https://github.com/fahadsultan/csc475/blob/main/project/fall23_reports/Joshua%20Hutson_687924_assignsubmission_file_Hutson_CSC_475_Final_Report.pdf) | [🌐](https://penguin-del.github.io/CSC-475_Project/) | [💻](https://github.com/penguin-del/CSC-475_Project) |

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Pandas I: Data Structures &#8212; CSC-475</title>
   
@@ -15,58 +14,56 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/pandas1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Pandas II: Selection, Filtering and Dropping" href="pandas2.html" />
     <link rel="prev" title="pandas: Vectorized Operations" href="10_dataops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -128,9 +137,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -140,12 +153,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo2.png" class="logo__image only-light" alt="CSC-475 - Home"/>
+    <script>document.write(`<img src="../_static/logo2.png" class="logo__image only-dark" alt="CSC-475 - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -156,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../policies/grading.html">Grading</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../policies/academic_success.html">Academic Success</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../policies/accomodations.html">Accomodations</a></li>
@@ -164,13 +188,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="../policies/title_9.html">Nondiscrimination Policy and Sexual Misconduct</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways (Spring ‘24)</a></li>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../project/preproposal.html">Pre-Proposal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
@@ -178,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../project/poster.html">Poster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../project/presentation.html">Presentation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
 <ul class="nav bd-sidenav">
@@ -195,18 +219,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas I: Data Structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="gmaps.html">Google Maps</a></li>
 </ul>
 
@@ -223,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -232,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -361,26 +385,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -424,14 +450,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas-i-data-structures">
-<h1>Pandas I: Data Structures<a class="headerlink" href="#pandas-i-data-structures" title="Permalink to this headline">#</a></h1>
+<h1>Pandas I: Data Structures<a class="headerlink" href="#pandas-i-data-structures" title="Link to this heading">#</a></h1>
 <p>Lets dive right into things by having you explore and manipulate real-world data. To do so, we’ll introduce <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, a popular Python library for interacting with tabular data.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> is generally accepted in the data science community as the industry- and academia-standard tool for manipulating tabular data.</p>
 <section id="tabular-data">
-<h2>Tabular Data<a class="headerlink" href="#tabular-data" title="Permalink to this headline">#</a></h2>
+<h2>Tabular Data<a class="headerlink" href="#tabular-data" title="Link to this heading">#</a></h2>
 <p>Data scientists work with data stored in a variety of formats. The primary focus of this class is in understanding <em>tabular data</em> –– data that is stored in a table.</p>
 <p>Tabular data is one of the most common systems that data scientists use to organize data. This is in large part due to the simplicity and flexibility of tables. Tables allow us to represent each <strong>observation</strong>, or instance of collecting data from an individual, as its own row. We can record distinct characteristics, or <strong>features</strong>, of each observation in separate columns.</p>
 <p>To see this in action, we’ll explore the <code class="docutils literal notranslate"><span class="pre">elections</span></code> dataset, which stores information about political candidates who ran for president of the United States in various years.</p>
@@ -592,7 +618,7 @@ document.write(`
 <p>In the <code class="docutils literal notranslate"><span class="pre">elections</span></code> dataset, each row represents one instance of a candidate running for president in a particular year. For example, the first row represents Andrew Jackson running for president in the year 1824. Each column represents one characteristic piece of information about each presidential candidate. For example, the column named <code class="docutils literal notranslate"><span class="pre">Result</span></code> stores whether or not the candidate won the election.</p>
 </section>
 <section id="dataframes-series-and-indices">
-<h2>DataFrames, Series and Indices<a class="headerlink" href="#dataframes-series-and-indices" title="Permalink to this headline">#</a></h2>
+<h2>DataFrames, Series and Indices<a class="headerlink" href="#dataframes-series-and-indices" title="Link to this heading">#</a></h2>
 <p>There are three fundamental data structures in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>:</p>
 <ol class="arabic simple">
 <li><p><strong>Series</strong>: 1D labeled array data; best thought of as columnar data</p></li>
@@ -603,19 +629,19 @@ document.write(`
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/data_structure.png"><img alt="https://fahadsultan.com/datascience_ml/_images/data_structure.png" src="https://fahadsultan.com/datascience_ml/_images/data_structure.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Three fundamental <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data structures: <strong>Series</strong>, <strong>DataFrame</strong>, <strong>Index</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Three fundamental <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data structures: <strong>Series</strong>, <strong>DataFrame</strong>, <strong>Index</strong></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Notice how the <strong>DataFrame</strong> is a two-dimensional object – it contains both rows and columns. The <strong>Series</strong> above is a singular column of this <strong>DataFrame</strong>, namely, the <code class="docutils literal notranslate"><span class="pre">Result</span></code> column. Both contain an <strong>Index</strong>, or a shared list of row labels (here, the integers from 0 to 4, inclusive).</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png"><img alt="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Schematic of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> and  <strong>Series</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Schematic of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> and  <strong>Series</strong></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="series">
-<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h2>
+<h2>Series<a class="headerlink" href="#series" title="Link to this heading">#</a></h2>
 <p>A Series represents a column of a DataFrame; more generally, it can be any 1-dimensional array-like object containing values of the same type with associated data labels, called its index. In the cell below, we create a Series named <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -694,7 +720,7 @@ dtype: int64
 </div>
 </section>
 <section id="dataframe">
-<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h2>
+<h2>DataFrame<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
 <p>With our new understanding of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> in hand, let’s return to the <code class="docutils literal notranslate"><span class="pre">elections</span></code> dataset from before. Now, we recognize that it is represented as a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -710,7 +736,7 @@ dtype: int64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># `pd` is the conventional alias for Pandas, as `np` is for NumPy</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">elections</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/elections.csv&quot;</span><span class="p">)</span>
@@ -799,17 +825,17 @@ dtype: int64
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/df_cols.png"><img alt="https://fahadsultan.com/datascience_ml/_images/df_cols.png" src="https://fahadsultan.com/datascience_ml/_images/df_cols.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Each column of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.index</span></code></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Each column of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.index</span></code></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/df_rows.png"><img alt="https://fahadsultan.com/datascience_ml/_images/df_rows.png" src="https://fahadsultan.com/datascience_ml/_images/df_rows.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Each row of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.columns</span></code></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Each row of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.columns</span></code></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="creating-a-dataframe">
-<h3>Creating a DataFrame<a class="headerlink" href="#creating-a-dataframe" title="Permalink to this headline">#</a></h3>
+<h3>Creating a DataFrame<a class="headerlink" href="#creating-a-dataframe" title="Link to this heading">#</a></h3>
 <p>There are many ways to create a DataFrame. Here, we will cover the most popular approaches.</p>
 <ol class="arabic simple">
 <li><p>Using a list and column names</p></li>
@@ -817,7 +843,7 @@ dtype: int64
 <li><p>From a Series</p></li>
 </ol>
 <section id="using-a-list-and-column-names">
-<h4>Using a List and Column Names<a class="headerlink" href="#using-a-list-and-column-names" title="Permalink to this headline">#</a></h4>
+<h4>Using a List and Column Names<a class="headerlink" href="#using-a-list-and-column-names" title="Link to this heading">#</a></h4>
 <p>Consider the following examples. The first code cell creates a DataFrame with a single column <code class="docutils literal notranslate"><span class="pre">Numbers</span></code>. The second creates a DataFrame with the columns <code class="docutils literal notranslate"><span class="pre">Numbers</span></code> and <code class="docutils literal notranslate"><span class="pre">Description</span></code>. Notice how a 2D list of values is required to initialize the second DataFrame – each nested list represents a single row of data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -912,7 +938,7 @@ dtype: int64
 </div>
 </section>
 <section id="from-a-dictionary">
-<h4>From a Dictionary<a class="headerlink" href="#from-a-dictionary" title="Permalink to this headline">#</a></h4>
+<h4>From a Dictionary<a class="headerlink" href="#from-a-dictionary" title="Link to this heading">#</a></h4>
 <p>A second (and more common) way to create a DataFrame is with a dictionary. The dictionary keys represent the column names, and the dictionary values represent the column values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -961,7 +987,7 @@ dtype: int64
 </div>
 </section>
 <section id="from-a-series">
-<h4>From a Series<a class="headerlink" href="#from-a-series" title="Permalink to this headline">#</a></h4>
+<h4>From a Series<a class="headerlink" href="#from-a-series" title="Link to this heading">#</a></h4>
 <p>Earlier, we noted that a Series is usually thought of as a column in a DataFrame. It follows then, that a DataFrame is equivalent to a collection of Series, which all share the same index.</p>
 <p>In fact, we can initialize a DataFrame by merging two or more Series.</p>
 <div class="cell docutils container">
@@ -1022,7 +1048,7 @@ dtype: int64
 </section>
 </section>
 <section id="indices">
-<h2>Indices<a class="headerlink" href="#indices" title="Permalink to this headline">#</a></h2>
+<h2>Indices<a class="headerlink" href="#indices" title="Link to this heading">#</a></h2>
 <p>The major takeaway: we can think of a <strong>DataFrame</strong> as a collection of <strong>Series</strong> that all share the same <strong>Index</strong>.</p>
 <p>On a more technical note, an Index doesn’t have to be an integer, nor does it have to be unique. For example, we can set the index of the <code class="docutils literal notranslate"><span class="pre">elections</span></code> Dataframe to be the name of presidential candidates.</p>
 <div class="cell docutils container">
@@ -1063,7 +1089,7 @@ dtype: int64
 </div>
 </section>
 <section id="arithmetic-and-data-alignment">
-<h2>Arithmetic and Data Alignment<a class="headerlink" href="#arithmetic-and-data-alignment" title="Permalink to this headline">#</a></h2>
+<h2>Arithmetic and Data Alignment<a class="headerlink" href="#arithmetic-and-data-alignment" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> can make it much simpler to work with objects that have different indexes. For example, when you add objects, if any index pairs are not the same, the respective index in the result will be the union of the index pairs. Let’s look at an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1285,11 +1311,10 @@ dtype: float64
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="10_dataops.html"
@@ -1309,10 +1334,7 @@ dtype: float64
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1320,6 +1342,7 @@ dtype: float64
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1362,9 +1385,10 @@ By Syed Fahad Sultan
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1388,8 +1412,8 @@ By Syed Fahad Sultan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Dos and Donts of Visualization &#8212; CSC-475</title>
   
@@ -15,51 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/23_dosdonts';</script>
@@ -68,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Google Maps" href="gmaps.html" />
     <link rel="prev" title="Multivariate Visualizations" href="22_multivariate.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -76,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -110,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -130,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -142,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo2.png" class="logo__image only-light" alt="CSC-475 - Home"/>
+    <script>document.write(`<img src="../_static/logo2.png" class="logo__image only-dark" alt="CSC-475 - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -158,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../policies/grading.html">Grading</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../policies/academic_success.html">Academic Success</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../policies/accomodations.html">Accomodations</a></li>
@@ -166,13 +190,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="../policies/title_9.html">Nondiscrimination Policy and Sexual Misconduct</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways (Spring ‘24)</a></li>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../project/preproposal.html">Pre-Proposal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
@@ -180,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../project/poster.html">Poster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../project/presentation.html">Presentation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
 <ul class="nav bd-sidenav">
@@ -197,18 +221,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Dos and Donts of Visualization</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="gmaps.html">Google Maps</a></li>
 </ul>
 
@@ -225,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -234,14 +258,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -363,26 +387,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -430,17 +456,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dos-and-donts-of-visualization">
-<h1>Dos and Donts of Visualization<a class="headerlink" href="#dos-and-donts-of-visualization" title="Permalink to this headline">#</a></h1>
+<h1>Dos and Donts of Visualization<a class="headerlink" href="#dos-and-donts-of-visualization" title="Link to this heading">#</a></h1>
 <p>Distinguishing good vs. bad visualizations requires a design aesthetic, and a vocabulary to talk about data representations.</p>
 <p>Here, we will discuss some recommendations for creating effective visualizations, and some common pitfalls to avoid.</p>
 <section id="dos">
-<h2>Dos ✅<a class="headerlink" href="#dos" title="Permalink to this headline">#</a></h2>
+<h2>Dos ✅<a class="headerlink" href="#dos" title="Link to this heading">#</a></h2>
 <p>The following recommendations are Edward Tufte’s Visualization Aesthetic</p>
 <section id="maximize-data-ink-ratio">
-<h3>Maximize data ink-ratio<a class="headerlink" href="#maximize-data-ink-ratio" title="Permalink to this headline">#</a></h3>
+<h3>Maximize data ink-ratio<a class="headerlink" href="#maximize-data-ink-ratio" title="Link to this heading">#</a></h3>
 <p>The data ink ratio is the proportion of the plotting area dedicated to displaying the data. It is defined as:</p>
 <p><span class="math notranslate nohighlight">\(\text{Data-Ink Ratio} = \frac{\text{Data Ink}}{\text{Total ink used in graph}}\)</span></p>
 <p>The goal is to maximize the data ink ratio. In other words, we want to maximize the proportion of the plotting area dedicated to displaying the data and minimize the proportion dedicated to non-data ink.</p>
@@ -451,7 +477,7 @@ document.write(`
 Similar to the first example, the data shown in both panels of the figure above is the same. However, the panel on the left has a low data ink ratio because it includes needless icons, grid lines and fancy fonts. The panel on the right cleans up the visualization by minimizing all the non-data ink.
 </section>
 <section id="use-1-1-aspect-ratio">
-<h3>Use 1:1 Aspect Ratio<a class="headerlink" href="#use-1-1-aspect-ratio" title="Permalink to this headline">#</a></h3>
+<h3>Use 1:1 Aspect Ratio<a class="headerlink" href="#use-1-1-aspect-ratio" title="Link to this heading">#</a></h3>
 <p>The aspect ratio of the visualization should be 1:1. In other words, the width of the visualization should be equal to the height of the visualization. This ensures that the data is not distorted.</p>
 <p>This is particularly true for line graphs. If the aspect ratio is not 1:1, then the slope of the line will be distorted. The steepness of apparent <em>trends</em> in a line plot is a function of aspect ratio. Aim for 45° lines or Golden ratio (<span class="math notranslate nohighlight">\(\approx 1.618\)</span>) as most interpretable.</p>
 <center>
@@ -460,37 +486,37 @@ Similar to the first example, the data shown in both panels of the figure above 
 <!-- <img src="https://miro.medium.com/v2/resize:fit:11998/1*7pfffHqyf4ZnZ91cDMGzrQ.jpeg"> -->
 </section>
 <section id="bar-graphs-start-at-0">
-<h3>Bar graphs start at 0<a class="headerlink" href="#bar-graphs-start-at-0" title="Permalink to this headline">#</a></h3>
+<h3>Bar graphs start at 0<a class="headerlink" href="#bar-graphs-start-at-0" title="Link to this heading">#</a></h3>
 <p>Bar graphs should always start at zero. If the bar graph does not start at zero, then the differences between the bars will be distorted.</p>
 <center>
 <img width="70%" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/bars0.jpeg">
 </center>
 </section>
 <section id="use-continuous-scales">
-<h3>Use continuous scales<a class="headerlink" href="#use-continuous-scales" title="Permalink to this headline">#</a></h3>
+<h3>Use continuous scales<a class="headerlink" href="#use-continuous-scales" title="Link to this heading">#</a></h3>
 <p>The scale of the axes should be continuous. In other words, the scale should be linear or logarithmic. Do not use a scale that is discontinuous or non-linear.</p>
 <center>
 <img width="70%" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/ranges2.png">
 </center>
 </section>
 <section id="use-the-right-colors">
-<h3>Use the right colors<a class="headerlink" href="#use-the-right-colors" title="Permalink to this headline">#</a></h3>
+<h3>Use the right colors<a class="headerlink" href="#use-the-right-colors" title="Link to this heading">#</a></h3>
 <p>If the data is categorical, then use qualitative colormaps. If your data ranges from negative to positive values use divergent colormaps. If your data ranges from low to high values, then use sequential colormaps.</p>
 <center><img width="50%" src="https://matplotlib.org/stable/_images/sphx_glr_colormap_reference_002_2_00x.png"></center>
 <center><img width="50%" src="https://matplotlib.org/stable/_images/sphx_glr_colormap_reference_006_2_00x.png"></center>
 <center><img width="50%" src="https://matplotlib.org/stable/_images/sphx_glr_colormap_reference_004_2_00x.png"></center>
 </section>
 <section id="order-your-numerical-axes">
-<h3>Order your numerical axes<a class="headerlink" href="#order-your-numerical-axes" title="Permalink to this headline">#</a></h3>
+<h3>Order your numerical axes<a class="headerlink" href="#order-your-numerical-axes" title="Link to this heading">#</a></h3>
 <p>The numerical axes should be ordered. For example, if the x-axis represents time, then the x-axis should be ordered from earliest to latest. If the x-axis represents age, then the x-axis should be ordered from youngest to oldest.</p>
 <p>Othwerwise, the data will be difficult to interpret as the viewer will not know which data point corresponds to which value on the x-axis. Example of an unordered x-axis:</p>
 <center><img width="60%" src="https://i.imgur.com/0qVlR6P.png"></center>
 </section>
 </section>
 <section id="donts">
-<h2>Donts ❌<a class="headerlink" href="#donts" title="Permalink to this headline">#</a></h2>
+<h2>Donts ❌<a class="headerlink" href="#donts" title="Link to this heading">#</a></h2>
 <section id="forget-to-label">
-<h3>Forget to label<a class="headerlink" href="#forget-to-label" title="Permalink to this headline">#</a></h3>
+<h3>Forget to label<a class="headerlink" href="#forget-to-label" title="Link to this heading">#</a></h3>
 <p>All visualizations should have at minimum contain the following:</p>
 <ol class="arabic simple">
 <li><p>A clear and descriptive <strong>Title</strong>.</p></li>
@@ -506,7 +532,7 @@ Similar to the first example, the data shown in both panels of the figure above 
 <p>Note that the figure above is missing axis labels. No, <em>“wave1”</em>, <em>“wave2”</em>, <em>“wave3”</em> and <em>“wave4”</em> are not proper  labels for the x-axis. <em>“Are we stuck?”</em> is also not a very informative title.</p>
 </section>
 <section id="scale-distortion">
-<h3>Scale Distortion<a class="headerlink" href="#scale-distortion" title="Permalink to this headline">#</a></h3>
+<h3>Scale Distortion<a class="headerlink" href="#scale-distortion" title="Link to this heading">#</a></h3>
 <p>The scale of the effect in the graphic should match the scale of the effect in the data. In other words, the difference in size of the graphics should be proportional to the difference in values in the data.</p>
 <p><span class="math notranslate nohighlight">\( \text{Scale Distortion} \rightarrow \text{size of effect in graphic} \neq \text{size of effect in data}\)</span></p>
 <center>
@@ -517,27 +543,27 @@ Similar to the first example, the data shown in both panels of the figure above 
 </center> -->
 </section>
 <section id="use-uneven-ranges">
-<h3>Use uneven ranges<a class="headerlink" href="#use-uneven-ranges" title="Permalink to this headline">#</a></h3>
+<h3>Use uneven ranges<a class="headerlink" href="#use-uneven-ranges" title="Link to this heading">#</a></h3>
 <p>If ranges are not equal, then you can essentially tell any story with the data you want. Catching this is difficult, but it is a common trick deliberately used to mislead the viewer.</p>
 <center>
 <img width="70%" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/ranges1.png">
 </center></section>
 <section id="use-line-graphs-where-the-x-axis-is-not-time">
-<h3>Use line graphs where the x-axis is not time<a class="headerlink" href="#use-line-graphs-where-the-x-axis-is-not-time" title="Permalink to this headline">#</a></h3>
+<h3>Use line graphs where the x-axis is not time<a class="headerlink" href="#use-line-graphs-where-the-x-axis-is-not-time" title="Link to this heading">#</a></h3>
 <p>Plotting a line graph where the x-axis is not time is confusing. Use a bar graph instead.</p>
 <center>
 <img width="70%" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/line2.png">
 </center>
 </section>
 <section id="use-the-wrong-colors">
-<h3>Use the wrong colors<a class="headerlink" href="#use-the-wrong-colors" title="Permalink to this headline">#</a></h3>
+<h3>Use the wrong colors<a class="headerlink" href="#use-the-wrong-colors" title="Link to this heading">#</a></h3>
 <p>If the data is categorical, then use qualitative colormaps. Do not use sequential colormaps.</p>
 <center>
 <img width="50%" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/scale3.png">
 </center>
 </section>
 <section id="use-3d">
-<h3>Use 3D<a class="headerlink" href="#use-3d" title="Permalink to this headline">#</a></h3>
+<h3>Use 3D<a class="headerlink" href="#use-3d" title="Link to this heading">#</a></h3>
 <p>Please. Just. Don’t.</p>
 </section>
 </section>
@@ -568,11 +594,10 @@ Similar to the first example, the data shown in both panels of the figure above 
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="22_multivariate.html"
@@ -592,10 +617,7 @@ Similar to the first example, the data shown in both panels of the figure above 
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -603,6 +625,7 @@ Similar to the first example, the data shown in both panels of the figure above 
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -649,9 +672,10 @@ By Syed Fahad Sultan
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -675,8 +699,8 @@ By Syed Fahad Sultan
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
