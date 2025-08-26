@@ -1,5 +1,5 @@
 
-# Purposeful Pathways (Spring '24)
+# Purposeful Pathways
 
 During the semester, you **must attend two events** that are designated as **Purposeful Pathways** events for Computer Science.
 
@@ -34,7 +34,7 @@ This will allow **IT majors will ultimately participate in a minimum of six acti
 
 <hr/>
 
-Schedule of Experiences for this semester:
+<!--Schedule of Experiences for this semester:
 
 ## January
 
@@ -102,4 +102,4 @@ With prior approval of the professor, activities such as [informational intervie
 
 PLEASE NOTE THAT ADDITIONAL ACTIVITIES MAY BE ADDED TO THIS SCHEDULE THROUGHOUT THE SEMESTER. 
 
-CHECK IT REGULARLY.
+CHECK IT REGULARLY. -->
