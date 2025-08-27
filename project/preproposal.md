@@ -1,11 +1,6 @@
 
 # Pre-Proposal
 
-```{important}
-Due Tuesday, January 16th, 2024 11:59 PM
-(5% of the course grade) 
-``` 
-
 1. Create accounts on **[Overleaf](https://www.overleaf.com/)** and **[Github](https://github.com/)** and share your account information. 
 
 2. Identify 3 potential project ideas for your CSC-475 Project. Describe each idea in 250 words or more. 

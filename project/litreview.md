@@ -1,9 +1,5 @@
 # Literature Review 
 
-```{important}
-Literature Review is due on **February 20th** at 2:30 PM. 
-```
-
 For the next phase of the project, you are to conduct a literature review for your proposed project. Add a "Literature Review" section to the same Overleaf project as your Project Proposal.
 
 The literature review should include **a minimum of 10 new citations of relevant sources. The majority of the sources should be peer-reviewed conference or journal articles**. The citations in the literature review should should reflect the state of the art existing work in the area of your project.
