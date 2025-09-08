@@ -37,12 +37,12 @@ parts:
     chapters:
     # - file: tutorials/index
     #   sections: 
-      - file: tutorials/latex
       - file: tutorials/shell
+      - file: tutorials/github
       - file: tutorials/ssh
       - file: tutorials/git
-      - file: tutorials/github
       - file: tutorials/github_pages
+      - file: tutorials/latex
       - file: tutorials/markdown
       - file: tutorials/bokeh
       - file: tutorials/10_dataops

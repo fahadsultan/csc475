@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="git: Version Control" href="git.html" />
-    <link rel="prev" title="sh: Shell" href="shell.html" />
+    <link rel="prev" title="Github: Social Network of Programmers" href="github.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -211,12 +211,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -433,6 +433,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-ssh-key-to-your-clipboard">Copy the SSH key to your clipboard</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-ssh-key-to-github">Add SSH key to GitHub</a></li>
 </ul>
             </nav>
         </div>
@@ -462,7 +463,7 @@ document.write(`
 <figure class="align-default" id="ssh">
 <a class="reference internal image-reference" href="../_images/ssh.png"><img alt="../_images/ssh.png" src="../_images/ssh.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">SSH keys</span><a class="headerlink" href="#ssh" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">SSH keys</span><a class="headerlink" href="#ssh" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="check-if-you-already-have-an-ssh-key">
@@ -520,6 +521,21 @@ Windows</label><div class="sd-tab-content docutils">
 <p>Now you can paste your public ssh key on the website you want to use it on.</p>
 </section>
 </section>
+<section id="add-ssh-key-to-github">
+<h2>Add SSH key to GitHub<a class="headerlink" href="#add-ssh-key-to-github" title="Link to this heading">#</a></h2>
+<img width="35%" align="right" src="https://docs.github.com/assets/cb-65929/mw-1440/images/help/settings/userbar-account-settings.webp">
+<p>Go to your GitHub account settings and click on SSH and GPG keys. Then click on New SSH key. Give a title to your key (ideally this should be something like Macbook 2023) and paste the key in the box below. Click on Add SSH key.</p>
+<ol class="arabic simple">
+<li><p>Copy the SSH public key to your clipboard. If your SSH public key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don’t add any newlines or whitespace.  <br/> <br/></p></li>
+<li><p>In the upper-right corner of any page, click your profile photo, then click Settings. <br/> <br/></p></li>
+<li><p>In the “Access” section of the sidebar, click  <strong>SSH and GPG keys</strong>. <br/> <br/></p></li>
+<li><p>Click <strong>New SSH key</strong> or <strong>Add SSH key</strong>. <br/> <br/></p></li>
+<li><p>In the “Title” field, add a descriptive label for the new key. For example, if you’re using a personal laptop, you might call this key “Personal laptop”. <br/> <br/></p></li>
+<li><p>In the “Key” field, paste your public key. <br/> <br/></p></li>
+<li><p>Click <strong>Add SSH key</strong>.</p></li>
+</ol>
+<img src="https://fahadsultan.com/potpourri/_images/ssh_key.png">
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -553,12 +569,12 @@ Windows</label><div class="sd-tab-content docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="shell.html"
+       href="github.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</p>
       </div>
     </a>
     <a class="right-next"
@@ -592,6 +608,7 @@ Windows</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-ssh-key-to-your-clipboard">Copy the SSH key to your clipboard</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-ssh-key-to-github">Add SSH key to GitHub</a></li>
 </ul>
   </nav></div>
 
