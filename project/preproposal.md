@@ -25,6 +25,6 @@
 
     **Since, a lot of you mentioned doing something in data science / machine learning, please explore [Kaggle](https://www.kaggle.com/datasets), [Google Dataset Search](https://datasetsearch.research.google.com/) and [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets) for datasets for your projects.**
 
-Based on our conversations in class, your pre-course survey responses and my own interests and areas of expertise, I will also put together a list of ideas that will share by the deadline. 
+<!-- Based on our conversations in class, your pre-course survey responses and my own interests and areas of expertise, I will also put together a list of ideas that will share by the deadline.  -->
 
 Please also note that this is not the _final_ project proposal. However, the final project proposal (due a week later, as indicated on the course website) is likely to be one of the three ideas you propose here or at least closely related. 
