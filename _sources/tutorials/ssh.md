@@ -94,3 +94,26 @@ clip < ~/.ssh/id_rsa.pub
 ````
 
 Now you can paste your public ssh key on the website you want to use it on.
+
+## Add SSH key to GitHub
+
+<img width="35%" align="right" src="https://docs.github.com/assets/cb-65929/mw-1440/images/help/settings/userbar-account-settings.webp">
+
+Go to your GitHub account settings and click on SSH and GPG keys. Then click on New SSH key. Give a title to your key (ideally this should be something like Macbook 2023) and paste the key in the box below. Click on Add SSH key.
+
+1. Copy the SSH public key to your clipboard. If your SSH public key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.  <br/> <br/>
+
+2. In the upper-right corner of any page, click your profile photo, then click Settings. <br/> <br/>
+
+
+3. In the "Access" section of the sidebar, click  **SSH and GPG keys**. <br/> <br/>
+
+4. Click **New SSH key** or **Add SSH key**. <br/> <br/>
+
+5. In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal laptop, you might call this key "Personal laptop". <br/> <br/>
+
+6. In the "Key" field, paste your public key. <br/> <br/>
+
+8. Click **Add SSH key**.
+
+<img src="https://fahadsultan.com/potpourri/_images/ssh_key.png">

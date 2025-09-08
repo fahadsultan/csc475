@@ -1,9 +1,11 @@
 
 # Pre-Proposal
 
-1. Create accounts on **[Overleaf](https://www.overleaf.com/)** and **[Github](https://github.com/)** and share your account information. 
+1. Create accounts on **[Overleaf](https://www.overleaf.com/)** and **[Github](https://github.com/)** and share your account information in your submission. 
 
-2. Identify 3 potential project ideas for your CSC-475 Project. Describe each idea in 250 words or more. 
+2. Review [Past Projects](https://fahadsultan.com/csc475/project/index.html#past-csc-475-projects) for inspiration and to get a sense of scope and possibilities. 
+
+3. Identify 3 potential project ideas for your CSC-475 Project. Describe each idea in 250 words or more. 
 
     Unless you feel completely certain about a specific topic, I strongly encourage you to suggest ideas that are widely varied and diverse. 
 
@@ -20,6 +22,8 @@
     * Are there any interesting publicly available datasets that could be used for the project?
 	
     Please note that none of the considerations above are binding or mandatory, except for the first.  
+
+    **Since, a lot of you mentioned doing something in data science / machine learning, please explore [Kaggle](https://www.kaggle.com/datasets), [Google Dataset Search](https://datasetsearch.research.google.com/) and [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets) for datasets for your projects.**
 
 Based on our conversations in class, your pre-course survey responses and my own interests and areas of expertise, I will also put together a list of ideas that will share by the deadline. 
 
