@@ -1,4 +1,4 @@
-const apiKey = "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"; // Replace with your OpenAI API key
+const apiKey = "api-key"; // Replace with your OpenAI API key
 const chatDiv = document.getElementById('chat');
 const inputField = document.getElementById('input');
 const sendButton = document.getElementById('send');
