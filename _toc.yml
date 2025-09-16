@@ -44,7 +44,10 @@ parts:
       - file: tutorials/github_pages
       - file: tutorials/latex
       - file: tutorials/markdown
+      - file: tutorials/llms.ipynb
       - file: tutorials/openai_api.ipynb
+      - file: tutorials/openai_agents.ipynb
+      - file: tutorials/opensource.ipynb
       - file: tutorials/bokeh
       - file: tutorials/10_dataops
         sections: 

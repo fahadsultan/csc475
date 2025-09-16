@@ -220,6 +220,11 @@
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="llms.html">Large Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api.html"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="openai_agents.html">Agents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
@@ -3293,13 +3298,13 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>72</th>
-      <td>1916</td>
-      <td>Charles Evans Hughes</td>
-      <td>Republican</td>
-      <td>8548728</td>
+      <th>174</th>
+      <td>2016</td>
+      <td>Evan McMullin</td>
+      <td>Independent</td>
+      <td>732273</td>
       <td>loss</td>
-      <td>46.240779</td>
+      <td>0.539546</td>
     </tr>
   </tbody>
 </table>
@@ -3341,15 +3346,6 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>114</th>
-      <td>1964</td>
-      <td>Lyndon Johnson</td>
-      <td>Democratic</td>
-      <td>43127041</td>
-      <td>win</td>
-      <td>61.344703</td>
-    </tr>
-    <tr>
       <th>81</th>
       <td>1924</td>
       <td>John W. Davis</td>
@@ -3359,31 +3355,40 @@ Name: Popular vote, dtype: int64
       <td>28.976291</td>
     </tr>
     <tr>
-      <th>52</th>
-      <td>1896</td>
-      <td>William Jennings Bryan</td>
-      <td>Democratic</td>
-      <td>6509052</td>
-      <td>loss</td>
-      <td>46.871053</td>
-    </tr>
-    <tr>
-      <th>158</th>
-      <td>2004</td>
-      <td>John Kerry</td>
-      <td>Democratic</td>
-      <td>59028444</td>
-      <td>loss</td>
-      <td>48.306775</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>1832</td>
-      <td>Henry Clay</td>
+      <th>3</th>
+      <td>1828</td>
+      <td>John Quincy Adams</td>
       <td>National Republican</td>
-      <td>484205</td>
+      <td>500897</td>
       <td>loss</td>
-      <td>37.603628</td>
+      <td>43.796073</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>1948</td>
+      <td>Thomas E. Dewey</td>
+      <td>Republican</td>
+      <td>21991292</td>
+      <td>loss</td>
+      <td>45.112958</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>1972</td>
+      <td>George McGovern</td>
+      <td>Democratic</td>
+      <td>29173222</td>
+      <td>loss</td>
+      <td>37.670670</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>1916</td>
+      <td>Frank Hanly</td>
+      <td>Prohibition</td>
+      <td>221302</td>
+      <td>loss</td>
+      <td>1.197041</td>
     </tr>
   </tbody>
 </table>
@@ -3425,40 +3430,40 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>65</th>
-      <td>1908</td>
-      <td>William Taft</td>
-      <td>Republican</td>
-      <td>7678335</td>
-      <td>win</td>
-      <td>52.013300</td>
-    </tr>
-    <tr>
-      <th>131</th>
-      <td>1980</td>
+      <th>133</th>
+      <td>1984</td>
       <td>Ronald Reagan</td>
       <td>Republican</td>
-      <td>43903230</td>
+      <td>54455472</td>
       <td>win</td>
-      <td>50.897944</td>
+      <td>59.023326</td>
     </tr>
     <tr>
-      <th>106</th>
-      <td>1952</td>
+      <th>13</th>
+      <td>1844</td>
+      <td>James Polk</td>
+      <td>Democratic</td>
+      <td>1339570</td>
+      <td>win</td>
+      <td>50.749477</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>2016</td>
+      <td>Donald Trump</td>
+      <td>Republican</td>
+      <td>62984828</td>
+      <td>win</td>
+      <td>46.407862</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>1956</td>
       <td>Dwight Eisenhower</td>
       <td>Republican</td>
-      <td>34075529</td>
+      <td>35579180</td>
       <td>win</td>
-      <td>55.325173</td>
-    </tr>
-    <tr>
-      <th>120</th>
-      <td>1972</td>
-      <td>Richard Nixon</td>
-      <td>Republican</td>
-      <td>47168710</td>
-      <td>win</td>
-      <td>60.907806</td>
+      <td>57.650654</td>
     </tr>
   </tbody>
 </table>
