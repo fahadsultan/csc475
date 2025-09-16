@@ -1,0 +1,928 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Large Language Models &#8212; CSC-475</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/llms';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="openAI API" href="openai_api.html" />
+    <link rel="prev" title="Markdown: Writing Content" href="markdown.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo2.png" class="logo__image only-light" alt="CSC-475 - Home"/>
+    <script>document.write(`<img src="../_static/logo2.png" class="logo__image only-dark" alt="CSC-475 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    CSC-475 (Seminar in CS)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../policies/grading.html">Grading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/academic_success.html">Academic Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/accomodations.html">Accomodations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/integrity.html">Academic Integrity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../policies/title_9.html">Nondiscrimination Policy and Sexual Misconduct</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/preproposal.html">Pre-Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/poster.html">Poster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/presentation.html">Presentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../class_discussions/readings.html">Readings / Viewings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class_discussions/index.html">Class Discussions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Large Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api.html"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="openai_agents.html">Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="gmaps.html">Google Maps</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/llms.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/llms.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Large Language Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining-data">1. Pretraining Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-preprocess-the-internet">1.1. Download and Preprocess the Internet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">1.2. Tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-training">1.3. Neural Network Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference">1.4. Inference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-reproducing-openai-s-gpt-2">Demo: Reproducing OpenAI’s GPT-2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-base-models">Open Base Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-base-models-work">How Base Models Work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-training-supervised-fine-tuning">2. Post-Training: Supervised Fine-Tuning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversations-data">2.1. Conversations Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hallucinations-tool-use-and-memory">2.2. Hallucinations, Tool Use, and Memory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tools-to-reduce-hallucinations">2.3. Using Tools to Reduce Hallucinations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-of-self">2.4. Knowledge of Self</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#models-need-tokens-to-think">2.5. Models Need Tokens to Think</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bad-model-output">Bad Model Output:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-model-output">Good Model Output:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-training-reinforcement-learning">3. Post-Training: Reinforcement Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-rl-works">How RL Works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-on-unverifiable-domains-a-k-a-reinforcement-learning-from-human-feedback-rlhf">Learning on unverifiable domains a.k.a Reinforcement Learning from Human Feedback (RLHF)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preview-of-things-to-come">Preview of Things to Come</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keeping-track-of-llms">Keeping Track of LLMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-llms">Where to Find LLMs</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="large-language-models">
+<h1>Large Language Models<a class="headerlink" href="#large-language-models" title="Link to this heading">#</a></h1>
+<p>The following tutorial is a summary of Andrej Karpathy’s video <a class="reference external" href="https://www.youtube.com/watch?v=Te5rOTcE3FQ">A Deep Dive into Large Language Models like ChatGPT</a>. I highly recommend watching the video as well, as it contains a lot of useful information and visualizations that are hard to capture in text.</p>
+<p>Why should you read this?</p>
+<ul class="simple">
+<li><p>You want to understand how LLMs actually work not just at the surface level.</p></li>
+<li><p>You want to understand confusing fine-tuning terms like chat_template and ChatML (especially if you’re using Axolotl).</p></li>
+<li><p>You want to get better at prompt engineering by understanding why some prompts work better than others.</p></li>
+<li><p>You’re trying to reduce hallucinations and want to know how to keep LLMs from making things up.</p></li>
+<li><p>You want to understand why DeepSeek-R1 is such a big deal right now.</p></li>
+</ul>
+<p>Note: If you are looking for the excalidraw diagram that Andrej made for the video, you can download it <a class="reference external" href="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/LLMIntro-2024-07-22-1743.excalidraw">here</a>. He shared it through Google Drive and it invalidates the link after a certain time. That’s why I have decided to host it on my CDN as well.</p>
+<section id="pretraining-data">
+<h2>1. Pretraining Data<a class="headerlink" href="#pretraining-data" title="Link to this heading">#</a></h2>
+<section id="download-and-preprocess-the-internet">
+<h3>1.1. Download and Preprocess the Internet<a class="headerlink" href="#download-and-preprocess-the-internet" title="Link to this heading">#</a></h3>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/ct.png">
+<p>LLMs start by crawling the internet to build a massive text dataset. The problem? Raw data is noisy and full of duplicate content, low-quality text, and irrelevant information. Before training, it needs heavy filtering.</p>
+<ul class="simple">
+<li><p>If you’re building an English only model, you’ll need a heuristic to filter out non-English text (e.g., only keeping text with a high probability of being English).</p></li>
+<li><p>One example dataset is <a class="reference external" href="https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1">FineWeb</a>, which contains over 1.2 billion web pages.</p></li>
+</ul>
+<p>Once cleaned, the data still needs to be compressed into something usable. Instead of feeding raw text into the model, it gets converted into tokens: a structured, numerical representation.</p>
+</section>
+<section id="tokenization">
+<h3>1.2. Tokenization<a class="headerlink" href="#tokenization" title="Link to this heading">#</a></h3>
+<p>Tokenization is how models break text into smaller pieces (tokens) before processing it. Instead of storing raw words, the model converts them into IDs that represent repeating patterns.</p>
+<ul class="simple">
+<li><p>A popular technique for this is <a class="reference external" href="https://en.wikipedia.org/wiki/Byte_pair_encoding">Byte Pair Encoding (BPE)</a>.</p></li>
+<li><p>There’s an optimal number of symbols (tokens) for compression. For example, GPT-4 uses 100,277 tokens. It is totally dependent on the discretion of the model creator.</p></li>
+<li><p>You can visualize how this works using tools like <a class="reference external" href="https://tiktokenizer.vercel.app/?model=cl100k_base">Tiktokenizer</a>.</p></li>
+</ul>
+</section>
+<section id="neural-network-training">
+<h3>1.3. Neural Network Training<a class="headerlink" href="#neural-network-training" title="Link to this heading">#</a></h3>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/nn-io.png">
+<p>Once the data is tokenized, it’s fed into the neural network. Here’s how that process works:</p>
+<ol class="arabic simple">
+<li><p>The model takes in a <strong>context window</strong>, a set number of tokens (e.g., 8,000 for some models, up to 128k for GPT-4).</p></li>
+<li><p>It predicts the <strong>next token</strong> based on the patterns it has learned.</p></li>
+<li><p>The weights in the model are adjusted using <strong>backpropagation</strong> to reduce errors.</p></li>
+<li><p>Over time, the model learns to make better predictions.</p></li>
+</ol>
+<p>A longer context window means the model can “remember” more from the input, but it also increases computational cost.</p>
+<p><strong>Neural Network Internals</strong></p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/nn-internal-math-eq.png">
+<p>Inside the model, billions of parameters interact with the input tokens to generate a probability distribution for the next token.</p>
+<ul class="simple">
+<li><p>This process is defined by complex mathematical equations optimized for efficiency.</p></li>
+<li><p>Model architectures are designed to balance speed, accuracy, and parallelization.</p></li>
+<li><p>You can see a production-grade LLM architecture example <a class="reference external" href="https://bbycroft.net/llm">here</a>.</p></li>
+</ul>
+</section>
+<section id="inference">
+<h3>1.4. Inference<a class="headerlink" href="#inference" title="Link to this heading">#</a></h3>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/inference.png">
+<p>LLMs don’t generate deterministic outputs, they are <strong>stochastic</strong>. This means the output varies slightly every time you run the model.</p>
+<ul class="simple">
+<li><p>The model doesn’t just repeat what it was trained on, it generates responses based on probabilities.</p></li>
+<li><p>In some cases, the response will match something in the training data exactly, but most of the time, it will generate something new that follows similar patterns.</p></li>
+</ul>
+<p>This randomness is why LLMs can be creative, but also why they sometimes <strong>hallucinate</strong> incorrect information.</p>
+</section>
+<section id="demo-reproducing-openai-s-gpt-2">
+<h3>Demo: Reproducing OpenAI’s GPT-2<a class="headerlink" href="#demo-reproducing-openai-s-gpt-2" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a>, released by OpenAI in 2019, was an early example of a transformer-based LLM.</p>
+<p>Here’s what it looked like:</p>
+<ul class="simple">
+<li><p><strong>1.6 billion parameters</strong></p></li>
+<li><p><strong>1024-token context length</strong></p></li>
+<li><p><strong>Trained on ~100 billion tokens</strong></p></li>
+<li><p>The original GPT-2 training cost was <strong>$40,000</strong>.</p></li>
+</ul>
+<p>Since then, efficiency has improved dramatically. Andrej Karpathy managed to <strong>reproduce GPT-2</strong>  using <a class="reference external" href="https://github.com/karpathy/llm.c/discussions/677">llm.c</a> for just $672. With optimized pipelines, training costs could drop even further to <strong>around $100</strong> .</p>
+<p>Why is it so much cheaper now?</p>
+<ul class="simple">
+<li><p><strong>Better pre-training data extraction techniques</strong> → Cleaner datasets mean models learn faster.</p></li>
+<li><p><strong>Stronger hardware and optimized software</strong> → Less computation needed for the same results.</p></li>
+</ul>
+</section>
+<section id="open-base-models">
+<h3>Open Base Models<a class="headerlink" href="#open-base-models" title="Link to this heading">#</a></h3>
+<p>Disclaimer: The models under discussion do not strictly follow the Open Source Initiative (OSI) definitions of open-source AI (<a class="reference external" href="https://opensource.org/ai">OSI AI Definition</a>). Instead, we use the term open base models to describe models where the weights are publicly accessible, but training data and full reproducibility may not be provided.</p>
+<p>Some companies train massive <strong>language models (LMs)</strong> and <strong>release the base models for free</strong>. A <strong>base model</strong> is essentially a <strong>raw, pre-trained LM</strong>—it still requires <strong>fine-tuning</strong> or <strong>alignment</strong> to be practically useful.</p>
+<ul class="simple">
+<li><p>Base models are trained on <strong>unfiltered internet-scale data</strong>, meaning they generate <strong>raw</strong> completions but <strong>lack alignment with human intent</strong>.</p></li>
+<li><p>OpenAI released <a class="reference external" href="https://github.com/openai/gpt-2">GPT-2</a>, an <strong>open-weight and source-available</strong> model, but <strong>not fully open-source</strong> under OSI’s definition since its training data was not released.</p></li>
+<li><p>Meta released <a class="reference external" href="https://arxiv.org/pdf/2407.21783">Llama 3.1 (405B parameters)</a>, an <strong>open-weight</strong> but <strong>not open-source</strong> model.</p></li>
+</ul>
+<p>To release a <strong>base model</strong>, two key components are required:</p>
+<ol class="arabic simple">
+<li><p><strong><a class="reference external" href="https://github.com/openai/gpt-2/blob/master/src/model.py">Inference code</a></strong> → Defines the steps the model follows to generate text. Typically written in Python.</p></li>
+<li><p><strong><a class="reference external" href="https://www.kaggle.com/datasets/xhlulu/openai-gpt2-weights">Model weights</a></strong> → The billions of parameters that encode the model’s knowledge.</p></li>
+</ol>
+</section>
+<section id="how-base-models-work">
+<h3>How Base Models Work<a class="headerlink" href="#how-base-models-work" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>They generate <strong>token-level</strong> internet-style text.</p></li>
+<li><p>Every run produces a <strong>slightly different output</strong> (stochastic behavior).</p></li>
+<li><p>They can <strong>regurgitate</strong> parts of their training data.</p></li>
+<li><p>The parameters are like a <strong>lossy zip file</strong> of internet knowledge.</p></li>
+<li><p>You can already use them for applications like:</p>
+<ul>
+<li><p><strong>Translation</strong> → Using in-context examples.</p></li>
+<li><p><strong>Basic assistants</strong> → Prompting them in a structured way.</p></li>
+</ul>
+</li>
+</ul>
+<p>Want to experiment with one? Try the <strong>Llama 3 (405B base model)</strong> <a class="reference external" href="https://app.hyperbolic.xyz/models/llama31-405b-base-bf-16">here</a>.</p>
+<p>At its core, a base model is just an <strong>expensive autocomplete</strong>. It still needs fine-tuning.</p>
+</section>
+</section>
+<section id="post-training-supervised-fine-tuning">
+<h2>2. Post-Training: Supervised Fine-Tuning<a class="headerlink" href="#post-training-supervised-fine-tuning" title="Link to this heading">#</a></h2>
+<p>So far, we’ve looked at <strong>base models</strong>, which are just pre-trained text generators. But <strong>to make an actual assistant</strong>, you need <strong>post-training</strong>.</p>
+<ul class="simple">
+<li><p><strong>Base models hallucinate a lot</strong> → They generate text, but it’s not always useful.</p></li>
+<li><p><strong>Post-training fixes this</strong> by fine-tuning the model to respond better.</p></li>
+<li><p>The good news? <strong>Post-training is way cheaper than pre-training</strong> (e.g., months vs. hours).</p></li>
+</ul>
+<section id="conversations-data">
+<h3>2.1. Conversations Data<a class="headerlink" href="#conversations-data" title="Link to this heading">#</a></h3>
+<p>Once the base model is trained on internet data, the next step is <strong>post-training</strong>. This is where we replace the internet dataset with <strong>human/assistant conversations</strong> to make the model more conversational and useful.</p>
+<ul class="simple">
+<li><p>Pre-training takes months, but post-training is much faster. It can take as little as a few hours.</p></li>
+<li><p>The model’s algorithm stays the same, we’re just fine-tuning the existing parameters.</p></li>
+</ul>
+<p>To teach a model how to handle back-and-forth conversations, we use chat templates. These define the structure of a conversation and let the model know which part is user input and which part is an assistant response. You can read more about them here.</p>
+<p>Example template:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;|im_start|&gt;system&lt;|im_sep|&gt;You are a helpful assistant&lt;|im_end|&gt;
+&lt;|im_start|&gt;user&lt;|im_sep|&gt;What is 4 + 4?&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant&lt;|im_sep|&gt;4 + 4 = 8&lt;|im_end|&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>&lt;|im_start|&gt; and &lt;|im_end|&gt; are special tokens that help structure conversations.</p></li>
+<li><p>The model didn’t see these new tokens during pre-training, they’re introduced during post-training.</p></li>
+<li><p>OpenAI has discussed fine-tuning LLMs for conversation in the <a class="reference internal" href="#"><span class="xref myst">InstructGPT paper</span></a>.</p></li>
+</ul>
+<p>To visualize this, go to <a class="reference external" href="https://tiktokenizer.vercel.app/">tiktokenizer</a>.</p>
+<p>One such post-training dataset is <a class="reference external" href="https://huggingface.co/datasets/OpenAssistant/oasst1">OASST1</a>. Early post-training datasets were hand-curated by humans. Now, models like <a class="reference external" href="https://github.com/thunlp/UltraChat">UltraChat</a> can generate synthetic conversations, allowing models to improve without as much human input. You can visualize these mostly synthetic datasets <a class="reference external" href="https://atlas.nomic.ai/map/0ce65783-c3a9-40b5-895d-384933f50081/a7b46301-022f-45d8-bbf4-98107eabdbac">here</a>.</p>
+</section>
+<section id="hallucinations-tool-use-and-memory">
+<h3>2.2. Hallucinations, Tool Use, and Memory<a class="headerlink" href="#hallucinations-tool-use-and-memory" title="Link to this heading">#</a></h3>
+<p>One major issue with LLMs is <strong>hallucination</strong>, where the model confidently generates incorrect or made-up information.</p>
+<p>Why does this happen?</p>
+<ul class="simple">
+<li><p>During <strong>post-training</strong>, models learn that they must <strong>always</strong> give an answer.</p></li>
+<li><p>Even if the question doesn’t make sense, the model <strong>tries to generate a response</strong> instead of saying, “I don’t know.”</p></li>
+</ul>
+<p>How Meta Deals with Hallucinations</p>
+<p>Meta’s research on <strong>factuality</strong> (from their <a class="reference external" href="https://arxiv.org/pdf/2407.21783">Llama 3 paper</a>) describes a way to improve this:</p>
+<ol class="arabic simple">
+<li><p>Extract a snippet of training data.</p></li>
+<li><p>Generate a factual question about it using Llama 3.</p></li>
+<li><p>Have Llama 3 generate an answer.</p></li>
+<li><p>Score the response against the original data.</p></li>
+<li><p>If incorrect, train the model to recognize and refuse incorrect responses.</p></li>
+</ol>
+<p>Essentially, this process <strong>teaches models to recognize their own knowledge limits</strong>.</p>
+</section>
+<section id="using-tools-to-reduce-hallucinations">
+<h3>2.3. Using Tools to Reduce Hallucinations<a class="headerlink" href="#using-tools-to-reduce-hallucinations" title="Link to this heading">#</a></h3>
+<p>One way to fix hallucinations is to <strong>train models to use tools</strong> when they don’t know the answer. This approach follows the pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;|im_start|&gt;user&lt;|im_sep|&gt;Who is Orson Kovacs?&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant&lt;|im_sep|&gt;&lt;SEARCH_START&gt;Who is Orson Kovacs?&lt;SEARCH_END&gt;&lt;|im_end|&gt;
+
+[...search results...]
+
+&lt;|im_start|&gt;assistant&lt;|im_sep|&gt;Orson Kovacs is ....&lt;|im_end|&gt;
+</pre></div>
+</div>
+<p>With repeated training, models learn that <strong>if they don’t know something, they should look it up</strong> instead of making things up.</p>
+<p>“Vague Recollection” vs. “Working Memory”</p>
+<ul class="simple">
+<li><p><strong>Model parameters store vague recollections</strong> (like remembering something from a month ago).</p></li>
+<li><p><strong>Context tokens function as working memory</strong>, giving models access to fresh information.</p></li>
+</ul>
+<p>This is why <strong>retrieval-augmented generation (RAG)</strong> works so well: if the model has direct access to relevant documents, it <strong>doesn’t need to guess</strong>.</p>
+</section>
+<section id="knowledge-of-self">
+<h3>2.4. Knowledge of Self<a class="headerlink" href="#knowledge-of-self" title="Link to this heading">#</a></h3>
+<p>If you prompt an <strong>untuned base model</strong> about who it is, it will likely hallucinate. For example, a non-OpenAI model might still say it was created by OpenAI simply because most internet data links AI models to OpenAI.</p>
+<p>How to Fix This</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://huggingface.co/datasets/allenai/olmo-2-hard-coded">Hardcode self-identity into training data</a></strong> → Example: <strong><a class="reference external" href="https://huggingface.co/datasets/allenai/tulu-3-sft-olmo-2-mixture">Olmo-2 dataset</a></strong>.</p></li>
+<li><p><strong>Use system messages</strong> → At the start of every conversation, include a reminder of its identity.</p></li>
+</ul>
+<p><strong>By default, LLMs have no real knowledge of themselves</strong>. Without specific training, they default to generic AI responses.</p>
+</section>
+<section id="models-need-tokens-to-think">
+<h3>2.5. Models Need Tokens to Think<a class="headerlink" href="#models-need-tokens-to-think" title="Link to this heading">#</a></h3>
+<p>LLMs <strong>don’t reason like humans</strong>. They generate tokens <strong>sequentially</strong>, meaning they need structured generation to think properly.</p>
+<p>Example: Bad vs. Good Model Output</p>
+</section>
+<section id="bad-model-output">
+<h3>Bad Model Output:<a class="headerlink" href="#bad-model-output" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Human:</span> <span class="pre">Emily</span> <span class="pre">buys</span> <span class="pre">3</span> <span class="pre">apples</span> <span class="pre">and</span> <span class="pre">2</span> <span class="pre">oranges.</span> <span class="pre">Each</span> <span class="pre">orange</span> <span class="pre">costs</span> <span class="pre">$2.</span> <span class="pre">The</span> <span class="pre">total</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">all</span> <span class="pre">the</span> <span class="pre">fruit</span> <span class="pre">is</span> <span class="pre">$13.</span> <span class="pre">What</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">apples?</span> <span class="pre">Assistant:</span> <span class="pre">The</span> <span class="pre">answer</span> <span class="pre">is</span> <span class="pre">$3.</span></code></p>
+<p>The model <strong>jumps to the answer</strong> without breaking it down.</p>
+</section>
+<section id="good-model-output">
+<h3>Good Model Output:<a class="headerlink" href="#good-model-output" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Human:</span> <span class="pre">Emily</span> <span class="pre">buys</span> <span class="pre">3</span> <span class="pre">apples</span> <span class="pre">and</span> <span class="pre">2</span> <span class="pre">oranges.</span> <span class="pre">Each</span> <span class="pre">orange</span> <span class="pre">costs</span> <span class="pre">$2.</span> <span class="pre">The</span> <span class="pre">total</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">all</span> <span class="pre">the</span> <span class="pre">fruit</span> <span class="pre">is</span> <span class="pre">$13.</span> <span class="pre">What</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">apples?</span> <span class="pre">Assistant:</span> <span class="pre">The</span> <span class="pre">total</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">oranges</span> <span class="pre">is</span> <span class="pre">$4.</span> <span class="pre">13</span> <span class="pre">-</span> <span class="pre">4</span> <span class="pre">=</span> <span class="pre">9,</span> <span class="pre">so</span> <span class="pre">the</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">3</span> <span class="pre">apples</span> <span class="pre">is</span> <span class="pre">$9.</span> <span class="pre">9/3</span> <span class="pre">=</span> <span class="pre">3,</span> <span class="pre">so</span> <span class="pre">each</span> <span class="pre">apple</span> <span class="pre">costs</span> <span class="pre">$3.</span></code></p>
+<p>Here, the model <strong>works through the reasoning step-by-step</strong>.</p>
+<p>Why This Matters</p>
+<ul class="simple">
+<li><p>If a model <strong>jumps straight to an answer</strong>, it might just be guessing.</p></li>
+<li><p>If it <strong>walks through the solution step-by-step</strong>, it’s more reliable.</p></li>
+<li><p>The model <strong>breaks down the problem into smaller steps</strong>. Since there are finite layers in the model, one token output cannot be processed indefinitely. Breaking down the problem into smaller steps allows the model to process the problem in a way that is more likely to yield the correct answer.</p></li>
+</ul>
+<p>For <strong>math and logic tasks</strong>, it’s best to ask the model to <strong>use external tools</strong> rather than relying on its own reasoning.</p>
+</section>
+</section>
+<section id="post-training-reinforcement-learning">
+<h2>3. Post-Training: Reinforcement Learning<a class="headerlink" href="#post-training-reinforcement-learning" title="Link to this heading">#</a></h2>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rl.png">
+<p><br/><br/></p>
+<p>Once a model is trained on internet data, <strong>it still doesn’t know how to use its knowledge effectively</strong>.</p>
+<ul class="simple">
+<li><p><strong>Supervised fine-tuninsg</strong> teaches it to mimic human responses.</p></li>
+<li><p><strong>Reinforcement learning (RL)</strong> helps it improve by trial and error.</p></li>
+</ul>
+<section id="how-rl-works">
+<h3>How RL Works<a class="headerlink" href="#how-rl-works" title="Link to this heading">#</a></h3>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rl-1.png">
+<p>Instead of relying on human-created datasets, RL lets the model <strong>experiment with different solutions</strong> and figure out what works best.</p>
+<p>Example Process:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">We</span> <span class="n">generated</span> <span class="mi">15</span> <span class="n">solutions</span><span class="o">.</span>
+<span class="n">Only</span> <span class="mi">4</span> <span class="n">of</span> <span class="n">them</span> <span class="n">got</span> <span class="n">the</span> <span class="n">right</span> <span class="n">answer</span><span class="o">.</span>
+<span class="n">Take</span> <span class="n">the</span> <span class="n">top</span> <span class="n">solution</span> <span class="p">(</span><span class="n">each</span> <span class="n">right</span> <span class="ow">and</span> <span class="n">short</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Train</span> <span class="n">on</span> <span class="n">it</span><span class="o">.</span>
+<span class="n">Repeat</span> <span class="n">many</span><span class="p">,</span> <span class="n">many</span> <span class="n">times</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>No human is involved in this process. The model generates different solutions to the same problem, sometimes they are in millions. Then it compares them to pick the ones that reached the correct answer and then trains on the winning solutions.</p>
+<p>The pre-training and post-training processes are very well defined but the RL process is still under a lot of active research. Andrej talks about it <a class="reference external" href="https://x.com/karpathy/status/1885026028428681698">here</a> as well. Companies like OpenAI do a lot of research on it but it’s not public. That is why the release of DeepSeek was such a big deal. Their <a class="reference external" href="https://arxiv.org/pdf/2501.12948">paper</a> talks more about it. It talks very publicly about RL and FT for LLMs and how it brings out a lot of reasoning capabilities in them.</p>
+<p>An example taken from the Deepseek paper shows us that as the time passes, the model is able to use more tokens to get better at reasoning.</p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rl-2.png">
+<p>You can see that the model has this “aha” moment here, it’s not something that you can explicitly teach the model through just training on a dataset. It’s something that the model has to figure out on it’s own through reinforcement learning. Pros of this technique is, the model is becoming better at reasoning but the con is it’s consuming more and more tokens to do so.</p>
+<p>One thing we can learn from the research paper on <strong><a class="reference external" href="https://discovery.ucl.ac.uk/id/eprint/10045895/1/agz_unformatted_nature.pdf">mastering the game of Go</a></strong> is that RL actually helps the model become better at reasoning than their human counterparts. The model isn’t just trying to imitate the human but it’s coming up with its own strategies through trial and error to win the game.</p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rl-3.png">
+<p>One very unique thing noted during the AlphaGo’s game was a move called <strong><a class="reference external" href="https://www.youtube.com/watch?v=JNrXgpSEEIE">Move 37</a></strong>. It’s a move that was not part of the training data but the model came up with its own strategy to win the game. The researchers predicted that the chance of it being played by a human would be 1 in 10000. So you can see how the model is capable of coming up with its own strategies.</p>
+<p>RL is still heavily unexplored and there is a lot of research going on in this area. It is entirely possible if given the chance, the LLM might come up with a language of its own to express its thoughts and ideas because it discovered that it’s the best way to express its thoughts and ideas.</p>
+</section>
+<section id="learning-on-unverifiable-domains-a-k-a-reinforcement-learning-from-human-feedback-rlhf">
+<h3>Learning on unverifiable domains a.k.a Reinforcement Learning from Human Feedback (RLHF)<a class="headerlink" href="#learning-on-unverifiable-domains-a-k-a-reinforcement-learning-from-human-feedback-rlhf" title="Link to this heading">#</a></h3>
+<p>It is very easy to exclude humans from the RL process in verifiable domains. LLMs can act as a judge for its own performance.</p>
+<p>However, in unverifiable domains, we need to include humans in the loop.</p>
+<p>For example, for a prompt <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">a</span> <span class="pre">joke</span> <span class="pre">about</span> <span class="pre">pelicans</span></code>, it is not very easy to find a way to automatically judge the quality of the joke. The LLM will generate the jokes without issues, but judging their quality at scale is not possible.</p>
+<p>Furthermore, including humans in this process at scale is not feasible. This is where RLHF comes in. You can read more about it in <a class="reference external" href="https://arxiv.org/pdf/1909.08593">this paper</a>.</p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rlhf-1.png">
+<p>In order to do RLHF at scale, you basically train a separate reward model which could be a transformer without the extra layers surrounding it. You use humans to judge the rank it is giving to the responses and then you use that to train the reward model until you are satisfied with the results. Once that is done, you can use the reward model to judge the quality of the responses generated by the LLM at scale.</p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rlhf-2.png">
+<p><strong>RLHF Upside</strong></p>
+<ul class="simple">
+<li><p>Enables RL in <strong>unverifiable domains</strong> like joke-writing or summarization.s</p></li>
+<li><p>Often improves models <strong>by reducing hallucinations</strong> and making responses more human-like.</p></li>
+<li><p>Exploits the “<strong>discriminator-generator gap</strong>”—humans find it easier to evaluate an answer than generate one.</p>
+<ul>
+<li><p>Example: “Write a poem” vs. “Which of these 5 poems is best?”</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>RLHF Downside</strong></p>
+<ul class="simple">
+<li><p>The <strong>reward model is just a simulation of human preferences</strong>, not an actual human. This can be misleading.</p></li>
+<li><p>RL can <strong>game the system</strong>, producing adversarial examples that exploit weaknesses in the reward model.</p>
+<ul>
+<li><p>Example: After 1,000 updates, the model’s “top joke about pelicans” might be complete nonsense (e.g., “the the the the the the the the”).</p></li>
+</ul>
+</li>
+<li><p>This is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Adversarial_machine_learning">Adversarial Machine Learning</a>. Since there are infinite ways to game the system, filtering out bad responses isn’t straightforward.</p></li>
+<li><p>To prevent this, reward model training is <strong>capped at a few hundred iterations</strong>—beyond that, models start over-optimizing and performance declines.</p></li>
+</ul>
+</section>
+</section>
+<section id="preview-of-things-to-come">
+<h2>Preview of Things to Come<a class="headerlink" href="#preview-of-things-to-come" title="Link to this heading">#</a></h2>
+<p>Future LLMs will expand in several key areas:</p>
+<ul class="simple">
+<li><p><strong>Multimodal Capabilities</strong> → Not just text, but also understanding and generating images, audio, and video.</p></li>
+<li><p><strong>Agent-Based Models</strong> → Moving beyond single tasks to long-term memory, reasoning, and correction of mistakes.</p></li>
+<li><p><strong>Pervasive &amp; Invisible AI</strong> → AI will be integrated into workflows in a way that becomes second nature.</p></li>
+<li><p><strong>Computer-Using AI</strong> → AI models that interact with software and take actions beyond just text generation.</p></li>
+<li><p><strong>Test-Time Training</strong> → AI adapting itself in real-time to improve accuracy on the fly.</p></li>
+</ul>
+</section>
+<section id="keeping-track-of-llms">
+<h2>Keeping Track of LLMs<a class="headerlink" href="#keeping-track-of-llms" title="Link to this heading">#</a></h2>
+<p>If you’re interested in following developments in this space, here are some great resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lmarena.ai/">LM Arena</a> → Benchmarking new language models.</p></li>
+<li><p><a class="reference external" href="https://news.smol.ai/">AI News</a> → A newsletter covering AI research.</p></li>
+</ul>
+</section>
+<section id="where-to-find-llms">
+<h2>Where to Find LLMs<a class="headerlink" href="#where-to-find-llms" title="Link to this heading">#</a></h2>
+<p>Want to try different LLMs? Here’s where to find them:</p>
+<ul class="simple">
+<li><p><strong>Proprietary Models</strong> → OpenAI (GPT-4), Google (Gemini), Anthropic (Claude), etc.</p></li>
+<li><p><strong>Open-Weight Models</strong> → DeepSeek, Meta (Llama), etc. Try them via <a class="reference external" href="http://Together.ai">Together.ai</a>.</p></li>
+<li><p><strong>Run Locally</strong> → Use <a class="reference external" href="https://ollama.com/">Ollama</a> or <a class="reference external" href="https://lmstudio.ai/">LM Studio</a>.</p></li>
+<li><p><strong>Base Models</strong> → Explore <a class="reference external" href="https://app.hyperbolic.xyz/">Hyperbolic</a>.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="markdown.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="openai_api.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining-data">1. Pretraining Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-preprocess-the-internet">1.1. Download and Preprocess the Internet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">1.2. Tokenization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-training">1.3. Neural Network Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference">1.4. Inference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-reproducing-openai-s-gpt-2">Demo: Reproducing OpenAI’s GPT-2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-base-models">Open Base Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-base-models-work">How Base Models Work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-training-supervised-fine-tuning">2. Post-Training: Supervised Fine-Tuning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversations-data">2.1. Conversations Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hallucinations-tool-use-and-memory">2.2. Hallucinations, Tool Use, and Memory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tools-to-reduce-hallucinations">2.3. Using Tools to Reduce Hallucinations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-of-self">2.4. Knowledge of Self</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#models-need-tokens-to-think">2.5. Models Need Tokens to Think</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bad-model-output">Bad Model Output:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#good-model-output">Good Model Output:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-training-reinforcement-learning">3. Post-Training: Reinforcement Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-rl-works">How RL Works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-on-unverifiable-domains-a-k-a-reinforcement-learning-from-human-feedback-rlhf">Learning on unverifiable domains a.k.a Reinforcement Learning from Human Feedback (RLHF)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preview-of-things-to-come">Preview of Things to Come</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keeping-track-of-llms">Keeping Track of LLMs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-find-llms">Where to Find LLMs</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Syed Fahad Sultan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
