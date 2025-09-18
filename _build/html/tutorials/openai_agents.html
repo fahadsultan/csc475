@@ -433,7 +433,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-a-minimal-chat-agent">Quick start: a minimal “chat agent”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-your-agent-tools-function-calling">2) Give your agent tools (function calling)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-function-calling">2) Tools (function calling)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-tools">Built-in Tools</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge">3) Retrieval-Augmented Generation (RAG): give your agent knowledge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-tool-orchestrator-web-calc-rag">4) Multi-tool orchestrator: web + calc + RAG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-agents-sdk-optional-but-convenient">5) Using the Agents SDK (optional but convenient)</a></li>
@@ -497,72 +500,140 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="give-your-agent-tools-function-calling">
-<h2>2) Give your agent tools (function calling)<a class="headerlink" href="#give-your-agent-tools-function-calling" title="Link to this heading">#</a></h2>
+<section id="tools-function-calling">
+<h2>2) Tools (function calling)<a class="headerlink" href="#tools-function-calling" title="Link to this heading">#</a></h2>
 <p>Tools = your functions. The model chooses when/with what arguments to call them; you execute and return results back into the conversation.</p>
-<p>The following example adds a calculator tool.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
-<span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">expression</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;__builtins__&quot;</span><span class="p">:</span> <span class="p">{}},</span> <span class="p">{</span><span class="s2">&quot;pi&quot;</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">}))</span>
+<p>Let’s say the user wanted to know their horoscope.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a running input list we will add to over time</span>
+<span class="n">input_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span>    <span class="s2">&quot;user&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What is my horoscope? I am an Aquarius.&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Then you can create a Tool that intervenes in the default chat loop by calling a function.</p>
+<ol class="arabic">
+<li><p>Define a list of callable tools for the model</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_horoscope</span><span class="p">(</span><span class="n">sign</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sign</span><span class="si">}</span><span class="s2">: Next Tuesday you will befriend a baby otter.&quot;</span>
 
 <span class="n">tools</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;calc&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Evaluate a safe math expression. Supports pi and e.&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}},</span>
-                <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;expression&quot;</span><span class="p">],</span>
-                <span class="s2">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;get_horoscope&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Get today&#39;s horoscope for an astrological sign.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;sign&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;An astrological sign like Taurus or Aquarius&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
             <span class="p">},</span>
+            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sign&quot;</span><span class="p">],</span>
         <span class="p">},</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
 <span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Prompt the model with tools defined</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
+    <span class="nb">input</span><span class="o">=</span><span class="n">input_list</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Check if the model wants to call a tool. Call it if so, and add the result to the input list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">input_list</span> <span class="o">+=</span> <span class="n">response</span><span class="o">.</span><span class="n">output</span>
 
-<span class="k">def</span> <span class="nf">agent_turn</span><span class="p">(</span><span class="n">user_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span><span class="s2">&quot;user&quot;</span><span class="p">,</span><span class="s2">&quot;content&quot;</span><span class="p">:</span><span class="n">user_text</span><span class="p">}]</span>
-    <span class="c1"># 1) Ask the model; allow tool use</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span>
-        <span class="nb">input</span><span class="o">=</span><span class="n">msg</span><span class="p">,</span>
-        <span class="n">tools</span><span class="o">=</span><span class="n">tools</span>
-    <span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">output</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;function_call&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;get_horoscope&quot;</span><span class="p">:</span>
+            <span class="c1"># 3. Execute the function logic for get_horoscope</span>
+            <span class="n">horoscope</span> <span class="o">=</span> <span class="n">get_horoscope</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">arguments</span><span class="p">))</span>
+            
+            <span class="c1"># 4. Provide function call results to the model</span>
+            <span class="n">input_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function_call_output&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;call_id&quot;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">call_id</span><span class="p">,</span>
+                <span class="s2">&quot;output&quot;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+                <span class="s2">&quot;horoscope&quot;</span><span class="p">:</span> <span class="n">horoscope</span>
+                <span class="p">})</span>
+            <span class="p">})</span>
+</pre></div>
+</div>
+</li>
+<li><p>Get a response from the model, now with the function call result in context</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+    <span class="n">instructions</span><span class="o">=</span><span class="s2">&quot;Respond only with a horoscope generated by a tool.&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
+    <span class="nb">input</span><span class="o">=</span><span class="n">input_list</span><span class="p">,</span>
+<span class="p">)</span>
 
-    <span class="c1"># 2) If the model wants to call a tool, execute &amp; return result</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">out</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">output</span>  <span class="c1"># list of content blocks / tool calls / text</span>
-        <span class="n">tool_call</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">out</span> <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">type</span><span class="o">==</span><span class="s2">&quot;tool_call&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">tool_call</span><span class="p">:</span>
-            <span class="c1"># no tool call -&gt; print any text parts</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">out</span> <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">type</span><span class="o">==</span><span class="s2">&quot;output_text&quot;</span><span class="p">))</span>
-            <span class="k">break</span>
+<span class="c1"># 5. The model should be able to give a response!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final output:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<section id="built-in-tools">
+<h3>Built-in Tools<a class="headerlink" href="#built-in-tools" title="Link to this heading">#</a></h3>
+<p>OpenAI API comes with some built-in tools you can use out of the box.</p>
+<p>One example is the <code class="docutils literal notranslate"><span class="pre">search</span></code> tool, which allows the model to perform web searches to retrieve up-to-date information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="n">tool_call</span><span class="o">.</span><span class="n">tool_name</span> <span class="o">==</span> <span class="s2">&quot;calc&quot;</span><span class="p">:</span>
-            <span class="n">args</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tool_call</span><span class="o">.</span><span class="n">arguments</span><span class="p">)</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">calc</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
-            <span class="c1"># 3) Send tool result back as tool output &amp; continue the loop</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-                <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span>
-                <span class="nb">input</span><span class="o">=</span><span class="p">[</span>
-                    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span><span class="s2">&quot;user&quot;</span><span class="p">,</span><span class="s2">&quot;content&quot;</span><span class="p">:</span><span class="n">user_text</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span><span class="s2">&quot;tool&quot;</span><span class="p">,</span> <span class="s2">&quot;tool_call_id&quot;</span><span class="p">:</span> <span class="n">tool_call</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">}</span>
-                <span class="p">],</span>
-                <span class="n">tools</span><span class="o">=</span><span class="n">tools</span>
-            <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;web_search&quot;</span><span class="p">}],</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;What was a positive news story from today?&quot;</span>
+<span class="p">)</span>
 
-<span class="n">agent_turn</span><span class="p">(</span><span class="s2">&quot;What is sin(pi/2)^2 + cos(0)^2 ? Use the calculator.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can customize the behavior of built-in tools using parameters. For example, you can filter for</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+  <span class="n">reasoning</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;effort&quot;</span><span class="p">:</span> <span class="s2">&quot;low&quot;</span><span class="p">},</span>
+  <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;web_search&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;filters&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;allowed_domains&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;pubmed.ncbi.nlm.nih.gov&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;clinicaltrials.gov&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;www.who.int&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;www.cdc.gov&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;www.fda.gov&quot;</span><span class="p">,</span>
+              <span class="p">]</span>
+          <span class="p">},</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="n">tool_choice</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+  <span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;web_search_call.action.sources&quot;</span><span class="p">],</span>
+  <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;Please perform a web search on how semaglutide is used in the treatment of diabetes.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Key ideas:</p>
 <p>•	You declare tool schema; the model emits a function call with arguments.</p>
 <p>•	You run the function and send a tool response back for the model to finish the thought.</p>
 <p>Details: function tools / arguments / streaming formats are in the API reference.</p>
+</section>
 </section>
 <section id="retrieval-augmented-generation-rag-give-your-agent-knowledge">
 <h2>3) Retrieval-Augmented Generation (RAG): give your agent knowledge<a class="headerlink" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge" title="Link to this heading">#</a></h2>
@@ -575,7 +646,7 @@ document.write(`
 
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;p1&quot;</span><span class="p">,</span><span class="s2">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Furman University is in Greenville, SC.&quot;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;p2&quot;</span><span class="p">,</span><span class="s2">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;CSC-475 is an applied data science capstone with BMW collaboration.&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;p2&quot;</span><span class="p">,</span><span class="s2">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;DSC-475 is an applied data science capstone with BMW collaboration.&quot;</span><span class="p">},</span>
   <span class="c1"># add your corpus (or load from disk)</span>
 <span class="p">]</span>
 
@@ -600,7 +671,7 @@ document.write(`
     <span class="n">r</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1-mini&quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span><span class="s2">&quot;user&quot;</span><span class="p">,</span><span class="s2">&quot;content&quot;</span><span class="p">:</span><span class="n">prompt</span><span class="p">}])</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
 
-<span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Where is Furman, and what is CSC-475?&quot;</span><span class="p">)</span>
+<span class="n">answer</span><span class="p">(</span><span class="s2">&quot;Where is Furman, and what is DSC-475?&quot;</span><span class="p">)</span>
 
 </pre></div>
 </div>
@@ -795,7 +866,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-a-minimal-chat-agent">Quick start: a minimal “chat agent”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-your-agent-tools-function-calling">2) Give your agent tools (function calling)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-function-calling">2) Tools (function calling)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-tools">Built-in Tools</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge">3) Retrieval-Augmented Generation (RAG): give your agent knowledge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-tool-orchestrator-web-calc-rag">4) Multi-tool orchestrator: web + calc + RAG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-agents-sdk-optional-but-convenient">5) Using the Agents SDK (optional but convenient)</a></li>

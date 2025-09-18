@@ -432,8 +432,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining-data">1. Pretraining Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-preprocess-the-internet">1.1. Download and Preprocess the Internet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining">1. Pretraining</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internet-scale-data">1.1. Internet-scale data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">1.2. Tokenization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-training">1.3. Neural Network Training</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference">1.4. Inference</a></li>
@@ -473,7 +473,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="large-language-models">
 <h1>Large Language Models<a class="headerlink" href="#large-language-models" title="Link to this heading">#</a></h1>
-<p>The following tutorial is a summary of Andrej Karpathy’s video <a class="reference external" href="https://www.youtube.com/watch?v=Te5rOTcE3FQ">A Deep Dive into Large Language Models like ChatGPT</a>. I highly recommend watching the video as well, as it contains a lot of useful information and visualizations that are hard to capture in text.</p>
+<p>The following tutorial is a summary of Andrej Karpathy’s video <a class="reference external" href="https://www.youtube.com/watch?v=Te5rOTcE3FQ">A Deep Dive into Large Language Models like ChatGPT</a>. I highly recommend watching the video, as it contains a lot of useful information and visualizations that are hard to capture in text.</p>
 <p>Why should you read this?</p>
 <ul class="simple">
 <li><p>You want to understand how LLMs actually work not just at the surface level.</p></li>
@@ -483,31 +483,77 @@ document.write(`
 <li><p>You want to understand why DeepSeek-R1 is such a big deal right now.</p></li>
 </ul>
 <p>Note: If you are looking for the excalidraw diagram that Andrej made for the video, you can download it <a class="reference external" href="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/LLMIntro-2024-07-22-1743.excalidraw">here</a>. He shared it through Google Drive and it invalidates the link after a certain time. That’s why I have decided to host it on my CDN as well.</p>
-<section id="pretraining-data">
-<h2>1. Pretraining Data<a class="headerlink" href="#pretraining-data" title="Link to this heading">#</a></h2>
-<section id="download-and-preprocess-the-internet">
-<h3>1.1. Download and Preprocess the Internet<a class="headerlink" href="#download-and-preprocess-the-internet" title="Link to this heading">#</a></h3>
-<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/ct.png">
-<p>LLMs start by crawling the internet to build a massive text dataset. The problem? Raw data is noisy and full of duplicate content, low-quality text, and irrelevant information. Before training, it needs heavy filtering.</p>
+<section id="pretraining">
+<h2>1. Pretraining<a class="headerlink" href="#pretraining" title="Link to this heading">#</a></h2>
+<section id="internet-scale-data">
+<h3>1.1. Internet-scale data<a class="headerlink" href="#internet-scale-data" title="Link to this heading">#</a></h3>
+<p><strong><a class="reference external" href="https://commoncrawl.org/">Common Crawl</a></strong> is a non-profit organization that crawls the web and freely provides its archives and datasets to the public. It is one of the largest and most comprehensive web crawls available. It has been crawling the web since 2008 and has petabytes (thousands of terabytes) of data.</p>
+<p>The code and data are open source and free to use for anyone. Code can be accessed at <a class="github reference external" href="https://github.com/commoncrawl">commoncrawl</a> and the data can be accessed at <a class="reference external" href="https://data.commoncrawl.org/">https://data.commoncrawl.org/</a>.</p>
+<p><strong><a class="reference external" href="https://huggingface.co">HuggingFace</a></strong> is a company and open-source community that provides tools and libraries for natural language processing (NLP) and machine learning. They are most well-known for:</p>
 <ul class="simple">
-<li><p>If you’re building an English only model, you’ll need a heuristic to filter out non-English text (e.g., only keeping text with a high probability of being English).</p></li>
-<li><p>One example dataset is <a class="reference external" href="https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1">FineWeb</a>, which contains over 1.2 billion web pages.</p></li>
+<li><p><a class="reference external" href="https://huggingface.co/docs/transformers/en/index">Transformers library</a>, which provides pre-trained models for various NLP tasks.</p></li>
+<li><p><a class="reference external" href="https://huggingface.co/datasets">Data Sharing</a> a platform for sharing and discovering datasets, models, and other resources related to NLP.</p></li>
+<li><p><a class="reference external" href="https://huggingface.co/models">Model Hub</a>, which hosts thousands of pre-trained models for various NLP tasks.</p></li>
 </ul>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/ct.png">
+<p><strong><a class="reference external" href="https://huggingface.co/datasets/fineweb">Fineweb</a></strong> is a dataset created by Hugging Face that consists of cleaned and filtered web pages from Common Crawl. It is derived from 96 Common Crawl snapshots.  Extensive filtering (boilerplate removal, quality heuristics), deduplication, and cleaning to produce higher-quality web text than raw Common Crawl for FineWeb. It is designed to be used for training large language models. The dataset contains over 1.2 billion web pages, making it one of the largest datasets available for this purpose.</p>
 <p>Once cleaned, the data still needs to be compressed into something usable. Instead of feeding raw text into the model, it gets converted into tokens: a structured, numerical representation.</p>
 </section>
 <section id="tokenization">
 <h3>1.2. Tokenization<a class="headerlink" href="#tokenization" title="Link to this heading">#</a></h3>
-<p>Tokenization is how models break text into smaller pieces (tokens) before processing it. Instead of storing raw words, the model converts them into IDs that represent repeating patterns.</p>
+<p>Tokenization is the process of breaking raw text (like a sentence or document) into smaller units called <strong>tokens</strong> that the model can understand.</p>
+<p>A token is not always a word. Word-level tokenization struggles with unseen words (“out-of-vocabulary problem”). On the other end, character-level tokenization makes sequences too long.</p>
+<p><strong>Byte Pair Encoding (BPE)</strong> subword tokenization strikes the right balance. It breaks text into subword units, which can be as small as a single character or as large as a whole word.</p>
+<p>For example, the sentence: <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">love</span> <span class="pre">programming!</span></code> can be tokenized into: <code class="docutils literal notranslate"><span class="pre">[&quot;I&quot;,</span> <span class="pre">&quot;</span> <span class="pre">love&quot;,</span> <span class="pre">&quot;</span> <span class="pre">program&quot;,</span> <span class="pre">&quot;ming&quot;,</span> <span class="pre">&quot;!&quot;]</span></code></p>
+<p>Suppose we have a toy corpus <code class="docutils literal notranslate"><span class="pre">low,</span> <span class="pre">lower,</span> <span class="pre">newest,</span> <span class="pre">widest</span></code>, the following is how BPE tokenization works:</p>
+<ol class="arabic">
+<li><p>Start with characters</p>
+<p>Represent each word as a sequence of characters plus an end-of-word marker _:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="n">o</span> <span class="n">w</span> <span class="n">_</span>
+<span class="n">l</span> <span class="n">o</span> <span class="n">w</span> <span class="n">e</span> <span class="n">r</span> <span class="n">_</span>
+<span class="n">n</span> <span class="n">e</span> <span class="n">w</span> <span class="n">e</span> <span class="n">s</span> <span class="n">t</span> <span class="n">_</span>
+<span class="n">w</span> <span class="n">i</span> <span class="n">d</span> <span class="n">e</span> <span class="n">s</span> <span class="n">t</span> <span class="n">_</span>
+</pre></div>
+</div>
+</li>
+<li><p>Count symbol pairs</p>
+<p>Find the most frequent adjacent pair of symbols.</p>
+<p>“l o” (1), “o w” (2), “w e” (2), “e s” (2), “s t” (2), etc.</p>
+<p>Suppose e s is most frequent.</p>
+</li>
+<li><p>Merge the most frequent pair</p>
+<p>Replace e s with a new symbol es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="n">e</span> <span class="n">w</span> <span class="n">es</span> <span class="n">t</span> <span class="n">_</span>
+<span class="n">w</span> <span class="n">i</span> <span class="n">d</span> <span class="n">es</span> <span class="n">t</span> <span class="n">_</span>
+</pre></div>
+</div>
+</li>
+<li><p>Repeat</p>
+<p>Next merge could be <code class="docutils literal notranslate"><span class="pre">es</span> <span class="pre">t</span> <span class="pre">→</span> <span class="pre">est</span></code>, then <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">o</span> <span class="pre">w</span> <span class="pre">→</span> <span class="pre">low</span></code>, etc.</p>
+</li>
+</ol>
+<p>Over iterations, you build a <strong>vocabulary of subwords</strong>.</p>
+<p>At the end of the process, Frequent words stay whole and rare words get broken down into smaller, common chunks. You end with a vocabulary that balances:</p>
 <ul class="simple">
-<li><p>A popular technique for this is <a class="reference external" href="https://en.wikipedia.org/wiki/Byte_pair_encoding">Byte Pair Encoding (BPE)</a>.</p></li>
-<li><p>There’s an optimal number of symbols (tokens) for compression. For example, GPT-4 uses 100,277 tokens. It is totally dependent on the discretion of the model creator.</p></li>
-<li><p>You can visualize how this works using tools like <a class="reference external" href="https://tiktokenizer.vercel.app/?model=cl100k_base">Tiktokenizer</a>.</p></li>
+<li><p>Size: manageable number of tokens.</p></li>
+<li><p>Coverage: can represent most words.</p></li>
 </ul>
+<center><img width="60%" src="https://i.ibb.co/3mF4RmrK/Screenshot-2025-09-17-at-10-42-42-PM.png"></center><br/><br/>
+<p>You can visualize how this works using tools like <a class="reference external" href="https://tiktokenizer.vercel.app/?model=cl100k_base">Tiktokenizer (https://tiktokenizer.vercel.app)</a>.</p>
+<p>LLMs don’t operate directly on raw text. Instead:</p>
+<ol class="arabic simple">
+<li><p>Text → tokenizer → tokens (subword units).</p></li>
+<li><p>Tokens → mapped to integers (IDs in a fixed vocabulary).</p></li>
+<li><p>These IDs are fed into the model for training or inference.</p></li>
+</ol>
+<p>For reference, GPT-3 uses 50,257 tokens and GPT-4 uses 100,277 tokens in its vocabulary.</p>
 </section>
 <section id="neural-network-training">
 <h3>1.3. Neural Network Training<a class="headerlink" href="#neural-network-training" title="Link to this heading">#</a></h3>
+<p>Once the data is tokenized, it’s fed into the neural network. More specifically, a <strong>Transformer</strong> architecture, which is particularly good at handling sequential data like text.</p>
+<img src="https://heidloff.net/assets/img/2023/02/transformers.png" width="100%">
 <img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/nn-io.png">
-<p>Once the data is tokenized, it’s fed into the neural network. Here’s how that process works:</p>
+<p>Here’s how that process works:</p>
 <ol class="arabic simple">
 <li><p>The model takes in a <strong>context window</strong>, a set number of tokens (e.g., 8,000 for some models, up to 128k for GPT-4).</p></li>
 <li><p>It predicts the <strong>next token</strong> based on the patterns it has learned.</p></li>
@@ -843,8 +889,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining-data">1. Pretraining Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-preprocess-the-internet">1.1. Download and Preprocess the Internet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretraining">1. Pretraining</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internet-scale-data">1.1. Internet-scale data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">1.2. Tokenization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-training">1.3. Neural Network Training</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inference">1.4. Inference</a></li>
