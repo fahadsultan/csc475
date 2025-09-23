@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Agents &#8212; CSC-475</title>
+    <title>Tools &#8212; CSC-475</title>
   
   
   
@@ -218,11 +218,16 @@
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="llms.html">Large Language Models</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="llms.html">Large Language Models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="llms_pretraining.html">1. Pretraining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llms_finetuning.html">2. Post-Training: Supervised Fine-Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llms_rlhf.html">3. Post-Training: Reinforcement Learning</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="openai_api.html"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</a></li>
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Agents</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
@@ -422,7 +427,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Agents</h1>
+    <h1>Tools</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,19 +437,37 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-a-minimal-chat-agent">Quick start: a minimal “chat agent”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-function-calling">2) Tools (function calling)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-tools">Built-in Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling">Function Calling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-search">Web Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-and-citations">Output and citations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-filtering">Domain filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-location">User location</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge">3) Retrieval-Augmented Generation (RAG): give your agent knowledge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-tool-orchestrator-web-calc-rag">4) Multi-tool orchestrator: web + calc + RAG</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-agents-sdk-optional-but-convenient">5) Using the Agents SDK (optional but convenient)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-patterns">6) Memory patterns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-ux-recommended">7) Streaming UX (recommended)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guardrails-safety">8) Guardrails &amp; safety</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-eval-cheap-but-effective">9) Testing &amp; eval (cheap but effective)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-patterns">10) Deploy patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-mcp">Remote MCP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart">Quickstart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-listing-available-tools">Step 1: Listing available tools</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-search">File Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-customization">Retrieval customization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limiting-the-number-of-results">Limiting the number of results</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include-search-results-in-the-response">Include search results in the response</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-data-filtering">Meta-data filtering</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-files">Supported files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval">Retrieval</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-vector-store">1. Create a Vector Store</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-query">2. Search query</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-search">Semantic search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesizing-responses">Synthesizing responses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge">Retrieval-Augmented Generation (RAG): give your agent knowledge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-to-end-example">End to End example</a></li>
 </ul>
             </nav>
@@ -457,9 +480,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="agents">
-<h1>Agents<a class="headerlink" href="#agents" title="Link to this heading">#</a></h1>
-<p>An <strong>agent</strong> is a loop where a model:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tools">
+<h1>Tools<a class="headerlink" href="#tools" title="Link to this heading">#</a></h1>
+<img src="https://cf-assets.www.cloudflare.com/zkvhlag99gkb/6dhEhrOtwdaWOjJqhrzmMw/cc8576e7ccce43e2df1bacfd91b125ff/image3.png" width="50%" align="right">
+<p>An <strong>agent</strong> in the context of AI and machine learning is a loop where a model:</p>
 <ol class="arabic simple">
 <li><p>Reads user input + context</p></li>
 <li><p>Decides whether to call <em>tools</em> (code you provide)</p></li>
@@ -472,36 +496,8 @@ document.write(`
 <li><p>Embeddings for retrieval/memory, and</p></li>
 <li><p>An Agents SDK that wraps common agentic patterns (tools, state, tracing) to speed development.</p></li>
 </ul>
-<section id="quick-start-a-minimal-chat-agent">
-<h2>Quick start: a minimal “chat agent”<a class="headerlink" href="#quick-start-a-minimal-chat-agent" title="Link to this heading">#</a></h2>
-<p>Goal: one file, streams tokens, easy to run.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install openai==1.*  (or the official SDK version in your env)</span>
-<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">])</span>
-
-<span class="k">def</span> <span class="nf">chat</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
-    <span class="c1"># Responses API: simple chat completion with streaming</span>
-    <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span>
-        <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1-mini&quot;</span><span class="p">,</span>
-        <span class="nb">input</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}],</span>
-    <span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">stream</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;response.output_text.delta&quot;</span><span class="p">:</span>
-                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">delta</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">()</span>  <span class="c1"># newline</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">chat</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&gt; &quot;</span><span class="p">))</span>
-        <span class="k">except</span> <span class="p">(</span><span class="ne">EOFError</span><span class="p">,</span> <span class="ne">KeyboardInterrupt</span><span class="p">):</span>
-            <span class="k">break</span>
-</pre></div>
-</div>
-</section>
-<section id="tools-function-calling">
-<h2>2) Tools (function calling)<a class="headerlink" href="#tools-function-calling" title="Link to this heading">#</a></h2>
+<section id="function-calling">
+<h2>Function Calling<a class="headerlink" href="#function-calling" title="Link to this heading">#</a></h2>
 <p>Tools = your functions. The model chooses when/with what arguments to call them; you execute and return results back into the conversation.</p>
 <p>Let’s say the user wanted to know their horoscope.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a running input list we will add to over time</span>
@@ -584,10 +580,20 @@ document.write(`
 </div>
 </li>
 </ol>
-<section id="built-in-tools">
-<h3>Built-in Tools<a class="headerlink" href="#built-in-tools" title="Link to this heading">#</a></h3>
+</section>
+<section id="web-search">
+<h2>Web Search<a class="headerlink" href="#web-search" title="Link to this heading">#</a></h2>
 <p>OpenAI API comes with some built-in tools you can use out of the box.</p>
 <p>One example is the <code class="docutils literal notranslate"><span class="pre">search</span></code> tool, which allows the model to perform web searches to retrieve up-to-date information.</p>
+<p>Web search allows models to access up-to-date information from the internet and provide answers with sourced citations.</p>
+<p>To enable this, use the web search tool in the Responses API or, in some cases, Chat Completions.</p>
+<p>There are three main types of web search available with OpenAI models:</p>
+<ol class="arabic simple">
+<li><p><strong>Non‑reasoning web search</strong>: The non-reasoning model sends the user’s query to the web search tool, which returns the response based on top results. There’s no internal planning and the model simply passes along the search tool’s responses. This method is fast and ideal for quick lookups.</p></li>
+<li><p><strong>Agentic search with reasoning models</strong> is an approach where the model actively manages the search process. It can perform web searches as part of its chain of thought, analyze results, and decide whether to keep searching. This flexibility makes agentic search well suited to complex workflows, but it also means searches take longer than quick lookups. For example, you can adjust GPT-5’s reasoning level to change both the depth and latency of the search.</p></li>
+<li><p><strong>Deep research is a specialized, agent-driven method for in-depth, extended investigations</strong> by reasoning models. The model conducts web searches as part of its chain of thought, often tapping into hundreds of sources. Deep research can run for several minutes and is best used with background mode. These tasks typically use models like <code class="docutils literal notranslate"><span class="pre">o3-deep-research</span></code>, <code class="docutils literal notranslate"><span class="pre">o4-mini-deep-research</span></code>, or <code class="docutils literal notranslate"><span class="pre">gpt-5</span></code> with reasoning level set to <code class="docutils literal notranslate"><span class="pre">high</span></code>.</p></li>
+</ol>
+<p>Using the <a class="reference internal" href="#/docs/api-reference/responses"><span class="xref myst">Responses API</span></a>, you can enable web search by configuring it in the <code class="docutils literal notranslate"><span class="pre">tools</span></code> array in an API request to generate content. Like any other tool, the model can choose to search the web or not based on the content of the input prompt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
 
@@ -629,6 +635,885 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Web search tool example</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">OpenAI</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;openai&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OpenAI</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">responses</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">tools</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;web_search&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nx">input</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;What was a positive news story from today?&quot;</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">output_text</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;web_search&quot;</span><span class="p">}],</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;What was a positive news story from today?&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="output-and-citations">
+<h3>Output and citations<a class="headerlink" href="#output-and-citations" title="Link to this heading">#</a></h3>
+<p>Model responses that use the web search tool will include two parts:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">web_search_call</span></code> output item with the ID of the search call, along with the action taken in <code class="docutils literal notranslate"><span class="pre">web_search_call.action</span></code>. The action is one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">search</span></code>, which represents a web search. It will usually (but not always) includes the search <code class="docutils literal notranslate"><span class="pre">query</span></code> and <code class="docutils literal notranslate"><span class="pre">domains</span></code> which were searched. Search actions incur a tool call cost (see <a class="reference internal" href="#/docs/pricing#built-in-tools"><span class="xref myst">pricing</span></a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open_page</span></code>, which represents a page being opened. Supported in reasoning models.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find_in_page</span></code>, which represents searching within a page. Supported in reasoning models.</p></li>
+</ul>
+</li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">message</span></code> output item containing:</p>
+<ul>
+<li><p>The text result in <code class="docutils literal notranslate"><span class="pre">message.content[0].text</span></code></p></li>
+<li><p>Annotations <code class="docutils literal notranslate"><span class="pre">message.content[0].annotations</span></code> for the cited URLs</p></li>
+</ul>
+</li>
+</ul>
+<p>By default, the model’s response will include inline citations for URLs found in the web search results. In addition to this, the <code class="docutils literal notranslate"><span class="pre">url_citation</span></code> annotation object will contain the URL, title and location of the cited source.</p>
+<p>When displaying web results or information contained in web results to end users, inline citations must be made clearly visible and clickable in your user interface.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;web_search_call&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws_67c9fa0502748190b7dd390736892e100be649c1a5ff9609&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;msg_67c9fa077e288190af08fdffda2e34f20be649c1a5ff9609&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;message&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assistant&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;output_text&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;On March 6, 2025, several news...&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;annotations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;url_citation&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;start_index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2606</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;end_index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2758</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://...&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Title...&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="domain-filtering">
+<h3>Domain filtering<a class="headerlink" href="#domain-filtering" title="Link to this heading">#</a></h3>
+<p>Domain filtering in web search lets you limit results to a specific set of domains. With the <code class="docutils literal notranslate"><span class="pre">filters</span></code> parameter you can set an allow-list of up to 20 URLs. When formatting URLs, omit the HTTP or HTTPS prefix. For example, use <a class="reference external" href="http://openai.com"><code class="docutils literal notranslate"><span class="pre">openai.com</span></code></a> instead of <a class="reference external" href="https://openai.com/"><code class="docutils literal notranslate"><span class="pre">https://openai.com/</span></code></a>. This approach also includes subdomains in the search. Note that domain filtering is only available in the Responses API with the <code class="docutils literal notranslate"><span class="pre">web_search</span></code> tool.</p>
+</section>
+<section id="sources">
+<h3>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h3>
+<p>To view all URLs retrieved during a web search, use the <code class="docutils literal notranslate"><span class="pre">sources</span></code> field. Unlike inline citations, which show only the most relevant references, sources returns the complete list of URLs the model consulted when forming its response. The number of sources is often greater than the number of citations. Real-time third-party feeds are also surfaced here and are labeled as <code class="docutils literal notranslate"><span class="pre">oai-sports</span></code>, <code class="docutils literal notranslate"><span class="pre">oai-weather</span></code>, or <code class="docutils literal notranslate"><span class="pre">oai-finance</span></code>. The sources field is available with both the <code class="docutils literal notranslate"><span class="pre">web_search</span></code> and <code class="docutils literal notranslate"><span class="pre">web_search_preview</span></code> tools.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">OpenAI</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;openai&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OpenAI</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">responses</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">reasoning</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">effort</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;low&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">tools</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;web_search&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">filters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">allowed_domains</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">&quot;pubmed.ncbi.nlm.nih.gov&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;clinicaltrials.gov&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;www.who.int&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;www.cdc.gov&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;www.fda.gov&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="p">],</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">tool_choice</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">include</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;web_search_call.action.sources&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">input</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Please perform a web search on how semaglutide is used in the treatment of diabetes.&quot;</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">output_text</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+  <span class="n">reasoning</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;effort&quot;</span><span class="p">:</span> <span class="s2">&quot;low&quot;</span><span class="p">},</span>
+  <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;web_search&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;filters&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;allowed_domains&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;pubmed.ncbi.nlm.nih.gov&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;clinicaltrials.gov&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;www.who.int&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;www.cdc.gov&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;www.fda.gov&quot;</span><span class="p">,</span>
+              <span class="p">]</span>
+          <span class="p">},</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="n">tool_choice</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+  <span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;web_search_call.action.sources&quot;</span><span class="p">],</span>
+  <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;Please perform a web search on how semaglutide is used in the treatment of diabetes.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="user-location">
+<h3>User location<a class="headerlink" href="#user-location" title="Link to this heading">#</a></h3>
+<p>To refine search results based on geography, you can specify an approximate user location using country, city, region, and/or timezone.</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">city</span></code> and <code class="docutils literal notranslate"><span class="pre">region</span></code> fields are free text strings, like <code class="docutils literal notranslate"><span class="pre">Minneapolis</span></code> and <code class="docutils literal notranslate"><span class="pre">Minnesota</span></code> respectively.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">country</span></code> field is a two-letter <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_3166-1">ISO country code</a>, like <code class="docutils literal notranslate"><span class="pre">US</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">timezone</span></code> field is an <a class="reference external" href="https://timeapi.io/documentation/iana-timezones">IANA timezone</a> like <code class="docutils literal notranslate"><span class="pre">America/Chicago</span></code>.</p></li>
+</ul>
+<p>Note that user location is not supported for deep research models using web search.</p>
+<p>Customizing user location</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```python
+from openai import OpenAI
+client = OpenAI()
+
+response = client.responses.create(
+    model=&quot;o4-mini&quot;,
+    tools=[{
+        &quot;type&quot;: &quot;web_search&quot;,
+        &quot;user_location&quot;: {
+            &quot;type&quot;: &quot;approximate&quot;,
+            &quot;country&quot;: &quot;GB&quot;,
+            &quot;city&quot;: &quot;London&quot;,
+            &quot;region&quot;: &quot;London&quot;,
+        }
+    }],
+    input=&quot;What are the best restaurants around Granary Square?&quot;,
+)
+
+print(response.output_text)
+```
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Javascript</label><div class="sd-tab-content docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```javascript
+import OpenAI from &quot;openai&quot;;
+const openai = new OpenAI();
+
+const response = await openai.responses.create({
+    model: &quot;o4-mini&quot;,
+    tools: [{
+        type: &quot;web_search&quot;,
+        user_location: {
+            type: &quot;approximate&quot;,
+            country: &quot;GB&quot;,
+            city: &quot;London&quot;,
+            region: &quot;London&quot;
+        }
+    }],
+    input: &quot;What are the best restaurants around Granary Square?&quot;,
+});
+console.log(response.output_text);
+```
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Bash</label><div class="sd-tab-content docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```bash
+curl &quot;https://api.openai.com/v1/responses&quot; \
+    -H &quot;Content-Type: application/json&quot; \
+    -H &quot;Authorization: Bearer $OPENAI_API_KEY&quot; \
+    -d &#39;{
+        &quot;model&quot;: &quot;o4-mini&quot;,
+        &quot;tools&quot;: [{
+            &quot;type&quot;: &quot;web_search&quot;,
+            &quot;user_location&quot;: {
+                &quot;type&quot;: &quot;approximate&quot;,
+                &quot;country&quot;: &quot;GB&quot;,
+                &quot;city&quot;: &quot;London&quot;,
+                &quot;region&quot;: &quot;London&quot;
+            }
+        }],
+        &quot;input&quot;: &quot;What are the best restaurants around Granary Square?&quot;
+    }&#39;
+```
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>API compatibility</strong></p>
+<p>Web search is available in the Responses API as the generally available version of the tool, <code class="docutils literal notranslate"><span class="pre">web_search</span></code>, as well as the earlier tool version, <code class="docutils literal notranslate"><span class="pre">web_search_preview</span></code>. To use web search in the Chat Completions API, use the specialized web search models <code class="docutils literal notranslate"><span class="pre">gpt-4o-search-preview</span></code> and <code class="docutils literal notranslate"><span class="pre">gpt-4o-mini-search-preview</span></code>.</p>
+<p><strong>Limitations</strong></p>
+<ul class="simple">
+<li><p>Web search is currently not supported in <strong><code class="docutils literal notranslate"><span class="pre">gpt-5</span></code></strong> with <code class="docutils literal notranslate"><span class="pre">minimal</span></code> reasoning, and <code class="docutils literal notranslate"><span class="pre">gpt-4.1-nano</span></code>.</p></li>
+<li><p>When used as a tool in the <strong>Responses API</strong>, web search has the same tiered rate limits as the models above.</p></li>
+<li><p>Web search is limited to a context window size of 128000 (even with <strong><code class="docutils literal notranslate"><span class="pre">gpt-4.1</span></code></strong> and <code class="docutils literal notranslate"><span class="pre">gpt-4.1-mini</span></code> models).</p></li>
+</ul>
+</section>
+</section>
+<section id="remote-mcp">
+<h2>Remote MCP<a class="headerlink" href="#remote-mcp" title="Link to this heading">#</a></h2>
+<p>Use connectors and remote MCP (Model Context Protocol) servers to give models new capabilities.</p>
+<p>In addition to tools you make available to the model with function calling, you can give models new capabilities using connectors and remote MCP servers. These tools give the model the ability to connect to and control external services when needed to respond to a user’s prompt. These tool calls can either be allowed automatically, or restricted with explicit approval required by you as the developer.</p>
+<ul class="simple">
+<li><p>Connectors are OpenAI-maintained MCP wrappers for popular services like Google Workspace or Dropbox, like the connectors available in ChatGPT.</p></li>
+<li><p>Remote MCP servers can be any server on the public Internet that implements a remote Model Context Protocol (MCP) server.</p></li>
+</ul>
+<p>This guide will show how to use both remote MCP servers and connectors to give the model access to new capabilities.</p>
+<section id="quickstart">
+<h3>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h3>
+<p>Check out the examples below to see how remote MCP servers and connectors work through the Responses API. Both connectors and remote MCP servers can be used with the <code class="docutils literal notranslate"><span class="pre">mcp</span></code> built-in tool type.</p>
+<p>Using remote MCP servers
+Using connectors
+Remote MCP servers require a <code class="docutils literal notranslate"><span class="pre">server_url</span></code>. Depending on the server, you may also need an OAuth <code class="docutils literal notranslate"><span class="pre">authorization</span></code> parameter containing an access token.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;mcp&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;server_label&quot;</span><span class="p">:</span> <span class="s2">&quot;dmcp&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;server_description&quot;</span><span class="p">:</span> <span class="s2">&quot;A Dungeons and Dragons MCP server to assist with dice rolling.&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;server_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://dmcp-server.deno.dev/sse&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;require_approval&quot;</span><span class="p">:</span> <span class="s2">&quot;never&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;Roll 2d4+1&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Connectors require a connector_id parameter, and an OAuth access token provided by your application in the authorization parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;mcp&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;server_label&quot;</span><span class="p">:</span> <span class="s2">&quot;Dropbox&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;connector_id&quot;</span><span class="p">:</span> <span class="s2">&quot;connector_dropbox&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;oauth access token&gt;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;require_approval&quot;</span><span class="p">:</span> <span class="s2">&quot;never&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;Summarize the Q2 earnings report.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The API will return new items in the output array of the model response. If the model decides to use a Connector or MCP server, it will first make a request to list available tools from the server, which will create a mcp_list_tools output item. From the simple remote MCP server example above, it contains only one tool definition:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcpl_68a6102a4968819c8177b05584dd627b0679e572a900e618&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcp_list_tools&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;server_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dmcp&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;annotations&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Given a string of text describing a dice roll...&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input_schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;diceRollExpression&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;diceRollExpression&quot;</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;roll&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="step-1-listing-available-tools">
+<h3>Step 1: Listing available tools<a class="headerlink" href="#step-1-listing-available-tools" title="Link to this heading">#</a></h3>
+<p>When you specify a remote MCP server in the <code class="docutils literal notranslate"><span class="pre">tools</span></code> parameter, the API will attempt to get a list of tools from the server. The Responses API works with remote MCP servers that support either the Streamable HTTP or the HTTP/SSE transport protocols.</p>
+<p>If successful in retrieving the list of tools, a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">mcp_list_tools</span></code> output item will appear in the model response output. The <code class="docutils literal notranslate"><span class="pre">tools</span></code> property of this object will show the tools that were successfully imported.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcpl_68a6102a4968819c8177b05584dd627b0679e572a900e618&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcp_list_tools&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;server_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dmcp&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;annotations&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Given a string of text describing a dice roll...&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input_schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;diceRollExpression&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;diceRollExpression&quot;</span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;additionalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;roll&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="file-search">
+<h2>File Search<a class="headerlink" href="#file-search" title="Link to this heading">#</a></h2>
+<p>File search allow models to search your files for relevant information before generating a response.</p>
+<p>File search is a tool available in the Responses API. It enables models to retrieve information in a knowledge base of previously uploaded files through semantic and keyword search. By creating vector stores and uploading files to them, you can augment the models’ inherent knowledge by giving them access to these knowledge bases or vector_stores.</p>
+<p>To learn more about how vector stores and semantic search work, refer to our retrieval guide.</p>
+<p>This is a hosted tool managed by OpenAI, meaning you don’t have to implement code on your end to handle its execution. When the model decides to use it, it will automatically call the tool, retrieve information from your files, and return an output.</p>
+<p>Prior to using file search with the Responses API, you need to have set up a knowledge base in a vector store and uploaded files to it.</p>
+<ol class="arabic simple">
+<li><p>Create a vector store and upload files to it.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">create_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http://&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">file_path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://&quot;</span><span class="p">):</span>
+        <span class="c1"># Download the file content from the URL</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="n">file_content</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">file_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">file_content</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">file_tuple</span><span class="p">,</span>
+            <span class="n">purpose</span><span class="o">=</span><span class="s2">&quot;assistants&quot;</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Handle local file path</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_content</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+                <span class="n">file</span><span class="o">=</span><span class="n">file_content</span><span class="p">,</span>
+                <span class="n">purpose</span><span class="o">=</span><span class="s2">&quot;assistants&quot;</span>
+            <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">id</span>
+
+<span class="c1"># Replace with your own file path or URL</span>
+<span class="n">file_id</span> <span class="o">=</span> <span class="n">create_file</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s2">&quot;https://cdn.openai.com/API/docs/deep_research_blog.pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Once your knowledge base is set up, you can include the <code class="docutils literal notranslate"><span class="pre">file_search</span></code> tool in the list of tools available to the model, along with the list of vector stores in which to search.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;What is deep research by OpenAI?&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="p">[{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_search&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vector_store_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;vector_store_id&gt;&quot;</span><span class="p">]</span>
+    <span class="p">}]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When this tool is called by the model, you will receive a response with multiple outputs:</p>
+<ol class="arabic simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">file_search_call</span></code> output item, which contains the id of the file search call.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">message</span></code> output item, which contains the response from the model, along with the file citations.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;output&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_search_call&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;fs_67c09ccea8c48191ade9367e3ba71515&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;completed&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;queries&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;What is deep research?&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;search_results&quot;</span><span class="p">:</span> <span class="n">null</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;msg_67c09cd3091c819185af2be5d13d87de&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;message&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;output_text&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Deep research is a sophisticated capability that allows for extensive inquiry and synthesis of information across various domains. It is designed to conduct multi-step research tasks, gather data from multiple online sources, and provide comprehensive reports similar to what a research analyst would produce. This functionality is particularly useful in fields requiring detailed and accurate information...&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;annotations&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_citation&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="mi">992</span><span class="p">,</span>
+              <span class="s2">&quot;file_id&quot;</span><span class="p">:</span> <span class="s2">&quot;file-2dtbBZdjtDKS8eqWxqbgDi&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;deep_research_blog.pdf&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_citation&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="mi">992</span><span class="p">,</span>
+              <span class="s2">&quot;file_id&quot;</span><span class="p">:</span> <span class="s2">&quot;file-2dtbBZdjtDKS8eqWxqbgDi&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;deep_research_blog.pdf&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_citation&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="mi">1176</span><span class="p">,</span>
+              <span class="s2">&quot;file_id&quot;</span><span class="p">:</span> <span class="s2">&quot;file-2dtbBZdjtDKS8eqWxqbgDi&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;deep_research_blog.pdf&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+              <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_citation&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="mi">1176</span><span class="p">,</span>
+              <span class="s2">&quot;file_id&quot;</span><span class="p">:</span> <span class="s2">&quot;file-2dtbBZdjtDKS8eqWxqbgDi&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="s2">&quot;deep_research_blog.pdf&quot;</span>
+            <span class="p">}</span>
+          <span class="p">]</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="retrieval-customization">
+<h3>Retrieval customization<a class="headerlink" href="#retrieval-customization" title="Link to this heading">#</a></h3>
+<section id="limiting-the-number-of-results">
+<h4>Limiting the number of results<a class="headerlink" href="#limiting-the-number-of-results" title="Link to this heading">#</a></h4>
+<p>Using the file search tool with the Responses API, you can customize the number of results you want to retrieve from the vector stores. This can help reduce both token usage and latency, but may come at the cost of reduced answer quality.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;What is deep research by OpenAI?&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="p">[{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_search&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vector_store_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;vector_store_id&gt;&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;max_num_results&quot;</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">}]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="include-search-results-in-the-response">
+<h4>Include search results in the response<a class="headerlink" href="#include-search-results-in-the-response" title="Link to this heading">#</a></h4>
+<p>While you can see annotations (references to files) in the output text, the file search call will not return search results by default.</p>
+<p>To include search results in the response, you can use the <code class="docutils literal notranslate"><span class="pre">include</span></code> parameter when creating the response.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;What is deep research by OpenAI?&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="p">[{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_search&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vector_store_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;vector_store_id&gt;&quot;</span><span class="p">]</span>
+    <span class="p">}],</span>
+    <span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;file_search_call.results&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="meta-data-filtering">
+<h4>Meta-data filtering<a class="headerlink" href="#meta-data-filtering" title="Link to this heading">#</a></h4>
+<p>You can filter the search results based on the metadata of the files. For more details, refer to our retrieval guide, which covers:</p>
+<ul class="simple">
+<li><p>How to set attributes on vector store files</p></li>
+<li><p>How to define filters</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span>
+    <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;What is deep research by OpenAI?&quot;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="p">[{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file_search&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vector_store_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;vector_store_id&gt;&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;filters&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;eq&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;blog&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="supported-files">
+<h3>Supported files<a class="headerlink" href="#supported-files" title="Link to this heading">#</a></h3>
+<p>Supported files
+For text/ MIME types, the encoding must be one of utf-8, utf-16, or ascii.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>format	MIME type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>.c</p></td>
+<td><p>text/x-c</p></td>
+</tr>
+<tr class="row-odd"><td><p>.cpp</p></td>
+<td><p>text/x-c++</p></td>
+</tr>
+<tr class="row-even"><td><p>.cs</p></td>
+<td><p>text/x-csharp</p></td>
+</tr>
+<tr class="row-odd"><td><p>.css</p></td>
+<td><p>text/css</p></td>
+</tr>
+<tr class="row-even"><td><p>.doc</p></td>
+<td><p>application/msword</p></td>
+</tr>
+<tr class="row-odd"><td><p>.docx</p></td>
+<td><p>application/vnd.openxmlformats-officedocument.wordprocessingml.document</p></td>
+</tr>
+<tr class="row-even"><td><p>.go</p></td>
+<td><p>text/x-golang</p></td>
+</tr>
+<tr class="row-odd"><td><p>.html</p></td>
+<td><p>text/html</p></td>
+</tr>
+<tr class="row-even"><td><p>.java</p></td>
+<td><p>text/x-java</p></td>
+</tr>
+<tr class="row-odd"><td><p>.js</p></td>
+<td><p>text/javascript</p></td>
+</tr>
+<tr class="row-even"><td><p>.json</p></td>
+<td><p>application/json</p></td>
+</tr>
+<tr class="row-odd"><td><p>.md</p></td>
+<td><p>text/markdown</p></td>
+</tr>
+<tr class="row-even"><td><p>.pdf</p></td>
+<td><p>application/pdf</p></td>
+</tr>
+<tr class="row-odd"><td><p>.php</p></td>
+<td><p>text/x-php</p></td>
+</tr>
+<tr class="row-even"><td><p>.pptx</p></td>
+<td><p>application/vnd.openxmlformats-officedocument.presentationml.presentation</p></td>
+</tr>
+<tr class="row-odd"><td><p>.py</p></td>
+<td><p>text/x-python</p></td>
+</tr>
+<tr class="row-even"><td><p>.rb</p></td>
+<td><p>text/x-ruby</p></td>
+</tr>
+<tr class="row-odd"><td><p>.sh</p></td>
+<td><p>application/x-sh</p></td>
+</tr>
+<tr class="row-even"><td><p>.tex</p></td>
+<td><p>text/x-tex</p></td>
+</tr>
+<tr class="row-odd"><td><p>.ts</p></td>
+<td><p>application/typescript</p></td>
+</tr>
+<tr class="row-even"><td><p>.txt</p></td>
+<td><p>text/plain</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="retrieval">
+<h2>Retrieval<a class="headerlink" href="#retrieval" title="Link to this heading">#</a></h2>
+<p>Search your data using semantic similarity.</p>
+<p>The <strong>Retrieval API</strong> allows you to perform <strong>semantic search</strong> over your data, which is a technique that surfaces semantically similar results — even when they match few or no keywords. Retrieval is useful on its own, but is especially powerful when combined with our models to synthesize responses.</p>
+<p><img alt="Retrieval depiction" src="https://cdn.openai.com/API/docs/images/retrieval-depiction.png" /></p>
+<p>The Retrieval API is powered by <strong>vector stores</strong>, which serve as indices for your data. This guide will cover how to perform semantic search, and go into the details of vector stores.</p>
+<section id="create-a-vector-store">
+<h3>1. Create a Vector Store<a class="headerlink" href="#create-a-vector-store" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Create vector store and upload files.</p>
+<p>Vector stores are the containers that power semantic search for the Retrieval API and the <strong>file search</strong> tool. When you add a file to a vector store it will be automatically chunked, embedded, and indexed.</p>
+<p>Vector stores contain <code class="docutils literal notranslate"><span class="pre">vector_store_file</span></code> objects, which are backed by a <code class="docutils literal notranslate"><span class="pre">file</span></code> object.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Object type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>file</p></td>
+<td><p>Represents content uploaded through the Files API. Often used with vector stores, but also for fine-tuning and other use cases.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vector_store</p></td>
+<td><p>Container for searchable files.</p></td>
+</tr>
+<tr class="row-even"><td><p>vector_store.file</p></td>
+<td><p>Wrapper type specifically representing a file that has been chunked and embedded, and has been associated with a vector_store.Contains attributes map used for filtering.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+<p>Create vector store with files</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">vector_store</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">vector_stores</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>        <span class="c1"># Create vector store</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Support FAQ&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">vector_stores</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">upload_and_poll</span><span class="p">(</span>        <span class="c1"># Upload file</span>
+    <span class="n">vector_store_id</span><span class="o">=</span><span class="n">vector_store</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;customer_policies.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">OpenAI</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;openai&quot;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OpenAI</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">vector_store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">vectorStores</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="w">   </span><span class="c1">// Create vector store</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Support FAQ&quot;</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">vector_stores</span><span class="p">.</span><span class="nx">files</span><span class="p">.</span><span class="nx">upload_and_poll</span><span class="p">({</span><span class="w">         </span><span class="c1">// Upload file</span>
+<span class="w">    </span><span class="nx">vector_store_id</span><span class="o">:</span><span class="w"> </span><span class="nx">vector_store</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s2">&quot;customer_policies.txt&quot;</span><span class="p">),</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="search-query">
+<h3>2. Search query<a class="headerlink" href="#search-query" title="Link to this heading">#</a></h3>
+<p><strong>Send search query</strong> to get relevant results.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_query</span> <span class="o">=</span> <span class="s2">&quot;What is the return policy?&quot;</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">vector_stores</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+    <span class="n">vector_store_id</span><span class="o">=</span><span class="n">vector_store</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">query</span><span class="o">=</span><span class="n">user_query</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">userQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;What is the return policy?&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">vectorStores</span><span class="p">.</span><span class="nx">search</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">vector_store_id</span><span class="o">:</span><span class="w"> </span><span class="nx">vector_store</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="nx">userQuery</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>To learn how to use the results with our models, check out the <a class="reference internal" href="#/docs/guides/retrieval#synthesizing-responses"><span class="xref myst">synthesizing responses</span></a> section.</p>
+</section>
+<section id="semantic-search">
+<h3>Semantic search<a class="headerlink" href="#semantic-search" title="Link to this heading">#</a></h3>
+<p><strong>Semantic search</strong> is a technique that leverages <strong>vector embeddings</strong> to surface semantically relevant results. Importantly, this includes results with few or no shared keywords, which classical search techniques might miss.</p>
+<p>For example, let’s look at potential results for <code class="docutils literal notranslate"><span class="pre">&quot;When</span> <span class="pre">did</span> <span class="pre">we</span> <span class="pre">go</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">moon?&quot;</span></code>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Text</p></th>
+<th class="head"><p>Keyword Similarity</p></th>
+<th class="head"><p>Semantic Similarity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The first lunar landing occurred in July of 1969.</p></td>
+<td><p>0%</p></td>
+<td><p>65%</p></td>
+</tr>
+<tr class="row-odd"><td><p>The first man on the moon was Neil Armstrong.</p></td>
+<td><p>27%</p></td>
+<td><p>43%</p></td>
+</tr>
+<tr class="row-even"><td><p>When I ate the moon cake, it was delicious.</p></td>
+<td><p>40%</p></td>
+<td><p>28%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>(<a class="reference external" href="https://en.wikipedia.org/wiki/Jaccard_index">Jaccard</a> used for keyword, <a class="reference external" href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine</a> with <code class="docutils literal notranslate"><span class="pre">text-embedding-3-small</span></code> used for semantic.)</em></p>
+<p>Notice how the most relevant result contains none of the words in the search query. This flexibility makes semantic search a very powerful technique for querying knowledge bases of any size.</p>
+<p>Semantic search is powered by <strong>vector stores</strong>, which we cover in detail later in the guide. This section will focus on the mechanics of semantic search.</p>
+<p><strong>Performing semantic search</strong></p>
+<p>You can query a vector store using the <code class="docutils literal notranslate"><span class="pre">search</span></code> function and specifying a <code class="docutils literal notranslate"><span class="pre">query</span></code> in natural language. This will return a list of results, each with the relevant chunks, similarity scores, and file of origin.</p>
+<p>Search query</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">vector_stores</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+    <span class="n">vector_store_id</span><span class="o">=</span><span class="n">vector_store</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">query</span><span class="o">=</span><span class="s2">&quot;How many woodchucks are allowed per passenger?&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">vectorStores</span><span class="p">.</span><span class="nx">search</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">vector_store_id</span><span class="o">:</span><span class="w"> </span><span class="nx">vector_store</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;How many woodchucks are allowed per passenger?&quot;</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Results</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vector_store.search_results.page&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;search_query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;How many woodchucks are allowed per passenger?&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;file_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file-12345&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;woodchuck_policy.txt&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;North America&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wildlife Department&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;According to the latest regulations, each passenger is allowed to carry up to two woodchucks.&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ensure that the woodchucks are properly contained during transport.&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;file_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file-67890&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;transport_guidelines.txt&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;North America&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Transport Authority&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Passengers must adhere to the guidelines set forth by the Transport Authority regarding the transport of woodchucks.&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;has_more&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;next_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A response will contain 10 results maximum by default, but you can set up to 50 using the <code class="docutils literal notranslate"><span class="pre">max_num_results</span></code> param.</p>
+</section>
+<section id="synthesizing-responses">
+<h3>Synthesizing responses<a class="headerlink" href="#synthesizing-responses" title="Link to this heading">#</a></h3>
+<p>After performing a query you may want to synthesize a response based on the results. You can leverage our models to do so, by supplying the results and original query, to get back a grounded response.</p>
+<p>Perform search query to get results</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">user_query</span> <span class="o">=</span> <span class="s2">&quot;What is the return policy?&quot;</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">vector_stores</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+    <span class="n">vector_store_id</span><span class="o">=</span><span class="n">vector_store</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">query</span><span class="o">=</span><span class="n">user_query</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">OpenAI</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;openai&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OpenAI</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">userQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;What is the return policy?&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">vectorStores</span><span class="p">.</span><span class="nx">search</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">vector_store_id</span><span class="o">:</span><span class="w"> </span><span class="nx">vector_store</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="nx">userQuery</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Synthesize a response based on results</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">formatted_results</span> <span class="o">=</span> <span class="n">format_results</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">content</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;developer&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Produce a concise answer to the query based on the provided sources.&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Sources: </span><span class="si">{</span><span class="n">formatted_results</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Query: &#39;</span><span class="si">{</span><span class="n">user_query</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">formattedResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">formatResults</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="c1">// Join the text content of all results</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">textSources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">text</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">)).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">completion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">completions</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gpt-4.1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;developer&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Produce a concise answer to the query based on the provided sources.&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="sb">`Sources: </span><span class="si">${</span><span class="nx">formattedResults</span><span class="si">}</span><span class="sb">\n\nQuery: &#39;</span><span class="si">${</span><span class="nx">userQuery</span><span class="si">}</span><span class="sb">&#39;`</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">completion</span><span class="p">.</span><span class="nx">choices</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">message</span><span class="p">.</span><span class="nx">content</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Our return policy allows returns within 30 days of purchase.&quot;</span>
+</pre></div>
+</div>
+<p>This uses a sample <code class="docutils literal notranslate"><span class="pre">format_results</span></code> function, which could be implemented like so:</p>
+<p>Sample result formatting function</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">format_results</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+    <span class="n">formatted_results</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+        <span class="n">formatted_result</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;result file_id=&#39;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">file_id</span><span class="si">}</span><span class="s2">&#39; file_name=&#39;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&#39;&gt;&quot;</span>
+        <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+            <span class="n">formatted_result</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&lt;content&gt;</span><span class="si">{</span><span class="n">part</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/content&gt;&quot;</span>
+        <span class="n">formatted_results</span> <span class="o">+=</span> <span class="n">formatted_result</span> <span class="o">+</span> <span class="s2">&quot;&lt;/result&gt;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;sources&gt;</span><span class="si">{</span><span class="n">formatted_results</span><span class="si">}</span><span class="s2">&lt;/sources&gt;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">formatResults</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">formattedResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">formattedResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`&lt;result file_id=&#39;</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">file_id</span><span class="si">}</span><span class="sb">&#39; file_name=&#39;</span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">file_name</span><span class="si">}</span><span class="sb">&#39;&gt;`</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">part</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">content</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">formattedResult</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="sb">`&lt;content&gt;</span><span class="si">${</span><span class="nx">part</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span><span class="sb">&lt;/content&gt;`</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nx">formattedResults</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">formattedResult</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;&lt;/result&gt;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`&lt;sources&gt;</span><span class="si">${</span><span class="nx">formattedResults</span><span class="si">}</span><span class="sb">&lt;/sources&gt;`</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Key ideas:</p>
 <p>•	You declare tool schema; the model emits a function call with arguments.</p>
 <p>•	You run the function and send a tool response back for the model to finish the thought.</p>
@@ -636,7 +1521,7 @@ document.write(`
 </section>
 </section>
 <section id="retrieval-augmented-generation-rag-give-your-agent-knowledge">
-<h2>3) Retrieval-Augmented Generation (RAG): give your agent knowledge<a class="headerlink" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge" title="Link to this heading">#</a></h2>
+<h2>Retrieval-Augmented Generation (RAG): give your agent knowledge<a class="headerlink" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge" title="Link to this heading">#</a></h2>
 <p>Use Embeddings to index your documents, then do a vector search each turn and stuff the best snippets into context.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># pip install numpy tiktoken openai</span>
@@ -676,70 +1561,6 @@ document.write(`
 </pre></div>
 </div>
 <p>Docs &amp; concepts: embeddings for search, chunking, cosine similarity, and prompt-stuffing top results.  ￼</p>
-</section>
-<section id="multi-tool-orchestrator-web-calc-rag">
-<h2>4) Multi-tool orchestrator: web + calc + RAG<a class="headerlink" href="#multi-tool-orchestrator-web-calc-rag" title="Link to this heading">#</a></h2>
-<p>Once you have multiple tools, keep a router loop: on each turn, let the model pick tools; you execute; loop until it emits a final message.</p>
-<p>Common tools you’ll wire up:</p>
-<p>•	Search/HTTP (fetch JSON/HTML and summarize),</p>
-<p>•	Datastores (SQL query, vector search),</p>
-<p>•	Side effects (send email, create calendar events) — be careful; require confirmation.</p>
-<p>(Use the same function-tool pattern from §2 for each tool.)</p>
-</section>
-<section id="using-the-agents-sdk-optional-but-convenient">
-<h2>5) Using the Agents SDK (optional but convenient)<a class="headerlink" href="#using-the-agents-sdk-optional-but-convenient" title="Link to this heading">#</a></h2>
-<p>OpenAI’s Agents SDK provides:</p>
-<p>•	Lightweight agent loop with function tools as plain Python/TS functions (schema auto-generated),</p>
-<p>•	Built-in tracing and state handling.</p>
-<p>If you prefer batteries-included over writing the loop yourself, start here and register your tools; the SDK will handle function schema and orchestration.</p>
-</section>
-<section id="memory-patterns">
-<h2>6) Memory patterns<a class="headerlink" href="#memory-patterns" title="Link to this heading">#</a></h2>
-<p>There’s no magical “long-term memory.” You implement it:</p>
-<ul class="simple">
-<li><p>Short-term: keep recent turns in the request.</p></li>
-<li><p>Episodic: store summaries of past sessions and attach them when the user returns.</p></li>
-<li><p>Profile/Prefs: keep key-value facts (e.g., “prefers verified quotes”), and prepend a small “profile block” to the system prompt.</p></li>
-<li><p>Vector memory: embed user notes / prior chats; retrieve by query each turn (same pattern as §3).</p></li>
-</ul>
-</section>
-<section id="streaming-ux-recommended">
-<h2>7) Streaming UX (recommended)<a class="headerlink" href="#streaming-ux-recommended" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>•	Use the streaming API to render tokens as they arrive for snappy UX.
-•	If tools are used mid-stream, display a small status (“calling: calc(…) …done”), then continue streaming the model’s follow-up.
-</pre></div>
-</div>
-<p>Streaming and event formats are in the API reference.</p>
-</section>
-<section id="guardrails-safety">
-<h2>8) Guardrails &amp; safety<a class="headerlink" href="#guardrails-safety" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>•	Deterministic actions: For anything that spends money/sends data, require a confirmation step (“I’m about to email X—confirm?”).
-•	Schema validation: Keep strict JSON Schemas in your tools; reject invalid arguments and ask the model to retry.
-•	Allowlist outbound hosts for HTTP tools; sanitize inputs.
-•	Rate limiting &amp; retries: Implement exponential backoff and idempotency keys on side-effecting calls.
-</pre></div>
-</div>
-</section>
-<section id="testing-eval-cheap-but-effective">
-<h2>9) Testing &amp; eval (cheap but effective)<a class="headerlink" href="#testing-eval-cheap-but-effective" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>•	Golden prompts: keep a list of questions + expected answers.
-•	Behavioral checks: does the agent pick the right tool? (Log tool calls; assert patterns.)
-•	Latency budget: record step timings (model, each tool).
-•	Hallucination guard: ask the model to provide citations when answering from RAG context; mark responses “uncited” if it can’t.
-</pre></div>
-</div>
-</section>
-<section id="deploy-patterns">
-<h2>10) Deploy patterns<a class="headerlink" href="#deploy-patterns" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>•	Server: a thin HTTP/WS server that:
-•	validates the user,
-•	forwards messages to the agent loop,
-•	streams results back,
-•	stores transcripts &amp; tool logs.
-•	Background jobs for long tool tasks (ETL, big web crawls); return a ticket and stream status updates.
-•	Observability: log every tool call, arguments, duration, and a sample of model inputs/outputs (with PII hygiene).
-</pre></div>
-</div>
 </section>
 <section id="end-to-end-example">
 <h2>End to End example<a class="headerlink" href="#end-to-end-example" title="Link to this heading">#</a></h2>
@@ -865,19 +1686,37 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-a-minimal-chat-agent">Quick start: a minimal “chat agent”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-function-calling">2) Tools (function calling)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-tools">Built-in Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-calling">Function Calling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-search">Web Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-and-citations">Output and citations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-filtering">Domain filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sources">Sources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-location">User location</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge">3) Retrieval-Augmented Generation (RAG): give your agent knowledge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-tool-orchestrator-web-calc-rag">4) Multi-tool orchestrator: web + calc + RAG</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-agents-sdk-optional-but-convenient">5) Using the Agents SDK (optional but convenient)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-patterns">6) Memory patterns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-ux-recommended">7) Streaming UX (recommended)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guardrails-safety">8) Guardrails &amp; safety</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-eval-cheap-but-effective">9) Testing &amp; eval (cheap but effective)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-patterns">10) Deploy patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-mcp">Remote MCP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart">Quickstart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-listing-available-tools">Step 1: Listing available tools</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-search">File Search</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-customization">Retrieval customization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limiting-the-number-of-results">Limiting the number of results</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include-search-results-in-the-response">Include search results in the response</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-data-filtering">Meta-data filtering</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-files">Supported files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval">Retrieval</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-vector-store">1. Create a Vector Store</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-query">2. Search query</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-search">Semantic search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesizing-responses">Synthesizing responses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-augmented-generation-rag-give-your-agent-knowledge">Retrieval-Augmented Generation (RAG): give your agent knowledge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-to-end-example">End to End example</a></li>
 </ul>
   </nav></div>

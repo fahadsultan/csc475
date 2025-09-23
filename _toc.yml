@@ -45,9 +45,14 @@ parts:
       - file: tutorials/latex
       - file: tutorials/markdown
       - file: tutorials/llms.ipynb
+        sections: 
+        - file: tutorials/llms_pretraining.ipynb
+        - file: tutorials/llms_finetuning.ipynb
+        - file: tutorials/llms_rlhf.ipynb
       - file: tutorials/openai_api.ipynb
+        # sections:
       - file: tutorials/openai_agents.ipynb
-      - file: tutorials/opensource.ipynb
+        # - file: tutorials/opensource.ipynb
       - file: tutorials/bokeh
       - file: tutorials/10_dataops
         sections: 
