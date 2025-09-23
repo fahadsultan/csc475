@@ -220,11 +220,16 @@
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="llms.html">Large Language Models</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="llms.html">Large Language Models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="llms_pretraining.html">1. Pretraining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llms_finetuning.html">2. Post-Training: Supervised Fine-Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llms_rlhf.html">3. Post-Training: Reinforcement Learning</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="openai_api.html"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="openai_agents.html">Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_agents.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
@@ -3298,13 +3303,13 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>174</th>
-      <td>2016</td>
-      <td>Evan McMullin</td>
-      <td>Independent</td>
-      <td>732273</td>
-      <td>loss</td>
-      <td>0.539546</td>
+      <th>4</th>
+      <td>1832</td>
+      <td>Andrew Jackson</td>
+      <td>Democratic</td>
+      <td>702735</td>
+      <td>win</td>
+      <td>54.574789</td>
     </tr>
   </tbody>
 </table>
@@ -3346,31 +3351,31 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>81</th>
-      <td>1924</td>
-      <td>John W. Davis</td>
-      <td>Democratic</td>
-      <td>8386242</td>
-      <td>loss</td>
-      <td>28.976291</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1828</td>
-      <td>John Quincy Adams</td>
-      <td>National Republican</td>
-      <td>500897</td>
-      <td>loss</td>
-      <td>43.796073</td>
-    </tr>
-    <tr>
-      <th>104</th>
-      <td>1948</td>
-      <td>Thomas E. Dewey</td>
+      <th>171</th>
+      <td>2012</td>
+      <td>Mitt Romney</td>
       <td>Republican</td>
-      <td>21991292</td>
+      <td>60933504</td>
       <td>loss</td>
-      <td>45.112958</td>
+      <td>47.384076</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>1968</td>
+      <td>Hubert Humphrey</td>
+      <td>Democratic</td>
+      <td>31271839</td>
+      <td>loss</td>
+      <td>42.863537</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>1980</td>
+      <td>Barry Commoner</td>
+      <td>Citizens</td>
+      <td>233052</td>
+      <td>loss</td>
+      <td>0.270182</td>
     </tr>
     <tr>
       <th>118</th>
@@ -3382,13 +3387,13 @@ Name: Popular vote, dtype: int64
       <td>37.670670</td>
     </tr>
     <tr>
-      <th>73</th>
-      <td>1916</td>
-      <td>Frank Hanly</td>
+      <th>49</th>
+      <td>1892</td>
+      <td>John Bidwell</td>
       <td>Prohibition</td>
-      <td>221302</td>
+      <td>270879</td>
       <td>loss</td>
-      <td>1.197041</td>
+      <td>2.249468</td>
     </tr>
   </tbody>
 </table>
@@ -3439,31 +3444,31 @@ Name: Popular vote, dtype: int64
       <td>59.023326</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>1844</td>
-      <td>James Polk</td>
+      <th>32</th>
+      <td>1872</td>
+      <td>Ulysses Grant</td>
+      <td>Republican</td>
+      <td>3597439</td>
+      <td>win</td>
+      <td>55.928594</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>2008</td>
+      <td>Barack Obama</td>
       <td>Democratic</td>
-      <td>1339570</td>
+      <td>69498516</td>
       <td>win</td>
-      <td>50.749477</td>
+      <td>53.023510</td>
     </tr>
     <tr>
-      <th>173</th>
-      <td>2016</td>
-      <td>Donald Trump</td>
+      <th>120</th>
+      <td>1972</td>
+      <td>Richard Nixon</td>
       <td>Republican</td>
-      <td>62984828</td>
+      <td>47168710</td>
       <td>win</td>
-      <td>46.407862</td>
-    </tr>
-    <tr>
-      <th>109</th>
-      <td>1956</td>
-      <td>Dwight Eisenhower</td>
-      <td>Republican</td>
-      <td>35579180</td>
-      <td>win</td>
-      <td>57.650654</td>
+      <td>60.907806</td>
     </tr>
   </tbody>
 </table>

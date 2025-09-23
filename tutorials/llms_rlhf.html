@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Github Pages: Create a Website &#8212; CSC-475</title>
+    <title>3. Post-Training: Reinforcement Learning &#8212; CSC-475</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/github_pages';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/llms_rlhf';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LaTeX: Typesetting Documents" href="latex.html" />
-    <link rel="prev" title="git: Version Control" href="git.html" />
+    <link rel="next" title="openAI API" href="openai_api.html" />
+    <link rel="prev" title="2. Post-Training: Supervised Fine-Tuning" href="llms_finetuning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -215,13 +215,13 @@
 <li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="llms.html">Large Language Models</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="llms.html">Large Language Models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="llms_pretraining.html">1. Pretraining</a></li>
 <li class="toctree-l2"><a class="reference internal" href="llms_finetuning.html">2. Post-Training: Supervised Fine-Tuning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="llms_rlhf.html">3. Post-Training: Reinforcement Learning</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3. Post-Training: Reinforcement Learning</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="openai_api.html"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</a></li>
@@ -313,7 +313,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/github_pages.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/llms_rlhf.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +343,7 @@
       
       
       
-      <li><a href="../_sources/tutorials/github_pages.md" target="_blank"
+      <li><a href="../_sources/tutorials/llms_rlhf.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +353,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -427,7 +427,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Github Pages: Create a Website</h1>
+    <h1>3. Post-Training: Reinforcement Learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -437,13 +437,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-a-home-page">Set up a Home page</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-repository">1. Create a Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository-onto-your-computer">2. Clone the Repository onto your computer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-index-html-file">3. Create an index.html file</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-project-pages">Set up Project Pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-rl-works">How RL Works</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-on-unverifiable-domains-a-k-a-reinforcement-learning-from-human-feedback-rlhf">Learning on unverifiable domains a.k.a Reinforcement Learning from Human Feedback (RLHF)</a></li>
 </ul>
             </nav>
         </div>
@@ -455,41 +450,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="github-pages-create-a-website">
-<h1><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website<a class="headerlink" href="#github-pages-create-a-website" title="Link to this heading">#</a></h1>
-<img src="https://github.githubassets.com/images/modules/open_graph/github-octocat.png" align="right" width="40%">
-<section id="set-up-a-home-page">
-<h2>Set up a Home page<a class="headerlink" href="#set-up-a-home-page" title="Link to this heading">#</a></h2>
-<section id="create-a-repository">
-<h3>1. Create a Repository<a class="headerlink" href="#create-a-repository" title="Link to this heading">#</a></h3>
-<img src="https://fahadsultan.com/potpourri/_images/create_repo.png" align="center" width="65%">
-<p>Head over to GitHub and create a new public repository named <a class="reference external" href="http://username.github.io">username.github.io</a>, where username is your username (or organization name) on GitHub.</p>
-<p>If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.</p>
-</section>
-<section id="clone-the-repository-onto-your-computer">
-<h3>2. Clone the Repository onto your computer<a class="headerlink" href="#clone-the-repository-onto-your-computer" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/username/username.github.io
+  <section class="tex2jax_ignore mathjax_ignore" id="post-training-reinforcement-learning">
+<h1>3. Post-Training: Reinforcement Learning<a class="headerlink" href="#post-training-reinforcement-learning" title="Link to this heading">#</a></h1>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rl.png">
+<p><br/><br/></p>
+<p>Once a model is trained on internet data, <strong>it still doesn’t know how to use its knowledge effectively</strong>.</p>
+<ul class="simple">
+<li><p><strong>Supervised fine-tuninsg</strong> teaches it to mimic human responses.</p></li>
+<li><p><strong>Reinforcement learning (RL)</strong> helps it improve by trial and error.</p></li>
+</ul>
+<section id="how-rl-works">
+<h2>How RL Works<a class="headerlink" href="#how-rl-works" title="Link to this heading">#</a></h2>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rl-1.png">
+<p>Instead of relying on human-created datasets, RL lets the model <strong>experiment with different solutions</strong> and figure out what works best.</p>
+<p>Example Process:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">We</span> <span class="n">generated</span> <span class="mi">15</span> <span class="n">solutions</span><span class="o">.</span>
+<span class="n">Only</span> <span class="mi">4</span> <span class="n">of</span> <span class="n">them</span> <span class="n">got</span> <span class="n">the</span> <span class="n">right</span> <span class="n">answer</span><span class="o">.</span>
+<span class="n">Take</span> <span class="n">the</span> <span class="n">top</span> <span class="n">solution</span> <span class="p">(</span><span class="n">each</span> <span class="n">right</span> <span class="ow">and</span> <span class="n">short</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Train</span> <span class="n">on</span> <span class="n">it</span><span class="o">.</span>
+<span class="n">Repeat</span> <span class="n">many</span><span class="p">,</span> <span class="n">many</span> <span class="n">times</span><span class="o">.</span>
 </pre></div>
 </div>
+<p>No human is involved in this process. The model generates different solutions to the same problem, sometimes they are in millions. Then it compares them to pick the ones that reached the correct answer and then trains on the winning solutions.</p>
+<p>The pre-training and post-training processes are very well defined but the RL process is still under a lot of active research. Andrej talks about it <a class="reference external" href="https://x.com/karpathy/status/1885026028428681698">here</a> as well. Companies like OpenAI do a lot of research on it but it’s not public. That is why the release of DeepSeek was such a big deal. Their <a class="reference external" href="https://arxiv.org/pdf/2501.12948">paper</a> talks more about it. It talks very publicly about RL and FT for LLMs and how it brings out a lot of reasoning capabilities in them.</p>
+<p>An example taken from the Deepseek paper shows us that as the time passes, the model is able to use more tokens to get better at reasoning.</p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rl-2.png">
+<p>You can see that the model has this “aha” moment here, it’s not something that you can explicitly teach the model through just training on a dataset. It’s something that the model has to figure out on it’s own through reinforcement learning. Pros of this technique is, the model is becoming better at reasoning but the con is it’s consuming more and more tokens to do so.</p>
+<p>One thing we can learn from the research paper on <strong><a class="reference external" href="https://discovery.ucl.ac.uk/id/eprint/10045895/1/agz_unformatted_nature.pdf">mastering the game of Go</a></strong> is that RL actually helps the model become better at reasoning than their human counterparts. The model isn’t just trying to imitate the human but it’s coming up with its own strategies through trial and error to win the game.</p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rl-3.png">
+<p>One very unique thing noted during the AlphaGo’s game was a move called <strong><a class="reference external" href="https://www.youtube.com/watch?v=JNrXgpSEEIE">Move 37</a></strong>. It’s a move that was not part of the training data but the model came up with its own strategy to win the game. The researchers predicted that the chance of it being played by a human would be 1 in 10000. So you can see how the model is capable of coming up with its own strategies.</p>
+<p>RL is still heavily unexplored and there is a lot of research going on in this area. It is entirely possible if given the chance, the LLM might come up with a language of its own to express its thoughts and ideas because it discovered that it’s the best way to express its thoughts and ideas.</p>
 </section>
-<section id="create-an-index-html-file">
-<h3>3. Create an index.html file<a class="headerlink" href="#create-an-index-html-file" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">username.github.io</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;&lt;h1&gt;This</span> <span class="pre">is</span> <span class="pre">my</span> <span class="pre">website&lt;/h1&gt;&quot;</span> <span class="pre">&gt;</span> <span class="pre">index.html</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">index.html</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;First</span> <span class="pre">commit&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code></p></li>
-</ol>
-</section>
-</section>
-<section id="set-up-project-pages">
-<h2>Set up Project Pages<a class="headerlink" href="#set-up-project-pages" title="Link to this heading">#</a></h2>
-<p>You can create a website for a project hosted on GitHub by following the steps below:</p>
-<p>Step 1. Go to the repository settings</p>
-<p>Step 2. Go to the Pages tab</p>
-<p>Step 3. Choose the source for your GitHub Pages site (e.g., main branch)</p>
-<img src="https://i.ibb.co/ChLLRrD/github-pages.png">
+<section id="learning-on-unverifiable-domains-a-k-a-reinforcement-learning-from-human-feedback-rlhf">
+<h2>Learning on unverifiable domains a.k.a Reinforcement Learning from Human Feedback (RLHF)<a class="headerlink" href="#learning-on-unverifiable-domains-a-k-a-reinforcement-learning-from-human-feedback-rlhf" title="Link to this heading">#</a></h2>
+<p>It is very easy to exclude humans from the RL process in verifiable domains. LLMs can act as a judge for its own performance.</p>
+<p>However, in unverifiable domains, we need to include humans in the loop.</p>
+<p>For example, for a prompt <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">a</span> <span class="pre">joke</span> <span class="pre">about</span> <span class="pre">pelicans</span></code>, it is not very easy to find a way to automatically judge the quality of the joke. The LLM will generate the jokes without issues, but judging their quality at scale is not possible.</p>
+<p>Furthermore, including humans in this process at scale is not feasible. This is where RLHF comes in. You can read more about it in <a class="reference external" href="https://arxiv.org/pdf/1909.08593">this paper</a>.</p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rlhf-1.png">
+<p>In order to do RLHF at scale, you basically train a separate reward model which could be a transformer without the extra layers surrounding it. You use humans to judge the rank it is giving to the responses and then you use that to train the reward model until you are satisfied with the results. Once that is done, you can use the reward model to judge the quality of the responses generated by the LLM at scale.</p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/rlhf-2.png">
+<p><strong>RLHF Upside</strong></p>
+<ul class="simple">
+<li><p>Enables RL in <strong>unverifiable domains</strong> like joke-writing or summarization.s</p></li>
+<li><p>Often improves models <strong>by reducing hallucinations</strong> and making responses more human-like.</p></li>
+<li><p>Exploits the “<strong>discriminator-generator gap</strong>”—humans find it easier to evaluate an answer than generate one.</p>
+<ul>
+<li><p>Example: “Write a poem” vs. “Which of these 5 poems is best?”</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>RLHF Downside</strong></p>
+<ul class="simple">
+<li><p>The <strong>reward model is just a simulation of human preferences</strong>, not an actual human. This can be misleading.</p></li>
+<li><p>RL can <strong>game the system</strong>, producing adversarial examples that exploit weaknesses in the reward model.</p>
+<ul>
+<li><p>Example: After 1,000 updates, the model’s “top joke about pelicans” might be complete nonsense (e.g., “the the the the the the the the”).</p></li>
+</ul>
+</li>
+<li><p>This is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Adversarial_machine_learning">Adversarial Machine Learning</a>. Since there are infinite ways to game the system, filtering out bad responses isn’t straightforward.</p></li>
+<li><p>To prevent this, reward model training is <strong>capped at a few hundred iterations</strong>—beyond that, models start over-optimizing and performance declines.</p></li>
+</ul>
 </section>
 </section>
 
@@ -524,20 +545,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="git.html"
+       href="llms_finetuning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</p>
+        <p class="prev-next-title">2. Post-Training: Supervised Fine-Tuning</p>
       </div>
     </a>
     <a class="right-next"
-       href="latex.html"
+       href="openai_api.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -557,13 +578,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-a-home-page">Set up a Home page</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-repository">1. Create a Repository</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository-onto-your-computer">2. Clone the Repository onto your computer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-index-html-file">3. Create an index.html file</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-project-pages">Set up Project Pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-rl-works">How RL Works</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-on-unverifiable-domains-a-k-a-reinforcement-learning-from-human-feedback-rlhf">Learning on unverifiable domains a.k.a Reinforcement Learning from Human Feedback (RLHF)</a></li>
 </ul>
   </nav></div>
 

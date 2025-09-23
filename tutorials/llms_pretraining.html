@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Pretraining &#8212; CSC-475</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/llms_pretraining';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Post-Training: Supervised Fine-Tuning" href="llms_finetuning.html" />
+    <link rel="prev" title="Large Language Models" href="llms.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo2.png" class="logo__image only-light" alt="CSC-475 - Home"/>
+    <script>document.write(`<img src="../_static/logo2.png" class="logo__image only-dark" alt="CSC-475 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    CSC-475 (Seminar in CS)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../policies/index.html">Syllabus</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../policies/grading.html">Grading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/academic_success.html">Academic Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/accomodations.html">Accomodations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policies/integrity.html">Academic Integrity</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../policies/title_9.html">Nondiscrimination Policy and Sexual Misconduct</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../pathways.html">Purposeful Pathways</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/index.html">Project</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/deliverables.html">Deliverables</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/preproposal.html">Pre-Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/proposal.html">Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/litreview.html">Literature Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/report.html">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/poster.html">Poster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/presentation.html">Presentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Readings</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../class_discussions/readings.html">Readings / Viewings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../class_discussions/index.html">Class Discussions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html"><code class="docutils literal notranslate"><span class="pre">git</span></code>: Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_pages.html"><code class="docutils literal notranslate"><span class="pre">Github</span> <span class="pre">Pages</span></code>: Create a Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><code class="docutils literal notranslate"><span class="pre">LaTeX</span></code>: Typesetting Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html"><code class="docutils literal notranslate"><span class="pre">Markdown</span></code>: Writing Content</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="llms.html">Large Language Models</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Pretraining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llms_finetuning.html">2. Post-Training: Supervised Fine-Tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llms_rlhf.html">3. Post-Training: Reinforcement Learning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_api.html"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="openai_agents.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="gmaps.html">Google Maps</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/llms_pretraining.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/llms_pretraining.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Pretraining</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internet-scale-data">1.1. Internet-scale data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-crawl">Common Crawl</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineweb">FineWeb</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">1.2. Tokenization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings">1.3. Embeddings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-training">1.3. Neural Network Training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference">1.4. Inference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-reproducing-openai-s-gpt-2">Demo: Reproducing OpenAI’s GPT-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-base-models">Open Base Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-psychology-of-base-models">The ‘Psychology’ of Base Models</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pretraining">
+<h1>1. Pretraining<a class="headerlink" href="#pretraining" title="Link to this heading">#</a></h1>
+<section id="internet-scale-data">
+<h2>1.1. Internet-scale data<a class="headerlink" href="#internet-scale-data" title="Link to this heading">#</a></h2>
+<section id="common-crawl">
+<h3>Common Crawl<a class="headerlink" href="#common-crawl" title="Link to this heading">#</a></h3>
+<p><strong><a class="reference external" href="https://commoncrawl.org/">Common Crawl</a></strong> is a non-profit organization that crawls the web and freely provides its archives and datasets to the public. It is one of the largest and most comprehensive web crawls available. It has been crawling the web since 2008 and has petabytes (thousands of terabytes) of data.</p>
+<p>The code and data are open source and free to use for anyone. Code can be accessed at <a class="github reference external" href="https://github.com/commoncrawl">commoncrawl</a> and the data can be accessed at <a class="reference external" href="https://data.commoncrawl.org/">https://data.commoncrawl.org/</a>.</p>
+<p><strong><a class="reference external" href="https://huggingface.co">HuggingFace</a></strong> is a company and open-source community that provides tools and libraries for natural language processing (NLP) and machine learning. They are most well-known for:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://huggingface.co/docs/transformers/en/index">Transformers library</a>, which provides pre-trained models for various NLP tasks.</p></li>
+<li><p><a class="reference external" href="https://huggingface.co/datasets">Data Sharing</a> a platform for sharing and discovering datasets, models, and other resources related to NLP.</p></li>
+<li><p><a class="reference external" href="https://huggingface.co/models">Model Hub</a>, which hosts thousands of pre-trained models for various NLP tasks.</p></li>
+</ul>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/ct.png">
+</section>
+<section id="fineweb">
+<h3>FineWeb<a class="headerlink" href="#fineweb" title="Link to this heading">#</a></h3>
+<p><strong><a class="reference external" href="https://huggingface.co/datasets/fineweb">Fineweb</a></strong> is a dataset created by Hugging Face that consists of cleaned and filtered web pages from Common Crawl. It is derived from 96 Common Crawl snapshots.  Extensive filtering (boilerplate removal, quality heuristics), deduplication, and cleaning to produce higher-quality web text than raw Common Crawl for FineWeb. It is designed to be used for training large language models. The dataset contains over 1.2 billion web pages, making it one of the largest datasets available for this purpose.</p>
+<p>Once cleaned, the data still needs to be compressed into something usable. Instead of feeding raw text into the model, it gets converted into tokens: a structured, numerical representation.</p>
+</section>
+</section>
+<section id="tokenization">
+<h2>1.2. Tokenization<a class="headerlink" href="#tokenization" title="Link to this heading">#</a></h2>
+<p>Tokenization is the process of breaking raw text (like a sentence or document) into smaller units called <strong>tokens</strong> that the model can understand.</p>
+<p>A token is not always a word. Word-level tokenization struggles with unseen words (“out-of-vocabulary problem”). On the other end, character-level tokenization makes sequences too long.</p>
+<p><strong>Byte Pair Encoding (BPE)</strong> subword tokenization strikes the right balance. It breaks text into subword units, which can be as small as a single character or as large as a whole word.</p>
+<p>For example, the sentence: <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">love</span> <span class="pre">programming!</span></code> can be tokenized into: <code class="docutils literal notranslate"><span class="pre">[&quot;I&quot;,</span> <span class="pre">&quot;</span> <span class="pre">love&quot;,</span> <span class="pre">&quot;</span> <span class="pre">program&quot;,</span> <span class="pre">&quot;ming&quot;,</span> <span class="pre">&quot;!&quot;]</span></code></p>
+<p>Suppose we have a toy corpus <code class="docutils literal notranslate"><span class="pre">low,</span> <span class="pre">lower,</span> <span class="pre">newest,</span> <span class="pre">widest</span></code>, the following is how BPE tokenization works:</p>
+<ol class="arabic">
+<li><p>Start with characters</p>
+<p>Represent each word as a sequence of characters plus an end-of-word marker _:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="n">o</span> <span class="n">w</span> <span class="n">_</span>
+<span class="n">l</span> <span class="n">o</span> <span class="n">w</span> <span class="n">e</span> <span class="n">r</span> <span class="n">_</span>
+<span class="n">n</span> <span class="n">e</span> <span class="n">w</span> <span class="n">e</span> <span class="n">s</span> <span class="n">t</span> <span class="n">_</span>
+<span class="n">w</span> <span class="n">i</span> <span class="n">d</span> <span class="n">e</span> <span class="n">s</span> <span class="n">t</span> <span class="n">_</span>
+</pre></div>
+</div>
+</li>
+<li><p>Count symbol pairs</p>
+<p>Find the most frequent adjacent pair of symbols.</p>
+<p>“l o” (1), “o w” (2), “w e” (2), “e s” (2), “s t” (2), etc.</p>
+<p>Suppose e s is most frequent.</p>
+</li>
+<li><p>Merge the most frequent pair</p>
+<p>Replace e s with a new symbol es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="n">e</span> <span class="n">w</span> <span class="n">es</span> <span class="n">t</span> <span class="n">_</span>
+<span class="n">w</span> <span class="n">i</span> <span class="n">d</span> <span class="n">es</span> <span class="n">t</span> <span class="n">_</span>
+</pre></div>
+</div>
+</li>
+<li><p>Repeat</p>
+<p>Next merge could be <code class="docutils literal notranslate"><span class="pre">es</span> <span class="pre">t</span> <span class="pre">→</span> <span class="pre">est</span></code>, then <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">o</span> <span class="pre">w</span> <span class="pre">→</span> <span class="pre">low</span></code>, etc.</p>
+</li>
+</ol>
+<p>Over iterations, you build a <strong>vocabulary of subwords</strong>.</p>
+<p>At the end of the process, Frequent words stay whole and rare words get broken down into smaller, common chunks. You end with a vocabulary that balances:</p>
+<ul class="simple">
+<li><p>Size: manageable number of tokens.</p></li>
+<li><p>Coverage: can represent most words.</p></li>
+</ul>
+<center><img width="60%" src="https://i.ibb.co/3mF4RmrK/Screenshot-2025-09-17-at-10-42-42-PM.png"></center><br/><br/>
+<p>You can visualize how this works using tools like <a class="reference external" href="https://tiktokenizer.vercel.app/?model=cl100k_base">Tiktokenizer (https://tiktokenizer.vercel.app)</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="k">def</span> <span class="nf">get_stats</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Count frequency of adjacent symbol pairs in the list of tokens.&quot;&quot;&quot;</span>
+    <span class="n">pairs</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">pairs</span><span class="p">[(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">pairs</span>
+
+<span class="k">def</span> <span class="nf">merge_tokens</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">pair</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Merge the given pair into a single symbol.&quot;&quot;&quot;</span>
+    <span class="n">new_tokens</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">bigram</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">:</span>
+        <span class="n">new_word</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+            <span class="c1"># If we find the pair, merge</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">new_word</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bigram</span><span class="p">)</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_word</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">new_tokens</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_word</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_tokens</span>
+
+<span class="k">def</span> <span class="nf">byte_pair_encoding</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">num_merges</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Perform BPE on a corpus.&quot;&quot;&quot;</span>
+    <span class="c1"># Split words into characters + end-of-word symbol</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="p">[[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">word</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;&lt;/w&gt;&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_merges</span><span class="p">):</span>
+        <span class="n">pairs</span> <span class="o">=</span> <span class="n">get_stats</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">pairs</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">best</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">pairs</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="n">merge_tokens</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">best</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Merged: </span><span class="si">{</span><span class="n">best</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tokens</span>
+
+<span class="c1"># Example</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;low&quot;</span><span class="p">,</span> <span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="s2">&quot;lowest&quot;</span><span class="p">]</span>
+<span class="n">final_tokens</span> <span class="o">=</span> <span class="n">byte_pair_encoding</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">num_merges</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final tokens:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">final_tokens</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>LLMs don’t operate directly on raw text. Instead:</p>
+<ol class="arabic simple">
+<li><p>Text → tokenizer → tokens (subword units).</p></li>
+<li><p>Tokens → mapped to integers (IDs in a fixed vocabulary).</p></li>
+<li><p>These IDs are fed into the model for training or inference.</p></li>
+</ol>
+<p>For reference, GPT-3 uses 50,257 tokens and GPT-4 uses 100,277 tokens in its vocabulary.</p>
+</section>
+<section id="embeddings">
+<h2>1.3. Embeddings<a class="headerlink" href="#embeddings" title="Link to this heading">#</a></h2>
+<p>After BPE, input text is split into subword tokens. Each token is now just an integer ID (index in the vocabulary).</p>
+<p>We need to convert these integer IDs into a numerical format that the model can understand. This is where <strong>embeddings</strong> come in.</p>
+<p>An embedding is a dense vector representation of a token in a continuous vector space. Each token is mapped to a high-dimensional vector (e.g., 768, 1024, or even 2048 dimensions). These vectors capture semantic meaning, so similar tokens have similar vectors.</p>
+<p>For example, the words “king” and “queen” might have embeddings that are close together in the vector space, while “king” and “car” would be far apart.</p>
+<p>Each token ID is then mapped to a dense vector using an embedding matrix <code class="docutils literal notranslate"><span class="pre">E</span></code> of size <code class="docutils literal notranslate"><span class="pre">[Vocab_size</span> <span class="pre">×</span> <span class="pre">Embedding_dim]</span></code>. Suppose <code class="docutils literal notranslate"><span class="pre">Vocab_size</span> <span class="pre">=</span> <span class="pre">30,000</span></code> and <code class="docutils literal notranslate"><span class="pre">Embedding_dim</span> <span class="pre">=</span> <span class="pre">512</span></code>, then <code class="docutils literal notranslate"><span class="pre">E</span></code> is a <code class="docutils literal notranslate"><span class="pre">30,000</span> <span class="pre">×</span> <span class="pre">512</span></code> matrix.</p>
+<p>If token ID = 421, you take the 421st row of E.</p>
+<p>Embeddings are learned during training. The model starts with random vectors for each token and adjusts them based on the context in which the tokens appear. Over time, the embeddings capture relationships between words, such as synonyms, analogies, and more.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<span class="n">vocab_size</span> <span class="o">=</span> <span class="mi">30000</span>
+<span class="n">embed_dim</span> <span class="o">=</span> <span class="mi">512</span>
+
+<span class="n">embedding_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embed_dim</span><span class="p">)</span>
+
+<span class="c1"># Example: two BPE tokens</span>
+<span class="n">token_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">421</span><span class="p">,</span> <span class="mi">88</span><span class="p">])</span>  <span class="c1"># &quot;jouer&quot; split into two tokens</span>
+<span class="n">embeddings</span> <span class="o">=</span> <span class="n">embedding_layer</span><span class="p">(</span><span class="n">token_ids</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># torch.Size([2, 512])</span>
+</pre></div>
+</div>
+</section>
+<section id="neural-network-training">
+<h2>1.3. Neural Network Training<a class="headerlink" href="#neural-network-training" title="Link to this heading">#</a></h2>
+<p>Once the data is tokenized, it’s fed into the neural network. More specifically, a <strong>Transformer</strong> architecture, which is particularly good at handling sequential data like text.</p>
+<img src="https://heidloff.net/assets/img/2023/02/transformers.png" width="100%">
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/nn-io.png">
+<p>Here’s how that process works:</p>
+<ol class="arabic simple">
+<li><p>The model takes in a <strong>context window</strong>, a set number of tokens (e.g., 8,000 for some models, up to 128k for GPT-4).</p></li>
+<li><p>It predicts the <strong>next token</strong> based on the patterns it has learned.</p></li>
+<li><p>The weights in the model are adjusted using <strong>backpropagation</strong> to reduce errors.</p></li>
+<li><p>Over time, the model learns to make better predictions.</p></li>
+</ol>
+<p>A longer context window means the model can “remember” more from the input, but it also increases computational cost.</p>
+<p><strong>Neural Network Internals</strong></p>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/nn-internal-math-eq.png">
+<p>Inside the model, billions of parameters interact with the input tokens to generate a probability distribution for the next token.</p>
+<ul class="simple">
+<li><p>This process is defined by complex mathematical equations optimized for efficiency.</p></li>
+<li><p>Model architectures are designed to balance speed, accuracy, and parallelization.</p></li>
+<li><p>You can see a production-grade LLM architecture example <a class="reference external" href="https://bbycroft.net/llm">here</a>.</p></li>
+</ul>
+</section>
+<section id="inference">
+<h2>1.4. Inference<a class="headerlink" href="#inference" title="Link to this heading">#</a></h2>
+<img src="https://cdn.anfalmushtaq.com/static/imgs/blog/2025-02-08-deep-dive-into-llms-like-chatgpt-tldr/inference.png">
+<p>LLMs don’t generate deterministic outputs, they are <strong>stochastic</strong>. This means the output varies slightly every time you run the model.</p>
+<ul class="simple">
+<li><p>The model doesn’t just repeat what it was trained on, it generates responses based on probabilities.</p></li>
+<li><p>In some cases, the response will match something in the training data exactly, but most of the time, it will generate something new that follows similar patterns.</p></li>
+</ul>
+<p>This randomness is why LLMs can be creative, but also why they sometimes <strong>hallucinate</strong> incorrect information.</p>
+</section>
+<section id="demo-reproducing-openai-s-gpt-2">
+<h2>Demo: Reproducing OpenAI’s GPT-2<a class="headerlink" href="#demo-reproducing-openai-s-gpt-2" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a>, released by OpenAI in 2019, was an early example of a transformer-based LLM.</p>
+<p>Here’s what it looked like:</p>
+<ul class="simple">
+<li><p><strong>1.6 billion parameters</strong></p></li>
+<li><p><strong>1024-token context length</strong></p></li>
+<li><p><strong>Trained on ~100 billion tokens</strong></p></li>
+<li><p>The original GPT-2 training cost was <strong>$40,000</strong>.</p></li>
+</ul>
+<p>Since then, efficiency has improved dramatically. Andrej Karpathy managed to <strong>reproduce GPT-2</strong>  using <a class="reference external" href="https://github.com/karpathy/llm.c/discussions/677">llm.c</a> for just $672. With optimized pipelines, training costs could drop even further to <strong>around $100</strong> .</p>
+<p>Why is it so much cheaper now?</p>
+<ul class="simple">
+<li><p><strong>Better pre-training data extraction techniques</strong> → Cleaner datasets mean models learn faster.</p></li>
+<li><p><strong>Stronger hardware and optimized software</strong> → Less computation needed for the same results.</p></li>
+</ul>
+</section>
+<section id="open-base-models">
+<h2>Open Base Models<a class="headerlink" href="#open-base-models" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The models under discussion do not strictly follow the Open Source Initiative (OSI) definitions of open-source AI (<a class="reference external" href="https://opensource.org/ai">OSI AI Definition</a>). Instead, we use the term open base models to describe models where the weights are publicly accessible, but training data and full reproducibility may not be provided.</p>
+</div>
+<p>Some companies train massive <strong>language models (LMs)</strong> and <strong>release the base models for free</strong>. A <strong>base model</strong> is essentially a <strong>raw, pre-trained LM</strong>—it still requires <strong>fine-tuning</strong> or <strong>alignment</strong> to be practically useful.</p>
+<ul class="simple">
+<li><p>Base models are trained on <strong>unfiltered internet-scale data</strong>, meaning they generate <strong>raw</strong> completions but <strong>lack alignment with human intent</strong>.</p></li>
+<li><p>OpenAI released <a class="reference external" href="https://github.com/openai/gpt-2">GPT-2</a>, an <strong>open-weight and source-available</strong> model, but <strong>not fully open-source</strong> under OSI’s definition since its training data was not released.</p></li>
+<li><p>Meta released <a class="reference external" href="https://arxiv.org/pdf/2407.21783">Llama 3.1 (405B parameters)</a>, an <strong>open-weight</strong> but <strong>not open-source</strong> model.</p></li>
+</ul>
+<p>To release a <strong>base model</strong>, two key components are required:</p>
+<ol class="arabic simple">
+<li><p><strong><a class="reference external" href="https://github.com/openai/gpt-2/blob/master/src/model.py">Inference code</a></strong> → Defines the steps the model follows to generate text. Typically written in Python.</p></li>
+<li><p><strong><a class="reference external" href="https://www.kaggle.com/datasets/xhlulu/openai-gpt2-weights">Model weights</a></strong> → The billions of parameters that encode the model’s knowledge.</p></li>
+</ol>
+</section>
+<section id="the-psychology-of-base-models">
+<h2>The ‘Psychology’ of Base Models<a class="headerlink" href="#the-psychology-of-base-models" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Base models can be thoughts of as token-level internet document simulators.</p></li>
+<li><p>Every run produces a <strong>slightly different output</strong> (stochastic behavior).</p></li>
+<li><p>They can <strong>regurgitate</strong> parts of their training data.</p></li>
+<li><p>The parameters are like a <strong>lossy zip file</strong> of internet knowledge.</p></li>
+<li><p>You can already use them for applications like:</p>
+<ul>
+<li><p><strong>Translation</strong> → Using in-context examples.</p></li>
+<li><p><strong>Basic assistants</strong> → Prompting them in a structured way.</p></li>
+</ul>
+</li>
+</ul>
+<p>Want to experiment with one? Try the <strong>Llama 3 (405B base model)</strong> <a class="reference external" href="https://app.hyperbolic.xyz/models/llama31-405b-base-bf-16">here</a>.</p>
+<p>At its core, a base model is just an <strong>expensive autocomplete</strong>. It still needs fine-tuning.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="llms.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Large Language Models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="llms_finetuning.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2. Post-Training: Supervised Fine-Tuning</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internet-scale-data">1.1. Internet-scale data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-crawl">Common Crawl</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fineweb">FineWeb</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">1.2. Tokenization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings">1.3. Embeddings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-training">1.3. Neural Network Training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference">1.4. Inference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-reproducing-openai-s-gpt-2">Demo: Reproducing OpenAI’s GPT-2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-base-models">Open Base Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-psychology-of-base-models">The ‘Psychology’ of Base Models</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Syed Fahad Sultan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
