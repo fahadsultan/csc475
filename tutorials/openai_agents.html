@@ -717,10 +717,7 @@ document.write(`
 <section id="sources">
 <h3>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h3>
 <p>To view all URLs retrieved during a web search, use the <code class="docutils literal notranslate"><span class="pre">sources</span></code> field. Unlike inline citations, which show only the most relevant references, sources returns the complete list of URLs the model consulted when forming its response. The number of sources is often greater than the number of citations. Real-time third-party feeds are also surfaced here and are labeled as <code class="docutils literal notranslate"><span class="pre">oai-sports</span></code>, <code class="docutils literal notranslate"><span class="pre">oai-weather</span></code>, or <code class="docutils literal notranslate"><span class="pre">oai-finance</span></code>. The sources field is available with both the <code class="docutils literal notranslate"><span class="pre">web_search</span></code> and <code class="docutils literal notranslate"><span class="pre">web_search_preview</span></code> tools.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
   <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-5&quot;</span><span class="p">,</span>
   <span class="n">reasoning</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;effort&quot;</span><span class="p">:</span> <span class="s2">&quot;low&quot;</span><span class="p">},</span>
   <span class="n">tools</span><span class="o">=</span><span class="p">[</span>
@@ -728,18 +725,14 @@ document.write(`
           <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;web_search&quot;</span><span class="p">,</span>
           <span class="s2">&quot;filters&quot;</span><span class="p">:</span> <span class="p">{</span>
               <span class="s2">&quot;allowed_domains&quot;</span><span class="p">:</span> <span class="p">[</span>
-                  <span class="s2">&quot;pubmed.ncbi.nlm.nih.gov&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;clinicaltrials.gov&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;www.who.int&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;www.cdc.gov&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;www.fda.gov&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;furman.edu&quot;</span>
               <span class="p">]</span>
           <span class="p">},</span>
       <span class="p">}</span>
   <span class="p">],</span>
   <span class="n">tool_choice</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
   <span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;web_search_call.action.sources&quot;</span><span class="p">],</span>
-  <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;Please perform a web search on how semaglutide is used in the treatment of diabetes.&quot;</span><span class="p">,</span>
+  <span class="nb">input</span><span class="o">=</span><span class="s2">&quot;Please perform a web search on when is the last day of Fall 2025 classes.&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
