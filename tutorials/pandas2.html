@@ -229,7 +229,7 @@
 <li class="toctree-l1"><a class="reference internal" href="openai_api.html"><code class="docutils literal notranslate"><span class="pre">openAI</span></code> API</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="openai_agents.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openai_agents.html">LLM Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
@@ -3303,13 +3303,13 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>4</th>
-      <td>1832</td>
-      <td>Andrew Jackson</td>
-      <td>Democratic</td>
-      <td>702735</td>
-      <td>win</td>
-      <td>54.574789</td>
+      <th>143</th>
+      <td>1992</td>
+      <td>Ross Perot</td>
+      <td>Independent</td>
+      <td>19743821</td>
+      <td>loss</td>
+      <td>18.956298</td>
     </tr>
   </tbody>
 </table>
@@ -3351,49 +3351,49 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>171</th>
-      <td>2012</td>
-      <td>Mitt Romney</td>
-      <td>Republican</td>
-      <td>60933504</td>
+      <th>88</th>
+      <td>1932</td>
+      <td>Norman Thomas</td>
+      <td>Socialist</td>
+      <td>884885</td>
       <td>loss</td>
-      <td>47.384076</td>
+      <td>2.236211</td>
     </tr>
     <tr>
-      <th>116</th>
-      <td>1968</td>
-      <td>Hubert Humphrey</td>
+      <th>74</th>
+      <td>1916</td>
+      <td>Woodrow Wilson</td>
       <td>Democratic</td>
-      <td>31271839</td>
-      <td>loss</td>
-      <td>42.863537</td>
+      <td>9126868</td>
+      <td>win</td>
+      <td>49.367987</td>
     </tr>
     <tr>
-      <th>127</th>
-      <td>1980</td>
-      <td>Barry Commoner</td>
-      <td>Citizens</td>
-      <td>233052</td>
+      <th>107</th>
+      <td>1952</td>
+      <td>Vincent Hallinan</td>
+      <td>Progressive</td>
+      <td>140746</td>
       <td>loss</td>
-      <td>0.270182</td>
+      <td>0.228516</td>
     </tr>
     <tr>
-      <th>118</th>
-      <td>1972</td>
-      <td>George McGovern</td>
+      <th>91</th>
+      <td>1936</td>
+      <td>Franklin Roosevelt</td>
       <td>Democratic</td>
-      <td>29173222</td>
-      <td>loss</td>
-      <td>37.670670</td>
+      <td>27752648</td>
+      <td>win</td>
+      <td>60.978107</td>
     </tr>
     <tr>
-      <th>49</th>
-      <td>1892</td>
-      <td>John Bidwell</td>
-      <td>Prohibition</td>
-      <td>270879</td>
-      <td>loss</td>
-      <td>2.249468</td>
+      <th>86</th>
+      <td>1932</td>
+      <td>Franklin Roosevelt</td>
+      <td>Democratic</td>
+      <td>22821277</td>
+      <td>win</td>
+      <td>57.672125</td>
     </tr>
   </tbody>
 </table>
@@ -3435,40 +3435,40 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>133</th>
-      <td>1984</td>
-      <td>Ronald Reagan</td>
+      <th>53</th>
+      <td>1896</td>
+      <td>William McKinley</td>
       <td>Republican</td>
-      <td>54455472</td>
+      <td>7112138</td>
       <td>win</td>
-      <td>59.023326</td>
+      <td>51.213817</td>
     </tr>
     <tr>
-      <th>32</th>
-      <td>1872</td>
-      <td>Ulysses Grant</td>
-      <td>Republican</td>
-      <td>3597439</td>
-      <td>win</td>
-      <td>55.928594</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>2008</td>
-      <td>Barack Obama</td>
+      <th>17</th>
+      <td>1852</td>
+      <td>Franklin Pierce</td>
       <td>Democratic</td>
-      <td>69498516</td>
+      <td>1605943</td>
       <td>win</td>
-      <td>53.023510</td>
+      <td>51.013168</td>
     </tr>
     <tr>
-      <th>120</th>
-      <td>1972</td>
-      <td>Richard Nixon</td>
-      <td>Republican</td>
-      <td>47168710</td>
+      <th>1</th>
+      <td>1824</td>
+      <td>John Quincy Adams</td>
+      <td>Democratic-Republican</td>
+      <td>113142</td>
       <td>win</td>
-      <td>60.907806</td>
+      <td>42.789878</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>1944</td>
+      <td>Franklin Roosevelt</td>
+      <td>Democratic</td>
+      <td>25612916</td>
+      <td>win</td>
+      <td>53.773801</td>
     </tr>
   </tbody>
 </table>
