@@ -60,8 +60,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/pandas1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pandas II: Selection, Filtering and Dropping" href="pandas2.html" />
-    <link rel="prev" title="pandas: Vectorized Operations" href="10_dataops.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +121,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -210,7 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../class_discussions/index.html">Class Discussions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
@@ -228,19 +228,14 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="openai_agents.html">LLM Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="web.html">Web Development</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html">Client-Side Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html">Server-Side Technologies</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas I: Data Structures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas2.html">Pandas II: Selection, Filtering and Dropping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gmaps.html">Google Maps</a></li>
 </ul>
 
@@ -639,14 +634,14 @@ document.write(`
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/data_structure.png"><img alt="https://fahadsultan.com/datascience_ml/_images/data_structure.png" src="https://fahadsultan.com/datascience_ml/_images/data_structure.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Three fundamental <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data structures: <strong>Series</strong>, <strong>DataFrame</strong>, <strong>Index</strong></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-text">Three fundamental <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data structures: <strong>Series</strong>, <strong>DataFrame</strong>, <strong>Index</strong></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Notice how the <strong>DataFrame</strong> is a two-dimensional object – it contains both rows and columns. The <strong>Series</strong> above is a singular column of this <strong>DataFrame</strong>, namely, the <code class="docutils literal notranslate"><span class="pre">Result</span></code> column. Both contain an <strong>Index</strong>, or a shared list of row labels (here, the integers from 0 to 4, inclusive).</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png"><img alt="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/DataFrameSeries.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Schematic of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> and  <strong>Series</strong></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-text">Schematic of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> and  <strong>Series</strong></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -835,13 +830,13 @@ dtype: int64
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/df_cols.png"><img alt="https://fahadsultan.com/datascience_ml/_images/df_cols.png" src="https://fahadsultan.com/datascience_ml/_images/df_cols.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Each column of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.index</span></code></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-text">Each column of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.index</span></code></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/df_rows.png"><img alt="https://fahadsultan.com/datascience_ml/_images/df_rows.png" src="https://fahadsultan.com/datascience_ml/_images/df_rows.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Each row of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.columns</span></code></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-text">Each row of a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <strong>DataFrame</strong> <code class="docutils literal notranslate"><span class="pre">df</span></code> is a <strong>Series</strong> <code class="docutils literal notranslate"><span class="pre">s</span></code> where <code class="docutils literal notranslate"><span class="pre">s.index</span> <span class="pre">==</span> <span class="pre">df.columns</span></code></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="creating-a-dataframe">
@@ -1326,24 +1321,6 @@ dtype: float64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="10_dataops.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="pandas2.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pandas II: Selection, Filtering and Dropping</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
