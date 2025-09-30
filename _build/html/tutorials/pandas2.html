@@ -62,8 +62,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/pandas2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pandas III: Aggregation, Merging and Concatenation" href="pandas3.html" />
-    <link rel="prev" title="Pandas I: Data Structures" href="pandas1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +123,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -212,7 +212,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../class_discussions/index.html">Class Discussions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="shell.html"><code class="docutils literal notranslate"><span class="pre">sh</span></code>: Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github.html"><code class="docutils literal notranslate"><span class="pre">Github</span></code>: Social Network of Programmers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssh.html"><code class="docutils literal notranslate"><span class="pre">ssh</span></code>: Secure Shell</a></li>
@@ -230,19 +230,14 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="openai_agents.html">LLM Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="web.html">Web Development</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html">Client-Side Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html">Server-Side Technologies</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="bokeh.html"><code class="docutils literal notranslate"><span class="pre">bokeh</span></code>: Dashboards</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: Vectorized Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pandas1.html">Pandas I: Data Structures</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas II: Selection, Filtering and Dropping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas3.html">Pandas III: Aggregation, Merging and Concatenation</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="21_univariate.html">Univariate Visualizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="22_multivariate.html">Multivariate Visualizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="23_dosdonts.html">Dos and Donts of Visualization</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="10_dataops.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_visualization.html"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: Visualizing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gmaps.html">Google Maps</a></li>
 </ul>
 
@@ -934,7 +929,7 @@ dtype: int64
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/iloc.png"><img alt="https://fahadsultan.com/datascience_ml/_images/iloc.png" src="https://fahadsultan.com/datascience_ml/_images/iloc.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.iloc[i,</span> <span class="pre">j]</span></code> returns value(s) where row <strong>location</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column <strong>location</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.iloc[i,</span> <span class="pre">j]</span></code> returns value(s) where row <strong>location</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column <strong>location</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1238,7 +1233,7 @@ dtype: int64
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/loc.png"><img alt="https://fahadsultan.com/datascience_ml/_images/loc.png" src="https://fahadsultan.com/datascience_ml/_images/loc.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.loc[i,</span> <span class="pre">j]</span></code> returns value(s) where row <strong>label</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column <strong>label</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.loc[i,</span> <span class="pre">j]</span></code> returns value(s) where row <strong>label</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column <strong>label</strong>(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1477,7 +1472,7 @@ Name: Candidate, Length: 182, dtype: object
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://fahadsultan.com/datascience_ml/_images/squarebrackets.png"><img alt="https://fahadsultan.com/datascience_ml/_images/squarebrackets.png" src="https://fahadsultan.com/datascience_ml/_images/squarebrackets.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.iloc[i,</span> <span class="pre">j]</span></code> returns value(s) where row(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">.iloc[i,</span> <span class="pre">j]</span></code> returns value(s) where row(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">i</span></code> and column(s)<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">j</span></code> in the DataFrame.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -3303,13 +3298,13 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>143</th>
-      <td>1992</td>
-      <td>Ross Perot</td>
-      <td>Independent</td>
-      <td>19743821</td>
+      <th>37</th>
+      <td>1880</td>
+      <td>Winfield Scott Hancock</td>
+      <td>Democratic</td>
+      <td>4444976</td>
       <td>loss</td>
-      <td>18.956298</td>
+      <td>48.278422</td>
     </tr>
   </tbody>
 </table>
@@ -3351,49 +3346,49 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>88</th>
-      <td>1932</td>
-      <td>Norman Thomas</td>
-      <td>Socialist</td>
-      <td>884885</td>
+      <th>49</th>
+      <td>1892</td>
+      <td>John Bidwell</td>
+      <td>Prohibition</td>
+      <td>270879</td>
       <td>loss</td>
-      <td>2.236211</td>
+      <td>2.249468</td>
     </tr>
     <tr>
-      <th>74</th>
-      <td>1916</td>
-      <td>Woodrow Wilson</td>
-      <td>Democratic</td>
-      <td>9126868</td>
-      <td>win</td>
-      <td>49.367987</td>
-    </tr>
-    <tr>
-      <th>107</th>
-      <td>1952</td>
-      <td>Vincent Hallinan</td>
-      <td>Progressive</td>
-      <td>140746</td>
+      <th>138</th>
+      <td>1988</td>
+      <td>Ron Paul</td>
+      <td>Libertarian</td>
+      <td>431750</td>
       <td>loss</td>
-      <td>0.228516</td>
+      <td>0.472660</td>
     </tr>
     <tr>
-      <th>91</th>
-      <td>1936</td>
-      <td>Franklin Roosevelt</td>
-      <td>Democratic</td>
-      <td>27752648</td>
+      <th>173</th>
+      <td>2016</td>
+      <td>Donald Trump</td>
+      <td>Republican</td>
+      <td>62984828</td>
       <td>win</td>
-      <td>60.978107</td>
+      <td>46.407862</td>
     </tr>
     <tr>
-      <th>86</th>
-      <td>1932</td>
-      <td>Franklin Roosevelt</td>
+      <th>47</th>
+      <td>1892</td>
+      <td>Grover Cleveland</td>
       <td>Democratic</td>
-      <td>22821277</td>
+      <td>5553898</td>
       <td>win</td>
-      <td>57.672125</td>
+      <td>46.121393</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>1968</td>
+      <td>Hubert Humphrey</td>
+      <td>Democratic</td>
+      <td>31271839</td>
+      <td>loss</td>
+      <td>42.863537</td>
     </tr>
   </tbody>
 </table>
@@ -3435,40 +3430,40 @@ Name: Popular vote, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>53</th>
-      <td>1896</td>
-      <td>William McKinley</td>
+      <th>157</th>
+      <td>2004</td>
+      <td>George W. Bush</td>
       <td>Republican</td>
-      <td>7112138</td>
+      <td>62040610</td>
       <td>win</td>
-      <td>51.213817</td>
+      <td>50.771824</td>
     </tr>
     <tr>
-      <th>17</th>
-      <td>1852</td>
-      <td>Franklin Pierce</td>
+      <th>20</th>
+      <td>1856</td>
+      <td>James Buchanan</td>
       <td>Democratic</td>
-      <td>1605943</td>
+      <td>1835140</td>
       <td>win</td>
-      <td>51.013168</td>
+      <td>45.306080</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>1824</td>
-      <td>John Quincy Adams</td>
-      <td>Democratic-Republican</td>
-      <td>113142</td>
-      <td>win</td>
-      <td>42.789878</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>1944</td>
-      <td>Franklin Roosevelt</td>
+      <th>74</th>
+      <td>1916</td>
+      <td>Woodrow Wilson</td>
       <td>Democratic</td>
-      <td>25612916</td>
+      <td>9126868</td>
       <td>win</td>
-      <td>53.773801</td>
+      <td>49.367987</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1848</td>
+      <td>Zachary Taylor</td>
+      <td>Whig</td>
+      <td>1360235</td>
+      <td>win</td>
+      <td>47.309296</td>
     </tr>
   </tbody>
 </table>
@@ -3686,13 +3681,13 @@ Length: 182, dtype: int64
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis0b.png"><img alt="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis0b.png" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis0b.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df.apply(f,</span> <span class="pre">axis=0)</span></code> results in <span class="math notranslate nohighlight">\(D\)</span> concurrent calls to <span class="math notranslate nohighlight">\(f\)</span>. Each function call is passed a column.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df.apply(f,</span> <span class="pre">axis=0)</span></code> results in <span class="math notranslate nohighlight">\(D\)</span> concurrent calls to <span class="math notranslate nohighlight">\(f\)</span>. Each function call is passed a column.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis1b.png"><img alt="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis1b.png" src="https://raw.githubusercontent.com/fahadsultan/datascience_ml/main/assets/axis1b.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df.apply(f,</span> <span class="pre">axis=1)</span></code> results in <span class="math notranslate nohighlight">\(N\)</span> concurrent calls to <span class="math notranslate nohighlight">\(f\)</span>. Each function call is passed a row.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">df.apply(f,</span> <span class="pre">axis=1)</span></code> results in <span class="math notranslate nohighlight">\(N\)</span> concurrent calls to <span class="math notranslate nohighlight">\(f\)</span>. Each function call is passed a row.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -3729,24 +3724,6 @@ Length: 182, dtype: int64
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="pandas1.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pandas I: Data Structures</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="pandas3.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pandas III: Aggregation, Merging and Concatenation</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

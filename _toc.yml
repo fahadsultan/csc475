@@ -53,15 +53,19 @@ parts:
         # sections:
       - file: tutorials/openai_agents.ipynb
         # - file: tutorials/opensource.ipynb
+      - file: tutorials/web.ipynb
+        sections: 
+        - file: tutorials/client.ipynb
+        - file: tutorials/server.ipynb
       - file: tutorials/bokeh
       - file: tutorials/10_dataops
-        sections: 
-        - file: tutorials/pandas1
-        - file: tutorials/pandas2
-        - file: tutorials/pandas3
+        # sections: 
+        # - file: tutorials/pandas1
+        # - file: tutorials/pandas2
+        # - file: tutorials/pandas3
       - file: tutorials/20_visualization
-        sections: 
-        - file: tutorials/21_univariate
-        - file: tutorials/22_multivariate
-        - file: tutorials/23_dosdonts
+        # sections: 
+        # - file: tutorials/21_univariate
+        # - file: tutorials/22_multivariate
+        # - file: tutorials/23_dosdonts
       - file: tutorials/gmaps
