@@ -127,17 +127,17 @@ Following data sets and ideas are only there to give you a starting point. You a
 
 | Title | Name | Poster | Present | Final Report | Website | Code |
 |------|-------|--------|--------------|--------------|---------|------|
-| **Furman Now!** | Michael Peeler | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/MichaelPeeler.pdf) | | | | |
-| **Temptare** | Joshua Berger | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/Joshua%20Berger.pdf) | | | | |
-| **Analyzing MLB Contract** | Caden Parry | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/CadenParry.pdf) | | | | |
-| **Visualizing Internet Traffic Using** | Jack Crouse | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/JackCrouse.pdf) | | | | |
-| **Language Status Visualization** | Grace Warren | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/GraceWarren.pdf) | | | | |
-| **Breaking the Loop** | Will Foster | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/WillFoster.pdf) | | | | |
-| **Intersection of VR and Education** | Maherah Muqri | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/MaherahMuqri.pdf) | | | | |
-| **Solar Forecasting using Sunspot Data** | Jack Brewster | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/JackBrewster.pdf) | | | | |
-| **Online Advertising in 2024** | Coley Brown | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/ColeyBrown.pdf) | | | | |
-| **Dialect Dive** | Ainsley Yoshizumi | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/AinsleyYoshizumi.pdf) | | | | |
-| **Optimizing the Magic** | Abby Dumke | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/AbbyDumke.pdf) | | | | |
+| **Furman Now!** | Michael Peeler | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/MichaelPeeler.pdf) | |[📝](https://m-peeler.github.io/FurmanNowDocs/) | | |
+| **Temptare** | Joshua Berger | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/Joshua%20Berger.pdf) | | | [📝](https://m-peeler.github.io/FurmanNowDocs/)| |
+| **Analyzing MLB Contract** | Caden Parry | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/CadenParry.pdf) | | [📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/Caden.pdf)| | |
+| **Visualizing Internet Traffic Using** | Jack Crouse | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/JackCrouse.pdf) | |[📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/JackC.pdf) | | |
+| **Language Status Visualization** | Grace Warren | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/GraceWarren.pdf) | | [📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/Grace.pdf)| | |
+| **Breaking the Loop** | Will Foster | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/WillFoster.pdf) | | [📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/Will.pdf)| | |
+| **Intersection of VR and Education** | Maherah Muqri | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/MaherahMuqri.pdf) | | [📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/Maherah.pdf)| | |
+| **Solar Forecasting using Sunspot Data** | Jack Brewster | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/JackBrewster.pdf) | | [📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/JackB.pdf)| | |
+| **Online Advertising in 2024** | Coley Brown | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/ColeyBrown.pdf) | | [📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/Coley.pdf)| | |
+| **Dialect Dive** | Ainsley Yoshizumi | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/AinsleyYoshizumi.pdf) | | [📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/Ainsley.pdf)| | |
+| **Optimizing the Magic** | Abby Dumke | [🪧](https://github.com/fahadsultan/csc475/blob/main/Spring24/AbbyDumke.pdf) | | [📝](https://github.com/fahadsultan/csc475/blob/main/Spring24/Abby.pdf)| | |
 | **Animatlas** | Sophie Ngo | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Sophie%20Ngo_687893_assignsubmission_file_final%20poster.pdf) | [📽](https://docs.google.com/presentation/d/1RvoiPwSyw_So-QRNiprhGqxnmZblDsrb6_Za5Q-s5ZU/edit#slide=id.p1) | [📝](https://github.com/fahadsultan/csc475/blob/main/project/fall23_reports/Sophie%20Ngo_687925_assignsubmission_file_CSC_475_Final_Report___Sophie_Ngo.pdf) | [🌐](https://animatlas.net/) | [💻](https://github.com/Sophie-Ngo/AnimAtlas)
 | **Autoregressive Stock Prediction Modeling** | Emil Westling | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Emil%20Westling_687892_assignsubmission_file_Poster%20CSC475.pdf) | [📽](https://github.com/fahadsultan/csc475/blob/main/project/fall23_presentations/Emil%20Westling_688032_assignsubmission_file_Seminar%20presentation.pdf) | <a href="https://github.com/fahadsultan/csc475/blob/main/project/fall23_reports/EmilReport.pdf">📝</a> | <a href="https://emilwestling.com/AlgorithmTrading/">🌐</a> | [💻](https://github.com/emilwestling/AlgorithmTrading) |
 | **Making MacroEconomic Indicators Accessible** | Joshua Hutson | [🪧](https://github.com/fahadsultan/csc475/blob/main/project/fall23_posters/Joshua%20Hutson_687894_assignsubmission_file_Hutson%20CSC-475%20Poster.pdf) | [📽](https://github.com/fahadsultan/csc475/blob/main/project/fall23_presentations/Joshua%20Hutson_688037_assignsubmission_file_Final%20Presentation%20Link.pdf) | [📝](https://github.com/fahadsultan/csc475/blob/main/project/fall23_reports/Joshua%20Hutson_687924_assignsubmission_file_Hutson_CSC_475_Final_Report.pdf) | [🌐](https://penguin-del.github.io/CSC-475_Project/) | [💻](https://github.com/penguin-del/CSC-475_Project) |
